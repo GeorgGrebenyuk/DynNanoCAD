@@ -1,6 +1,8 @@
 # DynNanoCAD
 Public repository with Autodesk Dynamo Core's package to connect with LLC Nanosoft NanoCAD (.NET COM API implementation).
-Become a member of NanoCAD's developer club - register <b>[here](https://developer.nanocad.ru)</b>.
+
+### Become a member of NanoCAD's developer club - register [here](https://developer.nanocad.ru).
+
 # About project
 Slow step-by-step deeping into NanoCAD API (due to sanctions) with implementation that in Dynamo Core.
 ## Build
