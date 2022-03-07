@@ -1,0 +1,233 @@
+{
+  "Uuid": "8682bcd5-9dec-4728-875a-8b1929cb3659",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "GetBlocks",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "nanoCAD.DynBlocks.AcadBlock.GetInfo@int,var",
+      "Id": "cfca76ca54b74841961b4fd609a0935b",
+      "Inputs": [
+        {
+          "Id": "6b2c68da1dfe4e6f9c356bbd1c8c31c5",
+          "Name": "aux",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0b20c87102414a0185531f5633c1e3d1",
+          "Name": "com_block",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7320f61303684707bd96719125673532",
+          "Name": "Handle",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "924448fc85e84152a35edfa169ca0a35",
+          "Name": "Name",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c1259d7f29bf4fec8e56695084efef1d",
+          "Name": "ObjectID",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "99a9feb5c536400fab803004567cf717",
+          "Name": "Origin",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "886b0a0a500640c684745c652b377061",
+          "Name": "Units",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "AcadBlock.GetInfo (aux: int, com_block: var): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "nanoCAD.DynBlocks.General.GetAllBlocks@int",
+      "Id": "7c631cabc689486a98b303a8637e88f9",
+      "Inputs": [
+        {
+          "Id": "ddf9fa12fa8148b1ac3599c0033bcd2d",
+          "Name": "aux",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3294c24dd59448ada0f659d895f429cb",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "General.GetAllBlocks (aux: int): var[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "nanoCAD.Init.CurrentDoc",
+      "Id": "8b614fedb7e444c5ac64e13d71800451",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5b2d997fe31443628557043f670cd692",
+          "Name": "int",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Init.CurrentDoc ( ): int"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3294c24dd59448ada0f659d895f429cb",
+      "End": "0b20c87102414a0185531f5633c1e3d1",
+      "Id": "8e628adc8b2f4de0901188c364979282"
+    },
+    {
+      "Start": "5b2d997fe31443628557043f670cd692",
+      "End": "ddf9fa12fa8148b1ac3599c0033bcd2d",
+      "Id": "59d41a8de4e94f2f8b4854626e3496c0"
+    },
+    {
+      "Start": "5b2d997fe31443628557043f670cd692",
+      "End": "6b2c68da1dfe4e6f9c356bbd1c8c31c5",
+      "Id": "addb464793b94329a61fa655e7a43f4b"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "Нет",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "AcadBlock.GetInfo",
+        "Id": "cfca76ca54b74841961b4fd609a0935b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 792.69377857574045,
+        "Y": 132.08060757947095
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "General.GetAllBlocks",
+        "Id": "7c631cabc689486a98b303a8637e88f9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 535.03264132252,
+        "Y": 263.76336946477255
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Init.CurrentDoc",
+        "Id": "8b614fedb7e444c5ac64e13d71800451",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 325.61967638122121,
+        "Y": 210.13644227899775
+      }
+    ],
+    "Annotations": [],
+    "X": -284.67086551877287,
+    "Y": -106.18688769397767,
+    "Zoom": 1.2484436539722301
+  }
+}
