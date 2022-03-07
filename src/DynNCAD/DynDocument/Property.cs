@@ -17,7 +17,7 @@ namespace nanoCAD.DynDocument
         }
         [MultiReturn(new[] { "ActiveLayer", "FullName", "Name", "Blocks",
         "Layers", "Layouts", "Linetypes", "DimStyles"})]
-        public static Dictionary <string,object> Get(int aux)
+        public static Dictionary <string,object> GetInfo(int aux)
         {
             return new Dictionary<string, object>()
             {
