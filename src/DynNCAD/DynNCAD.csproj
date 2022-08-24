@@ -7,7 +7,7 @@
     <ProjectGuid>{7E3EEB0E-F174-47BE-8A5B-29200034255E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>nanoCAD</RootNamespace>
+    <RootNamespace>DynNCAD</RootNamespace>
     <AssemblyName>DynNCAD</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -22,8 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\Debug\DynNCAD.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,12 +35,15 @@
   <ItemGroup>
     <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DynamoUnits, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\DynamoUnits.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ProtoGeometry, Version=2.12.0.5475, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\ProtoGeometry.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,13 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynBlocks\AcadBlock.cs" />
-    <Compile Include="DynBlocks\General.cs" />
-    <Compile Include="DynDocument\Methods.cs" />
-    <Compile Include="DynDocument\Property.cs" />
-    <Compile Include="DynLayer\Methods.cs" />
-    <Compile Include="Init.cs" />
+    <Compile Include="Objects\Block.cs" />
+    <Compile Include="Objects\BlockReference.cs" />
+    <Compile Include="Objects\Blocks_adding.cs" />
+    <Compile Include="Project\Application.cs" />
+    <Compile Include="Project\Document.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Styles\DimStyle.cs" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="nanoCAD">
@@ -91,10 +93,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
