@@ -32,6 +32,18 @@ namespace DynNCAD.Project
         public string Name => this.block.Name;
 
         //functions
-        //public object GetReferences() => this.block.GetReferences
+        public void Add3DFace(dg.Point p1, dg.Point p2, dg.Point p3, dg.Point p4)
+        {
+            var object_3d_face = this.block.Add3DFace(
+                Tools.PointByDynPoint(p1),
+                Tools.PointByDynPoint(p2),
+                Tools.PointByDynPoint(p3),
+                Tools.PointByDynPoint(p4));
+        }
+        public void AddText (string Text, dg.Point insetion_point, double text_height)
+        {
+            var object_text = this.block.AddText(Text, Tools.PointByDynPoint(insetion_point), text_height);
+        }
+
     }
 }

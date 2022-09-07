@@ -12,119 +12,14 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "nanoCAD.DynBlocks.AcadBlock.GetInfo@int,var",
-      "Id": "cfca76ca54b74841961b4fd609a0935b",
-      "Inputs": [
-        {
-          "Id": "6b2c68da1dfe4e6f9c356bbd1c8c31c5",
-          "Name": "aux",
-          "Description": "int",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "0b20c87102414a0185531f5633c1e3d1",
-          "Name": "com_block",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "7320f61303684707bd96719125673532",
-          "Name": "Handle",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "924448fc85e84152a35edfa169ca0a35",
-          "Name": "Name",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "c1259d7f29bf4fec8e56695084efef1d",
-          "Name": "ObjectID",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "99a9feb5c536400fab803004567cf717",
-          "Name": "Origin",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "886b0a0a500640c684745c652b377061",
-          "Name": "Units",
-          "Description": "var",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "AcadBlock.GetInfo (aux: int, com_block: var): var[]..[]"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "nanoCAD.DynBlocks.General.GetAllBlocks@int",
-      "Id": "7c631cabc689486a98b303a8637e88f9",
-      "Inputs": [
-        {
-          "Id": "ddf9fa12fa8148b1ac3599c0033bcd2d",
-          "Name": "aux",
-          "Description": "int",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "3294c24dd59448ada0f659d895f429cb",
-          "Name": "var[]",
-          "Description": "var[]",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "General.GetAllBlocks (aux: int): var[]"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "nanoCAD.Init.CurrentDoc",
-      "Id": "8b614fedb7e444c5ac64e13d71800451",
+      "FunctionSignature": "DynNCAD.Project.Application.Application",
+      "Id": "60a461e11baf4843adb15b938aca9a8e",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "5b2d997fe31443628557043f670cd692",
-          "Name": "int",
-          "Description": "int",
+          "Id": "c635318f79ec4219a86541ec7dabb7d0",
+          "Name": "Application",
+          "Description": "Application",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -132,24 +27,254 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Init.CurrentDoc ( ): int"
+      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application ( ): Application"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.NDocument@DynNCAD.Project.Application",
+      "Id": "edc2319837b740008e50929173b7d817",
+      "Inputs": [
+        {
+          "Id": "ec05a3f9b4c34b57ac990248c8e97c0e",
+          "Name": "ncad_app",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ef9ecdf7d90a4772b6068f8d33008101",
+          "Name": "NDocument",
+          "Description": "NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает активный документ (проект)\n\nNDocument.NDocument (ncad_app: Application): NDocument"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.Blocks",
+      "Id": "c29f786e7cfc48e79f8c2722d4539942",
+      "Inputs": [
+        {
+          "Id": "816fba11e8ef4844a88aa3d896808cba",
+          "Name": "nDocument",
+          "Description": "DynNCAD.Project.NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ddc87f5c791048db89757a5aefd8e242",
+          "Name": "Block[]",
+          "Description": "Block[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "NDocument.Blocks ( ): Block[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.Layouts_AsBlocks",
+      "Id": "cc3e68bd635c4af08b6917a8e981ae8e",
+      "Inputs": [
+        {
+          "Id": "3b1fdff9d0bf43adad32fed72b5bdd0d",
+          "Name": "nDocument",
+          "Description": "DynNCAD.Project.NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a8dd14895e7c43b59494b0b5fcac5bcd",
+          "Name": "Block[]",
+          "Description": "Block[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение Блоков (пространства) листов чертежа\n\nNDocument.Layouts_AsBlocks ( ): Block[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.ModelSpace",
+      "Id": "c339d8b6a2b74abd8bd608290f12df4d",
+      "Inputs": [
+        {
+          "Id": "00dba653ad2440899986ecdfd885c7db",
+          "Name": "nDocument",
+          "Description": "DynNCAD.Project.NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6ae208b4e2c24260b4058e0ef8dc624b",
+          "Name": "Block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Возвращает Block пространства модели чертежа\n\nNDocument.ModelSpace: Block"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Block.Name",
+      "Id": "35faaf1768a64979af7ec2254c0afb6b",
+      "Inputs": [
+        {
+          "Id": "a7427a344bbc4fe68e58d78a3ad51d37",
+          "Name": "block",
+          "Description": "DynNCAD.Project.Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "42f356d68f0d4d728c69de96be3c6a35",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает имя блока\n\nBlock.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Block.Name",
+      "Id": "88b9ca60c4d24cd7ad4eaad1e83cbc45",
+      "Inputs": [
+        {
+          "Id": "5016f9199d144718a2e2511b8f82722b",
+          "Name": "block",
+          "Description": "DynNCAD.Project.Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b6b1160b39ab481d8a4b92ffaf34adde",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает имя блока\n\nBlock.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Block.Name",
+      "Id": "e03d9376986e43249948a19262c92f3e",
+      "Inputs": [
+        {
+          "Id": "6d713226dc7a474195e08b12f8426bfc",
+          "Name": "block",
+          "Description": "DynNCAD.Project.Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a2460c90fcf84d2fb11338a749f6b4a7",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает имя блока\n\nBlock.Name: string"
     }
   ],
   "Connectors": [
     {
-      "Start": "3294c24dd59448ada0f659d895f429cb",
-      "End": "0b20c87102414a0185531f5633c1e3d1",
-      "Id": "8e628adc8b2f4de0901188c364979282"
+      "Start": "c635318f79ec4219a86541ec7dabb7d0",
+      "End": "ec05a3f9b4c34b57ac990248c8e97c0e",
+      "Id": "a48b9170cae3430489197aa82f87c88c"
     },
     {
-      "Start": "5b2d997fe31443628557043f670cd692",
-      "End": "ddf9fa12fa8148b1ac3599c0033bcd2d",
-      "Id": "59d41a8de4e94f2f8b4854626e3496c0"
+      "Start": "ef9ecdf7d90a4772b6068f8d33008101",
+      "End": "816fba11e8ef4844a88aa3d896808cba",
+      "Id": "95f32a2e2a2a44f8ac55750702aa26b3"
     },
     {
-      "Start": "5b2d997fe31443628557043f670cd692",
-      "End": "6b2c68da1dfe4e6f9c356bbd1c8c31c5",
-      "Id": "addb464793b94329a61fa655e7a43f4b"
+      "Start": "ef9ecdf7d90a4772b6068f8d33008101",
+      "End": "3b1fdff9d0bf43adad32fed72b5bdd0d",
+      "Id": "9c5b5c3b55344931a78dd0aed22664bf"
+    },
+    {
+      "Start": "ef9ecdf7d90a4772b6068f8d33008101",
+      "End": "00dba653ad2440899986ecdfd885c7db",
+      "Id": "695b9f3c453148449c344e1b43fcf115"
+    },
+    {
+      "Start": "ddc87f5c791048db89757a5aefd8e242",
+      "End": "a7427a344bbc4fe68e58d78a3ad51d37",
+      "Id": "948c9cf8c46e4a53bb2a601e78411777"
+    },
+    {
+      "Start": "a8dd14895e7c43b59494b0b5fcac5bcd",
+      "End": "5016f9199d144718a2e2511b8f82722b",
+      "Id": "301ce982cc384bea9832666ea8a8f764"
+    },
+    {
+      "Start": "6ae208b4e2c24260b4058e0ef8dc624b",
+      "End": "6d713226dc7a474195e08b12f8426bfc",
+      "Id": "d06200bec4524576af7b1cbef3475417"
     }
   ],
   "Dependencies": [],
@@ -177,7 +302,7 @@
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.12.0.5650",
+      "Version": "2.12.1.8246",
       "RunType": "Manual",
       "RunPeriod": "1000"
     },
@@ -196,38 +321,88 @@
     "NodeViews": [
       {
         "ShowGeometry": true,
-        "Name": "AcadBlock.GetInfo",
-        "Id": "cfca76ca54b74841961b4fd609a0935b",
+        "Name": "Application.Application",
+        "Id": "60a461e11baf4843adb15b938aca9a8e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 792.69377857574045,
-        "Y": 132.08060757947095
+        "X": 389.95273882055108,
+        "Y": 241.45335048190753
       },
       {
         "ShowGeometry": true,
-        "Name": "General.GetAllBlocks",
-        "Id": "7c631cabc689486a98b303a8637e88f9",
+        "Name": "NDocument.NDocument",
+        "Id": "edc2319837b740008e50929173b7d817",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 535.03264132252,
-        "Y": 263.76336946477255
+        "X": 628.02579673358525,
+        "Y": 242.40184872060485
       },
       {
         "ShowGeometry": true,
-        "Name": "Init.CurrentDoc",
-        "Id": "8b614fedb7e444c5ac64e13d71800451",
+        "Name": "NDocument.Blocks",
+        "Id": "c29f786e7cfc48e79f8c2722d4539942",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 325.61967638122121,
-        "Y": 210.13644227899775
+        "X": 918.26625777497361,
+        "Y": 245.24734343669689
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "NDocument.Layouts_AsBlocks",
+        "Id": "cc3e68bd635c4af08b6917a8e981ae8e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 927.12134188273035,
+        "Y": 382.52507550363623
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "NDocument.ModelSpace",
+        "Id": "c339d8b6a2b74abd8bd608290f12df4d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 931.89900217152763,
+        "Y": 502.76285943836626
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Block.Name",
+        "Id": "35faaf1768a64979af7ec2254c0afb6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1289.4272471165198,
+        "Y": 226.45483940292706
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Block.Name",
+        "Id": "88b9ca60c4d24cd7ad4eaad1e83cbc45",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1497.2554696791988,
+        "Y": 381.72879878883668
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Block.Name",
+        "Id": "e03d9376986e43249948a19262c92f3e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1274.2979895353285,
+        "Y": 523.46605402315436
       }
     ],
     "Annotations": [],
-    "X": -284.67086551877287,
-    "Y": -106.18688769397767,
-    "Zoom": 1.2484436539722301
+    "X": -932.24239061426806,
+    "Y": -211.64746586914606,
+    "Zoom": 1.4180368472160669
   }
 }

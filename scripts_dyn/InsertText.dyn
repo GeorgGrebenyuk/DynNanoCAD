@@ -1,0 +1,426 @@
+{
+  "Uuid": "190a3d35-565b-4802-8456-56c89f37a7bc",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "InsertText",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Application.Application",
+      "Id": "e895de0da20f49d3893d432ba336abef",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d572e5fd2ad24b2b93bdc8a32b22dffb",
+          "Name": "Application",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application ( ): Application"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.NDocument@DynNCAD.Project.Application",
+      "Id": "e69528d1983c49a990374b813113a7e0",
+      "Inputs": [
+        {
+          "Id": "d7c3ff4877f5468390e62f0853ab3370",
+          "Name": "ncad_app",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c8c328953e4140d7812dc199df617255",
+          "Name": "NDocument",
+          "Description": "NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает активный документ (проект)\n\nNDocument.NDocument (ncad_app: Application): NDocument"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.ModelSpace",
+      "Id": "9821d6f652b5420aaad02c469db2e6ea",
+      "Inputs": [
+        {
+          "Id": "15129fe0c9c04b12a44a3e2c6d0f4800",
+          "Name": "nDocument",
+          "Description": "DynNCAD.Project.NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ce83308078bc4f1fb7846c85f8bb5a85",
+          "Name": "Block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Возвращает Block пространства модели чертежа\n\nNDocument.ModelSpace: Block"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Block.AddText@string,Autodesk.DesignScript.Geometry.Point,double",
+      "Id": "69999b3c966b4dc093cff33922e4dce4",
+      "Inputs": [
+        {
+          "Id": "1922a707719b495a91965ffe341ae540",
+          "Name": "block",
+          "Description": "DynNCAD.Project.Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a09a8e11b4dc486499ded2ff96dd2c6a",
+          "Name": "Text",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1cf067ffc6474beabedddc21ebb6d025",
+          "Name": "insetion_point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "62ec0261b4be43a0bbed0b5af47973d1",
+          "Name": "text_height",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e38b824e7b714deb97832a08374d7d6f",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Block.AddText (Text: string, insetion_point: Point, text_height: double): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"test\";\n3.0;",
+      "Id": "3251323422ce4678ac4863b5a46dc31a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f0f1420174c45ffa1f23a0545afcd68",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d3d5310411dd45b980ffdbeaa7492ed0",
+          "Name": "",
+          "Description": "Значение выражения в строке 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "ea3076ac80574e3dbc2cef7aab9e4950",
+      "Inputs": [
+        {
+          "Id": "72d0f716536249258bb16fbbc6c129eb",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nЗначение по умолчанию : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2fa40a2782da4be78b92a65fdc964fb0",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nЗначение по умолчанию : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a74d09252c3547809b77cadd2f806114",
+          "Name": "z",
+          "Description": "Z coordinate\n\ndouble\nЗначение по умолчанию : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e22042c16f564742904697dd83d2ece6",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Построение точки на основе трех заданных декартовых координат\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0.0;\n100.0;",
+      "Id": "8b54fe4ee7ab4f2c95cbf97221c8b47f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "277637ee116c44808127931c0a11b8f4",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b9cba247dfb841cb9f1f97caa7fdbaab",
+          "Name": "",
+          "Description": "Значение выражения в строке 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d572e5fd2ad24b2b93bdc8a32b22dffb",
+      "End": "d7c3ff4877f5468390e62f0853ab3370",
+      "Id": "693327c2ec594a4289355e7cf1c8242d"
+    },
+    {
+      "Start": "c8c328953e4140d7812dc199df617255",
+      "End": "15129fe0c9c04b12a44a3e2c6d0f4800",
+      "Id": "5e4874d50c4c4feaa63c122965831854"
+    },
+    {
+      "Start": "ce83308078bc4f1fb7846c85f8bb5a85",
+      "End": "1922a707719b495a91965ffe341ae540",
+      "Id": "6da07ff658a4428e88b8b306f741c8a5"
+    },
+    {
+      "Start": "6f0f1420174c45ffa1f23a0545afcd68",
+      "End": "a09a8e11b4dc486499ded2ff96dd2c6a",
+      "Id": "37f04f5d7ed0477ab0c65d12bc550c94"
+    },
+    {
+      "Start": "d3d5310411dd45b980ffdbeaa7492ed0",
+      "End": "62ec0261b4be43a0bbed0b5af47973d1",
+      "Id": "1c9975a85133433884c398c31882700c"
+    },
+    {
+      "Start": "e22042c16f564742904697dd83d2ece6",
+      "End": "1cf067ffc6474beabedddc21ebb6d025",
+      "Id": "3090e8cef272415fb8954bfaf56c6c67"
+    },
+    {
+      "Start": "277637ee116c44808127931c0a11b8f4",
+      "End": "72d0f716536249258bb16fbbc6c129eb",
+      "Id": "c7bf5490bc744977a210763253edf809"
+    },
+    {
+      "Start": "277637ee116c44808127931c0a11b8f4",
+      "End": "a74d09252c3547809b77cadd2f806114",
+      "Id": "aedeca58852e42ca882fccd6bcbf0da9"
+    },
+    {
+      "Start": "b9cba247dfb841cb9f1f97caa7fdbaab",
+      "End": "2fa40a2782da4be78b92a65fdc964fb0",
+      "Id": "8baa6f2c7a814364b72940c9039a9cea"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "Нет",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Application.Application",
+        "Id": "e895de0da20f49d3893d432ba336abef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 370.0,
+        "Y": 381.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "NDocument.NDocument",
+        "Id": "e69528d1983c49a990374b813113a7e0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 599.0,
+        "Y": 383.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "NDocument.ModelSpace",
+        "Id": "9821d6f652b5420aaad02c469db2e6ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 949.0,
+        "Y": 473.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Block.AddText",
+        "Id": "69999b3c966b4dc093cff33922e4dce4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1540.0,
+        "Y": 438.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "3251323422ce4678ac4863b5a46dc31a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1057.0,
+        "Y": 667.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Point.ByCoordinates",
+        "Id": "ea3076ac80574e3dbc2cef7aab9e4950",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 805.0,
+        "Y": 676.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8b54fe4ee7ab4f2c95cbf97221c8b47f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 560.0,
+        "Y": 696.0
+      }
+    ],
+    "Annotations": [],
+    "X": -485.0,
+    "Y": -70.0,
+    "Zoom": 1.0
+  }
+}
