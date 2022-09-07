@@ -24,7 +24,7 @@ namespace DynNCAD.Objects
         /// Получение блока из com-интерфейса
         /// </summary>
         /// <param name="BlockReference_object"></param>
-        public BlockReference (object BlockReference_object)
+        private BlockReference (object BlockReference_object)
         {
             this.block_ref = BlockReference_object as OdaX.AcadBlockReference;
         }

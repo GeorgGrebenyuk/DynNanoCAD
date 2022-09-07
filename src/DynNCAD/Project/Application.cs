@@ -42,6 +42,22 @@ namespace DynNCAD.Project
         /// Заголовок окна приложения
         /// </summary>
         public string Caption => this.ncad_app.Caption;
+        /// <summary>
+        /// Получение всех открытых документов
+        /// </summary>
+        /// <returns></returns>
+
+        public List<NDocument> Documents()
+        {
+            InanoCADDocuments docs_row = this.ncad_app.Documents;
+            List<NDocument> docs = new List<NDocument>();
+            for(int i = 0; i < docs_row.Count; i++)
+            {
+                docs.Add(new NDocument(docs_row[i]));
+            }
+            return docs;
+
+        }
 
     }
 }

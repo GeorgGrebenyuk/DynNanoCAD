@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Objects
+namespace DynNCAD.Project
 {
     /// <summary>
     /// Класс для работы с блоками (не путать с Вхождениями блоков (Block Reference)!)

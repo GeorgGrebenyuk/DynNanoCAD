@@ -26,31 +26,43 @@ namespace DynNCAD.Project
         /// Получает активный документ (проект)
         /// </summary>
         /// <param name="ncad_app"></param>
-        public NDocument (Application ncad_app)
+
+        public NDocument(Application ncad_app)
         {
             this.nc_doc = ncad_app.ncad_app.ActiveDocument;
+        }
+        internal NDocument(nanoCAD.Document doc)
+        {
+            nc_doc = doc;
         }
         /// <summary>
         /// Передает внутреннюю команду из скрипта в документ для выполнения
         /// </summary>
         /// <param name="command"></param>
-        public void SendCommand (string command) => this.nc_doc.SendCommand(command);
+        public void SendCommand(string command) => this.nc_doc.SendCommand(command);
         /// <summary>
         /// Устанавливает активный размерный стиль документа
         /// </summary>
         /// <param name="style"></param>
         /// <returns></returns>
-        public object SetActiveDimStyle (Styles.DimStyle style) => this.nc_doc.ActiveDimStyle = style.style;
+        public object SetActiveDimStyle(Styles.DimStyle style) => this.nc_doc.ActiveDimStyle = style.style;
 
         /// Возвращает коллекцию блоков для данного чертежа за исключением пространства Модели и Листов
         /// </summary>
         /// <param name="NDocument">Текущий документ модели</param>
         /// <returns></returns>
-        public static List<Objects.Block> Blocks(Project.NDocument NDocument)
+        public List<Project.Block> Blocks()
         {
-            List<Objects.Block> blocks = new List<Objects.Block>();
-            IAcadBlocks doc_blocks = NDocument.nc_doc.Blocks;
-            for (int i = 0; i < doc_blocks.Count; i++) { blocks.Add(new Objects.Block(doc_blocks.Item(i))); }
+            List<Project.Block> blocks = new List<Project.Block>();
+            IAcadBlocks doc_blocks = nc_doc.Blocks;
+            for (int i = 0; i < doc_blocks.Count; i++)
+            {
+                IAcadBlock bl = doc_blocks.Item(i);
+                if (!bl.Name.Contains("*Model_Space") && !bl.Name.Contains("*Paper_Space"))
+                {
+                    blocks.Add(new Project.Block(bl));
+                }
+            }
             return blocks;
         }
         /// <summary>
@@ -60,7 +72,40 @@ namespace DynNCAD.Project
         /// <summary>
         /// Возвращает Block пространства модели чертежа
         /// </summary>
-        public Objects.Block ModelSpace => new Objects.Block( this.nc_doc.ModelSpace);
+        public Project.Block ModelSpace => new Project.Block(this.nc_doc.ModelSpace);
+        /// <summary>
+        /// Получение Блоков (пространства) листов чертежа
+        /// </summary>
+        /// <returns></returns>
+        public List<Project.Block> Layouts_AsBlocks()
+        {
+            List<Project.Block> blocks = new List<Project.Block>();
+            IAcadBlocks doc_blocks = nc_doc.Blocks;
+            for (int i = 0; i < doc_blocks.Count; i++)
+            {
+                IAcadBlock bl = doc_blocks.Item(i);
+                if (bl.Name.Contains("*Paper_Space"))
+                {
+                    blocks.Add(new Project.Block(bl));
+                }
+            }
+            return blocks;
+        }
+        /// <summary>
+        /// Получение слоев чертежа
+        /// </summary>
+        /// <returns></returns>
+        public List<Layer> Layers()
+        {
+            List<Layer> ls = new List<Layer>();
+            AcadLayers ls_collection = this.nc_doc.Layers;
+            for (int i =0; i < ls_collection.Count; i++)
+            {
+                ls.Add(new Layer(ls_collection.Item(i)));
+            }
+            return ls;
+        }
+
 
     }
 }
