@@ -40,10 +40,6 @@ namespace DynNCAD.Project
                 Tools.PointByDynPoint(p3),
                 Tools.PointByDynPoint(p4));
         }
-        public void AddText (string Text, dg.Point insetion_point, double text_height)
-        {
-            var object_text = this.block.AddText(Text, Tools.PointByDynPoint(insetion_point), text_height);
-        }
 
     }
 }

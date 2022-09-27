@@ -24,7 +24,7 @@ namespace DynNCAD.Objects
         /// Получение блока из com-интерфейса
         /// </summary>
         /// <param name="BlockReference_object"></param>
-        private BlockReference (object BlockReference_object)
+        private BlockReference(object BlockReference_object)
         {
             this.block_ref = BlockReference_object as OdaX.AcadBlockReference;
         }
@@ -58,7 +58,7 @@ namespace DynNCAD.Objects
         /// </summary>
         /// <param name="angle"></param>
         /// <returns></returns>
-        public double SetRotation (double angle) => this.block_ref.Rotation = angle;
+        public double SetRotation(double angle) => this.block_ref.Rotation = angle;
         /// <summary>
         /// Получение масштаба по оси X блока
         /// </summary>
@@ -68,7 +68,7 @@ namespace DynNCAD.Objects
         /// </summary>
         /// <param name="ScaleFactor"></param>
         /// <returns></returns>
-        public double SetXScaleFactor (double ScaleFactor) => this.block_ref.XScaleFactor = ScaleFactor;
+        public double SetXScaleFactor(double ScaleFactor) => this.block_ref.XScaleFactor = ScaleFactor;
         /// <summary>
         /// Получение масштаба по оси Y блока
         /// </summary>

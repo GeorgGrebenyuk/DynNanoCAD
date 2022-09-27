@@ -20,5 +20,10 @@ namespace DynNCAD
         {
             return $"{p.X},{p.Y},{p.Z}";
         }
+        public static dg.Point ToDynamoPoint (string p)
+        {
+            double[] pa = p.Split(',').Select(a => double.Parse(a)).ToArray();
+            return dg.Point.ByCoordinates(pa[0], pa[1], pa[2]);
+        }
     }
 }
