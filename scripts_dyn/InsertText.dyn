@@ -95,71 +95,14 @@
       "Description": "Возвращает Block пространства модели чертежа\n\nNDocument.ModelSpace: Block"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.Project.Block.AddText@string,Autodesk.DesignScript.Geometry.Point,double",
-      "Id": "69999b3c966b4dc093cff33922e4dce4",
-      "Inputs": [
-        {
-          "Id": "1922a707719b495a91965ffe341ae540",
-          "Name": "block",
-          "Description": "DynNCAD.Project.Block",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "a09a8e11b4dc486499ded2ff96dd2c6a",
-          "Name": "Text",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "1cf067ffc6474beabedddc21ebb6d025",
-          "Name": "insetion_point",
-          "Description": "Point",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "62ec0261b4be43a0bbed0b5af47973d1",
-          "Name": "text_height",
-          "Description": "double",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "e38b824e7b714deb97832a08374d7d6f",
-          "Name": "void",
-          "Description": "void",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Block.AddText (Text: string, insetion_point: Point, text_height: double): void"
-    },
-    {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "\"test\";\n3.0;",
+      "Code": "\"test\";\n3.0;\n3;\n13;\n12;\n14;\n1;\n5;\n0;\n4;\n10;\n9;\n11;\n2;\n7;\n6;\n8;",
       "Id": "3251323422ce4678ac4863b5a46dc31a",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "6f0f1420174c45ffa1f23a0545afcd68",
+          "Id": "70f652864d084ef6823920a32b3a5660",
           "Name": "",
           "Description": "Значение выражения в строке 1",
           "UsingDefaultValue": false,
@@ -168,9 +111,144 @@
           "KeepListStructure": false
         },
         {
-          "Id": "d3d5310411dd45b980ffdbeaa7492ed0",
+          "Id": "ed798a63adb244bcaed5492c1dea9d59",
           "Name": "",
           "Description": "Значение выражения в строке 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e3577d3d155d427cb971710331114df2",
+          "Name": "",
+          "Description": "Значение выражения в строке 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5120d9c93cd04722a09891ddb02e8837",
+          "Name": "",
+          "Description": "Значение выражения в строке 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "377790625d8949f1a64d79182b915154",
+          "Name": "",
+          "Description": "Значение выражения в строке 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "297c4ddd01b149ffb868ae4ea335f2e7",
+          "Name": "",
+          "Description": "Значение выражения в строке 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0d9255684dc041908bfd7c8bbc348b7e",
+          "Name": "",
+          "Description": "Значение выражения в строке 7",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6e4e4807dc55467fb877207591e6c957",
+          "Name": "",
+          "Description": "Значение выражения в строке 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "943860ca75554e28a567d837cafb39fa",
+          "Name": "",
+          "Description": "Значение выражения в строке 9",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c5040ec63e2b4b728261f4c377bf462d",
+          "Name": "",
+          "Description": "Значение выражения в строке 10",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cfd2762b2a524f86983a1c4c0880dd0d",
+          "Name": "",
+          "Description": "Значение выражения в строке 11",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "00916bcb62d54ec18bcca438cc6c5229",
+          "Name": "",
+          "Description": "Значение выражения в строке 12",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b7069d7f93e649199f151934558f7623",
+          "Name": "",
+          "Description": "Значение выражения в строке 13",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "390989fa446f447a9d57c6a73960c9d5",
+          "Name": "",
+          "Description": "Значение выражения в строке 14",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7031d70b6ac3406984fe279ab46be2ff",
+          "Name": "",
+          "Description": "Значение выражения в строке 15",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "de0022a9790d4d2d8ee92189043ebb04",
+          "Name": "",
+          "Description": "Значение выражения в строке 16",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "80c13e68494a43a69ec1e38c174f39e8",
+          "Name": "",
+          "Description": "Значение выражения в строке 17",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -256,6 +334,273 @@
       ],
       "Replication": "Disabled",
       "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Text@DynNCAD.Project.Block,Autodesk.DesignScript.Geometry.Point,double,string",
+      "Id": "390b6153d9d54f9d97fcfa0c4b50e457",
+      "Inputs": [
+        {
+          "Id": "a8291ef3fd274a0e9634cb169095ed84",
+          "Name": "block",
+          "Description": "Сущность блока\n\nBlock",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b325bf886c714ed7bd618bc19b51a159",
+          "Name": "insetion_point",
+          "Description": "Точка вставки\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "033708394894425c814a76d2ecbe77a5",
+          "Name": "text_height",
+          "Description": "Высота текста\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5d16a0af49d4462cb8d2784f461eefdf",
+          "Name": "text",
+          "Description": "Значение текста\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "25d87ece53234f689048e9778a32bc60",
+          "Name": "Text",
+          "Description": "Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Создание объекта текста в данном блоке (пространстве модели или листов)\n\nText.Text (block: Block, insetion_point: Point, text_height: double, text: string): Text"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Height",
+      "Id": "2d7bb211193841a8bfec31ccc3f12a84",
+      "Inputs": [
+        {
+          "Id": "bd3d60301ac54fdfac87809ebe737e8d",
+          "Name": "text",
+          "Description": "DynNCAD.Objects.Annotation.Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5ebacceca42e4dcc881624ab01934385",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение высоты текста\n\nText.Height: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Rotation",
+      "Id": "962e16df680e4868850448793401ec5c",
+      "Inputs": [
+        {
+          "Id": "466622b6bf954b58923652651386194f",
+          "Name": "text",
+          "Description": "DynNCAD.Objects.Annotation.Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bf442fdaaba84113a692e26d90192925",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение угла поворота текста\n\nText.Rotation: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.ScaleFactor",
+      "Id": "d2a2fd29f6764bbb841c136cbc17e686",
+      "Inputs": [
+        {
+          "Id": "457a0ae0e1f148838f8cd6232f0313ce",
+          "Name": "text",
+          "Description": "DynNCAD.Objects.Annotation.Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ded6d13c4c454ce39fc3237dea49d171",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение значения масштабного фактора\n\nText.ScaleFactor: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.StyleName",
+      "Id": "8bdd653212e74a85be7f80746f0fa4e7",
+      "Inputs": [
+        {
+          "Id": "dd3a4a548f794f2ba2a30893a706b923",
+          "Name": "text",
+          "Description": "DynNCAD.Objects.Annotation.Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4f79c53ccf0f4e78b37f44821cda3ecb",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение текущего стиля текста (имени)\n\nText.StyleName: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.TextString",
+      "Id": "ce42ea90aa094f92a2ac167920f229ab",
+      "Inputs": [
+        {
+          "Id": "a90f451487954eb39f1e8b996f728937",
+          "Name": "text",
+          "Description": "DynNCAD.Objects.Annotation.Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "29cf7fa1301248a2b0afe101cb7f86b8",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение значения текста (значения текста)\n\nText.TextString: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Text@var",
+      "Id": "3e10ad6724a94625b8f7529364dec628",
+      "Inputs": [
+        {
+          "Id": "5e6030d6002a46abacc87425f56a2e23",
+          "Name": "model_object",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "23280c73e8a341a6b7362a9efda91d16",
+          "Name": "Text",
+          "Description": "Text",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение текста из объекта модели\n\nText.Text (model_object: var): Text"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.NDocument.GetSelectedObjects",
+      "Id": "c8b96d75c8ad47c493707a82937dcab5",
+      "Inputs": [
+        {
+          "Id": "85ad0ce442314634ac2949870ffa3605",
+          "Name": "nDocument",
+          "Description": "DynNCAD.Project.NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9daa5a44c1704c59b0afd64e13bb1203",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "NDocument.GetSelectedObjects ( ): var[]"
     }
   ],
   "Connectors": [
@@ -270,24 +615,29 @@
       "Id": "5e4874d50c4c4feaa63c122965831854"
     },
     {
+      "Start": "c8c328953e4140d7812dc199df617255",
+      "End": "85ad0ce442314634ac2949870ffa3605",
+      "Id": "795761eb98c44d17922f12b8f6461a37"
+    },
+    {
       "Start": "ce83308078bc4f1fb7846c85f8bb5a85",
-      "End": "1922a707719b495a91965ffe341ae540",
-      "Id": "6da07ff658a4428e88b8b306f741c8a5"
+      "End": "a8291ef3fd274a0e9634cb169095ed84",
+      "Id": "8ebfdd0dbb474b4db36ea504d8c890e3"
     },
     {
-      "Start": "6f0f1420174c45ffa1f23a0545afcd68",
-      "End": "a09a8e11b4dc486499ded2ff96dd2c6a",
-      "Id": "37f04f5d7ed0477ab0c65d12bc550c94"
+      "Start": "70f652864d084ef6823920a32b3a5660",
+      "End": "5d16a0af49d4462cb8d2784f461eefdf",
+      "Id": "f2162eb96c4b45d7be7453edb3925bfc"
     },
     {
-      "Start": "d3d5310411dd45b980ffdbeaa7492ed0",
-      "End": "62ec0261b4be43a0bbed0b5af47973d1",
-      "Id": "1c9975a85133433884c398c31882700c"
+      "Start": "ed798a63adb244bcaed5492c1dea9d59",
+      "End": "033708394894425c814a76d2ecbe77a5",
+      "Id": "ea7a53d050414e8f8bb7ee3d50aef4c8"
     },
     {
       "Start": "e22042c16f564742904697dd83d2ece6",
-      "End": "1cf067ffc6474beabedddc21ebb6d025",
-      "Id": "3090e8cef272415fb8954bfaf56c6c67"
+      "End": "b325bf886c714ed7bd618bc19b51a159",
+      "Id": "71fa4e83663746f4bbe0b5f0fc1e4e0e"
     },
     {
       "Start": "277637ee116c44808127931c0a11b8f4",
@@ -303,6 +653,31 @@
       "Start": "b9cba247dfb841cb9f1f97caa7fdbaab",
       "End": "2fa40a2782da4be78b92a65fdc964fb0",
       "Id": "8baa6f2c7a814364b72940c9039a9cea"
+    },
+    {
+      "Start": "25d87ece53234f689048e9778a32bc60",
+      "End": "bd3d60301ac54fdfac87809ebe737e8d",
+      "Id": "b5d7528b7cee469fa11ab64e2cc842da"
+    },
+    {
+      "Start": "25d87ece53234f689048e9778a32bc60",
+      "End": "466622b6bf954b58923652651386194f",
+      "Id": "542015e189fe4aa3be9f0c330464790c"
+    },
+    {
+      "Start": "25d87ece53234f689048e9778a32bc60",
+      "End": "457a0ae0e1f148838f8cd6232f0313ce",
+      "Id": "d6b619088b0b49f18878315bed5f53b3"
+    },
+    {
+      "Start": "25d87ece53234f689048e9778a32bc60",
+      "End": "dd3a4a548f794f2ba2a30893a706b923",
+      "Id": "aa34f7337d8a43b6b93906557d7a6fd4"
+    },
+    {
+      "Start": "25d87ece53234f689048e9778a32bc60",
+      "End": "a90f451487954eb39f1e8b996f728937",
+      "Id": "f8dd0ddd3bf34656aa0eb50eb70a6097"
     }
   ],
   "Dependencies": [],
@@ -374,18 +749,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 949.0,
-        "Y": 473.5
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Block.AddText",
-        "Id": "69999b3c966b4dc093cff33922e4dce4",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1540.0,
-        "Y": 438.5
+        "X": 921.70029673590511,
+        "Y": 386.85311572700294
       },
       {
         "ShowGeometry": true,
@@ -394,8 +759,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1057.0,
-        "Y": 667.0
+        "X": 1059.9129447824332,
+        "Y": 611.6540491337671
       },
       {
         "ShowGeometry": true,
@@ -404,8 +769,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 805.0,
-        "Y": 676.5
+        "X": 870.65662836597539,
+        "Y": 691.42196099226715
       },
       {
         "ShowGeometry": true,
@@ -416,11 +781,91 @@
         "Excluded": false,
         "X": 560.0,
         "Y": 696.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.Text",
+        "Id": "390b6153d9d54f9d97fcfa0c4b50e457",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1357.1759335508948,
+        "Y": 516.25743738553172
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.Height",
+        "Id": "2d7bb211193841a8bfec31ccc3f12a84",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1683.4257491834253,
+        "Y": 467.70835767830977
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.Rotation",
+        "Id": "962e16df680e4868850448793401ec5c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1765.9591846857024,
+        "Y": 677.440382013508
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.ScaleFactor",
+        "Id": "d2a2fd29f6764bbb841c136cbc17e686",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1769.84311106228,
+        "Y": 776.48050461624052
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.StyleName",
+        "Id": "8bdd653212e74a85be7f80746f0fa4e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1776.6399822212911,
+        "Y": 882.317498377984
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.TextString",
+        "Id": "ce42ea90aa094f92a2ac167920f229ab",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1788.2917613510242,
+        "Y": 1027.9647374996493
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Text.Text",
+        "Id": "3e10ad6724a94625b8f7529364dec628",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1365.3696139549195,
+        "Y": 725.1571754142833
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "NDocument.GetSelectedObjects",
+        "Id": "c8b96d75c8ad47c493707a82937dcab5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1143.8952262999217,
+        "Y": 232.71691682942873
       }
     ],
     "Annotations": [],
-    "X": -485.0,
-    "Y": -70.0,
-    "Zoom": 1.0
+    "X": 19.600186550125954,
+    "Y": 1.2681531234661918,
+    "Zoom": 0.67900743610005765
   }
 }
