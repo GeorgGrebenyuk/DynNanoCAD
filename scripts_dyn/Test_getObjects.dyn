@@ -275,6 +275,60 @@
           "Level": 2,
           "UseLevels": false,
           "KeepListStructure": false
+        },
+        {
+          "Id": "28b9b1844e8d434bb0ce42ee6f877221",
+          "Name": "Угловой размер",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "209b5aeed7354608b4758157f0c6c93d",
+          "Name": "Эллипс",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d2b75bb84a3240709af99becf418c7af",
+          "Name": "Штриховка",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fa321ad221f0478ab3cc60c59b934466",
+          "Name": "Диаметральный размер",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "502feb80684e430ab0a4b77f24de2249",
+          "Name": "Область",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a1c529f88554ba4a357fb1c363fea7b",
+          "Name": "Сплайн",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
         }
       ],
       "Replication": "Auto",
@@ -402,13 +456,13 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Text@var",
+      "FunctionSignature": "DynNCAD.Objects.Annotation.Text.Text@DynNCAD.Objects.AcadEntity",
       "Id": "2aa466cdff414e4c80d348418db488d2",
       "Inputs": [
         {
           "Id": "0649b48ea0e1453b85f672c37930f3e7",
-          "Name": "model_object",
-          "Description": "var",
+          "Name": "AcadEntity",
+          "Description": "объект чертежа\n\nAcadEntity",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -427,7 +481,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Получение текста из объекта модели\n\nText.Text (model_object: var): Text"
+      "Description": "Получение текста из объекта модели\n\nText.Text (AcadEntity: AcadEntity): Text"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -565,7 +619,7 @@
     {
       "Start": "0b35f3f70762449fb6cfd3270d0fde1b",
       "End": "8c4f8638fdc94b598973e16a0f9154e8",
-      "Id": "da52665b4ade4e91a87520c6d78f51ea"
+      "Id": "bb5965dcbfb947bf85f5de77a63b0e96"
     },
     {
       "Start": "8f4c0e221e1243088493d10f5eaef5bb",
@@ -687,8 +741,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 827.5,
-        "Y": 596.783083170571
+        "X": 652.49957035199134,
+        "Y": 607.97363053123024
       },
       {
         "ShowGeometry": true,
@@ -842,8 +896,8 @@
       }
     ],
     "Annotations": [],
-    "X": -6836.828902300108,
-    "Y": -598.685693207676,
-    "Zoom": 2.0695503014789267
+    "X": -40.32802729624143,
+    "Y": -58.820963971503772,
+    "Zoom": 0.81352675450402578
   }
 }

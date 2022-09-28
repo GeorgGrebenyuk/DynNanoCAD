@@ -17,17 +17,17 @@ namespace DynNCAD.Objects.Annotation
     /// <summary>
     /// Класс для работы с однострочным текстом (Text), интерфейс AcadText
     /// </summary>
-    public class Text
+    public class Text : AcadEntity
     {
         public AcadText text;
         #region creation
         /// <summary>
         /// Получение текста из объекта модели
         /// </summary>
-        /// <param name="model_object"></param>
-        public Text(object model_object)
+        /// <param name="AcadEntity">объект чертежа</param>
+        public Text(Objects.AcadEntity AcadEntity)
         {
-            if (model_object as AcadText != null) this.text = model_object as AcadText;
+            if (AcadEntity.entity as AcadText != null) this.text = AcadEntity.entity as AcadText;
             else this.text = null;
         }
         /// <summary>

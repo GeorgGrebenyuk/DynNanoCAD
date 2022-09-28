@@ -58,17 +58,17 @@ namespace DynNCAD.Project
                 {"Отрезок", " AcDbLine" },
                 {"Полилиния", "AcDbPolyline" },
                 {"3D-полилиния", "AcDbPolyline3d" },
-                {"Круговой размер", "AcDbRotatedDimension" },
-                {"Фигура", "AcDbSolid" },
                 {"Дуга", "AcDbArc" },
                 {"Окружность", "AcDbCircle" },
-                {"Вхождение блока", "AcDbBlockReference" },
-                {"Угловой размер", "AcDb2LineAngularDimension" },
                 {"Эллипс", "AcDbEllipse" },
+                {"Сплайн", "AcDbSpline" },
                 {"Штриховка", "AcDbHatch" },
+                {"Угловой размер", "AcDb2LineAngularDimension" },
                 {"Диаметральный размер", "AcDbDiametricDimension" },
+                {"Круговой размер", "AcDbRotatedDimension" },
                 {"Область", "AcDbRegion" },
-                {"Сплайн", "AcDbSpline" }
+                {"Фигура", "AcDbSolid" },
+                {"Вхождение блока", "AcDbBlockReference" }
             };
         }
     }

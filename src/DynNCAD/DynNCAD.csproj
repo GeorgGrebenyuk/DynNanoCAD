@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Objects\AcadEntity.cs" />
+    <Compile Include="Objects\Annotation\MText.cs" />
     <Compile Include="Objects\Annotation\Text.cs" />
+    <Compile Include="Objects\Geometry\AcPoint.cs" />
     <Compile Include="Project\Block.cs" />
     <Compile Include="Objects\BlockReference.cs" />
     <Compile Include="Project\Application.cs" />

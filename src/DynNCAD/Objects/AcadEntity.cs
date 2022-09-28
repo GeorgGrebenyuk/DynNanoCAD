@@ -45,6 +45,7 @@ namespace DynNCAD.Objects
         /// Получение интерфейса OdaX.AcadEntity для данного класса 
         /// (как аргумента для конструктора других классов на базе объекта модели)
         /// </summary>
+        [dr.IsVisibleInDynamoLibrary(false)]
         public object AsCOM_object => this.entity;
         #endregion
     }
