@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Styles
+namespace DynNCAD.Project.Styles
 {
     //[dr.IsVisibleInDynamoLibrary(false)]
     public class DimStyle

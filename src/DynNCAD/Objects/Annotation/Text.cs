@@ -17,7 +17,7 @@ namespace DynNCAD.Objects.Annotation
     /// <summary>
     /// Класс для работы с однострочным текстом (Text), интерфейс AcadText
     /// </summary>
-    public class Text : AcadEntity
+    public class Text
     {
         public AcadText text;
         #region creation

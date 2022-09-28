@@ -62,66 +62,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.Project.NDocument.ModelSpace",
-      "Id": "ca78ef45749c4d589491bf82c30f5d5d",
-      "Inputs": [
-        {
-          "Id": "77d82a5b41ed498ab2bbfe9ac6d5d07f",
-          "Name": "nDocument",
-          "Description": "DynNCAD.Project.NDocument",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "60d5abc02f8643579518c87c000dc4ce",
-          "Name": "Block",
-          "Description": "Block",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Возвращает Block пространства модели чертежа\n\nNDocument.ModelSpace: Block"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.Project.Block.Name",
-      "Id": "4358d5dbb9a04c5eb2440fda0d1c38db",
-      "Inputs": [
-        {
-          "Id": "84051569f42b4322b8ddf1acb52bfe7a",
-          "Name": "block",
-          "Description": "DynNCAD.Project.Block",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "7616af7cbcde42dd9b41d42bdf960c86",
-          "Name": "string",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Получает имя блока\n\nBlock.Name: string"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "DynNCAD.Objects.AcadEntity.ObjectID",
       "Id": "ba84d462f16840cb95e5ede474319a01",
       "Inputs": [
@@ -613,6 +553,165 @@
       ],
       "Replication": "Disabled",
       "Description": "Выполнение встроенного сценария Python."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Database.Database@DynNCAD.Project.NDocument",
+      "Id": "8d3f239fc44d4606984122e34a1490cb",
+      "Inputs": [
+        {
+          "Id": "16bdf44d540b40dc82734352083f12c8",
+          "Name": "NDocument",
+          "Description": "NDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5e1b2eaebdc54b1d96982956daf8417e",
+          "Name": "Database",
+          "Description": "Database",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение базы данных чертежа\n\nDatabase.Database (NDocument: NDocument): Database"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Database.ModelSpace",
+      "Id": "860491912c8441c9929b3640f455df95",
+      "Inputs": [
+        {
+          "Id": "44526fcb8e554667907f9ee3248ef8ae",
+          "Name": "database",
+          "Description": "DynNCAD.Project.Database",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "580927eb2921469bb4f9a2d98eef50da",
+          "Name": "Block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Возвращает Block пространства модели чертежа\n\nDatabase.ModelSpace: Block"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Geometry.AcLwPolyline.AcLwPolyline@DynNCAD.Objects.AcadEntity",
+      "Id": "db5e526e04cf4c339eb081fe01c6b9bd",
+      "Inputs": [
+        {
+          "Id": "8916eb0a3b7e48f28638624375b879e2",
+          "Name": "AcadEntity",
+          "Description": "AcadEntity",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d8bcd0670b3d414c835af2e27e460d48",
+          "Name": "AcLwPolyline",
+          "Description": "AcLwPolyline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение полилинии из объекта модели, если это тот тип\n\nAcLwPolyline.AcLwPolyline (AcadEntity: AcadEntity): AcLwPolyline"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.Geometry.AcLwPolyline.Coordinates",
+      "Id": "b87ed1bd9c5848b78921b67a57aa5c12",
+      "Inputs": [
+        {
+          "Id": "d0c49b83c9e74df888822b218c14d66d",
+          "Name": "acLwPolyline",
+          "Description": "DynNCAD.Objects.Geometry.AcLwPolyline",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d31adeca9e724c5685aca5786289d19c",
+          "Name": "Point[]",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение координат линии\n\nAcLwPolyline.Coordinates ( ): Point[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.PolyCurve.ByPoints@Autodesk.DesignScript.Geometry.Point[],bool",
+      "Id": "f0230bc008dc4845a76dbfe7f4e32f9b",
+      "Inputs": [
+        {
+          "Id": "11419e590cc74da291a39b6c60b56ecc",
+          "Name": "points",
+          "Description": "Точки для создания PolyCurve\n\nPoint[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3d5f893f243744beb7440975fc785c08",
+          "Name": "connectLastToFirst",
+          "Description": "Значение true — соединение последней точки с первой, false — без замыкания\n\nbool\nЗначение по умолчанию : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a0e499e6a19b44cd91da568222e41700",
+          "Name": "PolyCurve",
+          "Description": "Polycurve created by points",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Создайте элемент PolyCurve, соединив точки. Чтобы замкнуть PolyCurve, задайте для параметра «connectLastToFirst» значение true.\n\nPolyCurve.ByPoints (points: Point[], connectLastToFirst: bool = false): PolyCurve"
     }
   ],
   "Connectors": [
@@ -623,18 +722,13 @@
     },
     {
       "Start": "8f4c0e221e1243088493d10f5eaef5bb",
-      "End": "77d82a5b41ed498ab2bbfe9ac6d5d07f",
-      "Id": "b06d6a254bd8497ba675f9411d42ace4"
-    },
-    {
-      "Start": "8f4c0e221e1243088493d10f5eaef5bb",
       "End": "767d1f2e15734bf28b3a84fa819a3c87",
       "Id": "d9e6f11643de4f2f9c7d7c1673a90f37"
     },
     {
-      "Start": "60d5abc02f8643579518c87c000dc4ce",
-      "End": "84051569f42b4322b8ddf1acb52bfe7a",
-      "Id": "963b9ec3be0d4142b1caf7362d013f4b"
+      "Start": "8f4c0e221e1243088493d10f5eaef5bb",
+      "End": "16bdf44d540b40dc82734352083f12c8",
+      "Id": "89aa114106514676a96b105cf3fb1612"
     },
     {
       "Start": "3adf55b01ba74ff18e2eecffc25e9742",
@@ -647,9 +741,9 @@
       "Id": "f776a75694b74b6ba0244b416bbe1c5b"
     },
     {
-      "Start": "e2d650693d2341f999cc495d12008e07",
+      "Start": "fa5aecc38ad04ee6a620b514db2e1cc3",
       "End": "1df87eea3a0447bfa77680d4c563bf57",
-      "Id": "11c60626923e41b89eae295b448c5195"
+      "Id": "85ac30c6de214dedbfd3b63d58522df5"
     },
     {
       "Start": "f60b9b0ae28a4f68856a69ee4b1dd3a9",
@@ -667,9 +761,14 @@
       "Id": "8c2c08b1a1a44b41868600ef2e141130"
     },
     {
-      "Start": "1628279ae5574702ac1ed317901fbfcd",
+      "Start": "f60b9b0ae28a4f68856a69ee4b1dd3a9",
+      "End": "8916eb0a3b7e48f28638624375b879e2",
+      "Id": "895ae0213d7a4c13832772879f44c35f"
+    },
+    {
+      "Start": "dee45132f7134cdc9f4c2f019e17af40",
       "End": "1938f801f2294292ac85afa9efffc9f3",
-      "Id": "a41a8fb5424041969b31649214df96c7"
+      "Id": "56d0e8a437f74a58838896bdf7ff769d"
     },
     {
       "Start": "97ecf499eefb4cca8f0ef0b7c2f3b1ef",
@@ -690,6 +789,21 @@
       "Start": "e9baa83283d14b39888095487955ef78",
       "End": "80b04ece6bdd4bab9843fe9b9c15d842",
       "Id": "2f78cc2de53b42138dd237df55336855"
+    },
+    {
+      "Start": "5e1b2eaebdc54b1d96982956daf8417e",
+      "End": "44526fcb8e554667907f9ee3248ef8ae",
+      "Id": "58269bdde6e74736a112dea65afcc2ee"
+    },
+    {
+      "Start": "d8bcd0670b3d414c835af2e27e460d48",
+      "End": "d0c49b83c9e74df888822b218c14d66d",
+      "Id": "1fc6b80a20a8449687472823fa2d5afa"
+    },
+    {
+      "Start": "d31adeca9e724c5685aca5786289d19c",
+      "End": "11419e590cc74da291a39b6c60b56ecc",
+      "Id": "3234a12ef7f84403af1ff6d10bdb8643"
     }
   ],
   "Dependencies": [],
@@ -723,15 +837,15 @@
     },
     "Camera": {
       "Name": "Фоновый просмотр",
-      "EyeX": -17.0,
-      "EyeY": 24.0,
-      "EyeZ": 50.0,
-      "LookX": 12.0,
-      "LookY": -13.0,
-      "LookZ": -58.0,
-      "UpX": 0.0,
-      "UpY": 1.0,
-      "UpZ": 0.0
+      "EyeX": -84.89703369140625,
+      "EyeY": 330.95648193359375,
+      "EyeZ": 287.98043823242188,
+      "LookX": 102.20735931396484,
+      "LookY": -309.64727783203125,
+      "LookZ": -293.67520141601563,
+      "UpX": 0.17660586535930634,
+      "UpY": 0.84339135885238647,
+      "UpZ": -0.50744616985321045
     },
     "NodeViews": [
       {
@@ -741,8 +855,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 652.49957035199134,
-        "Y": 607.97363053123024
+        "X": 1205.13325919078,
+        "Y": 606.77207106579635
       },
       {
         "ShowGeometry": true,
@@ -751,28 +865,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1056.5,
-        "Y": 598.783083170571
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "NDocument.ModelSpace",
-        "Id": "ca78ef45749c4d589491bf82c30f5d5d",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1406.2002967359049,
-        "Y": 650.136198897574
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Block.Name",
-        "Id": "4358d5dbb9a04c5eb2440fda0d1c38db",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1682.5,
-        "Y": 687.0
+        "X": 1463.5027616262673,
+        "Y": 597.064158128774
       },
       {
         "ShowGeometry": true,
@@ -781,8 +875,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3002.5329017734261,
-        "Y": 594.70303874677882
+        "X": 3134.4903401220954,
+        "Y": 676.60765565284964
       },
       {
         "ShowGeometry": true,
@@ -791,8 +885,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2645.5134511044716,
-        "Y": 487.24630077238783
+        "X": 2703.1500333717067,
+        "Y": 343.15484510430019
       },
       {
         "ShowGeometry": true,
@@ -831,8 +925,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2082.0,
-        "Y": 927.0
+        "X": 2017.9847198295561,
+        "Y": 664.23830519244177
       },
       {
         "ShowGeometry": true,
@@ -841,8 +935,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": true,
-        "X": 3010.1265453275532,
-        "Y": 725.84946886522675
+        "X": 3142.0839836762225,
+        "Y": 807.75408577129758
       },
       {
         "ShowGeometry": true,
@@ -851,8 +945,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3316.9277237684087,
-        "Y": 714.22143586309528
+        "X": 3448.8851621170779,
+        "Y": 796.12605276916611
       },
       {
         "ShowGeometry": true,
@@ -861,8 +955,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3621.045509978002,
-        "Y": 713.32697178600813
+        "X": 3753.0029483266712,
+        "Y": 795.231588692079
       },
       {
         "ShowGeometry": true,
@@ -871,8 +965,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3897.0349823734991,
-        "Y": 627.02616843755732
+        "X": 4028.9924207221684,
+        "Y": 708.93078534362814
       },
       {
         "ShowGeometry": true,
@@ -893,11 +987,139 @@
         "Excluded": false,
         "X": 3489.6919691314379,
         "Y": 244.04922214517558
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Database.Database",
+        "Id": "8d3f239fc44d4606984122e34a1490cb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1764.5702068821579,
+        "Y": 350.40860242492579
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Database.ModelSpace",
+        "Id": "860491912c8441c9929b3640f455df95",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2058.3528006036249,
+        "Y": 352.867034171549
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcLwPolyline.AcLwPolyline",
+        "Id": "db5e526e04cf4c339eb081fe01c6b9bd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 3150.4938409610049,
+        "Y": 999.12928947563614
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcLwPolyline.Coordinates",
+        "Id": "b87ed1bd9c5848b78921b67a57aa5c12",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3490.1389501139183,
+        "Y": 1002.1086325383808
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PolyCurve.ByPoints",
+        "Id": "f0230bc008dc4845a76dbfe7f4e32f9b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3876.8796624887759,
+        "Y": 991.91114376774931
       }
     ],
-    "Annotations": [],
-    "X": -40.32802729624143,
-    "Y": -58.820963971503772,
-    "Zoom": 0.81352675450402578
+    "Annotations": [
+      {
+        "Id": "42175259b88b4854b4a8bb41001d6f83",
+        "Title": "Проверка текста",
+        "Nodes": [
+          "ba84d462f16840cb95e5ede474319a01",
+          "80a535d3c26a4c048365c8270d383264",
+          "2aa466cdff414e4c80d348418db488d2",
+          "d80be753e56c4eed9dc7eb44908a5679",
+          "62f2933b04584a449467f5696a947bab"
+        ],
+        "Left": 3124.4903401220954,
+        "Top": 623.60765565284964,
+        "Width": 1090.502080600073,
+        "Height": 277.14643011844794,
+        "FontSize": 36.0,
+        "InitialTop": 676.60765565284964,
+        "InitialHeight": 276.14643011844794,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "643a982e0395473eaf75f1e99a64c784",
+        "Title": "Подсчет уникальных значений",
+        "Nodes": [
+          "5633b34744b14bc8b666404ddc7ca50c",
+          "b06e31184a8842579151a02604a30051",
+          "b1914677f3a34edf97f6b0f49779e3e9"
+        ],
+        "Left": 2693.1500333717067,
+        "Top": 191.04922214517558,
+        "Width": 1123.5419357597311,
+        "Height": 245.10562295912462,
+        "FontSize": 36.0,
+        "InitialTop": 244.04922214517558,
+        "InitialHeight": 244.10562295912462,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "e3218f31e391484b83a8f79509b8ea3e",
+        "Title": "Получение сущностей файла",
+        "Nodes": [
+          "e9163f279f154c17b75d85961578ca67",
+          "379cee2d49c0492689a31b7e3ebe5f97",
+          "f17d9f5e8052491799554331d9ae5b92",
+          "3df74a7136924a9f9654a975f7d1e654",
+          "a0742fe0ab9146b38a012c8300467ac1",
+          "a92757edeb1e497db5c9e4559e89d2fe"
+        ],
+        "Left": 1195.13325919078,
+        "Top": 544.064158128774,
+        "Width": 1353.1512376057528,
+        "Height": 766.54923985699759,
+        "FontSize": 36.0,
+        "InitialTop": 597.064158128774,
+        "InitialHeight": 386.38481660831008,
+        "TextblockHeight": 43.0,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "f304904cd25c46c4aea64ec2ce101d58",
+        "Title": "Проверка полилиния",
+        "Nodes": [
+          "db5e526e04cf4c339eb081fe01c6b9bd",
+          "b87ed1bd9c5848b78921b67a57aa5c12",
+          "f0230bc008dc4845a76dbfe7f4e32f9b"
+        ],
+        "Left": 3140.4938409610049,
+        "Top": 938.91114376774931,
+        "Width": 1032.3858215277714,
+        "Height": 172.0,
+        "FontSize": 36.0,
+        "InitialTop": 991.91114376774931,
+        "InitialHeight": 149.0,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -983.13117385031615,
+    "Y": -143.18960732825394,
+    "Zoom": 0.59092208048742279
   }
 }

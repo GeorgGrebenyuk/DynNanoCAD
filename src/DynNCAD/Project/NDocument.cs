@@ -47,50 +47,13 @@ namespace DynNCAD.Project
         /// <returns></returns>
         public object SetActiveDimStyle(Styles.DimStyle style) => this.nc_doc.ActiveDimStyle = style.style;
 
-        /// Возвращает коллекцию блоков для данного чертежа за исключением пространства Модели и Листов
-        /// </summary>
-        /// <param name="NDocument">Текущий документ модели</param>
-        /// <returns></returns>
-        public List<Project.Block> Blocks()
-        {
-            List<Project.Block> blocks = new List<Project.Block>();
-            IAcadBlocks doc_blocks = nc_doc.Blocks;
-            for (int i = 0; i < doc_blocks.Count; i++)
-            {
-                IAcadBlock bl = doc_blocks.Item(i);
-                if (!bl.Name.Contains("*Model_Space") && !bl.Name.Contains("*Paper_Space"))
-                {
-                    blocks.Add(new Project.Block(bl));
-                }
-            }
-            return blocks;
-        }
+
         /// <summary>
         /// Получение полного пути к документу
         /// </summary>
         public string FullName => this.nc_doc.FullName;
-        /// <summary>
-        /// Возвращает Block пространства модели чертежа
-        /// </summary>
-        public Project.Block ModelSpace => new Project.Block(this.nc_doc.ModelSpace);
-        /// <summary>
-        /// Получение Блоков (пространства) листов чертежа
-        /// </summary>
-        /// <returns></returns>
-        public List<Project.Block> Layouts_AsBlocks()
-        {
-            List<Project.Block> blocks = new List<Project.Block>();
-            IAcadBlocks doc_blocks = nc_doc.Blocks;
-            for (int i = 0; i < doc_blocks.Count; i++)
-            {
-                IAcadBlock bl = doc_blocks.Item(i);
-                if (bl.Name.Contains("*Paper_Space"))
-                {
-                    blocks.Add(new Project.Block(bl));
-                }
-            }
-            return blocks;
-        }
+
+
         /// <summary>
         /// Получение слоев чертежа
         /// </summary>

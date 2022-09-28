@@ -20,6 +20,28 @@ namespace DynNCAD.Objects.Geometry
     public class AcPoint
     {
         internal AcadPoint point;
+        /// <summary>
+        /// Получение точки как объекта чертежа
+        /// </summary>
+        /// <param name="AcadEntity"></param>
+        public AcPoint (AcadEntity AcadEntity)
+        {
+            if (AcadEntity.entity as AcadPoint != null) this.point = AcadEntity.entity as AcadPoint;
+            else this.point = null;
+        }
+        /// <summary>
+        /// Создание точки в указанной позиции
+        /// </summary>
+        /// <param name="Block"></param>
+        /// <param name="insertion_point"></param>
+        public AcPoint (Project.Block Block, dg.Point insertion_point)
+        {
+            this.point = Block.block.AddPoint(Tools.PointByDynPoint(insertion_point));
+        }
+        /// <summary>
+        /// Получение координаты точки
+        /// </summary>
+        public dg.Point Coordinates => Tools.ToDynamoPoint(this.point.Coordinates);
 
     }
 }

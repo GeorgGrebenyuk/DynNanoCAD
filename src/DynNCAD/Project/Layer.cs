@@ -25,6 +25,15 @@ namespace DynNCAD.Project
             this.nc_layer = layer;
         }
         /// <summary>
+        /// Создание нового слоя по имени
+        /// </summary>
+        /// <param name="Database"></param>
+        /// <param name="Name"></param>
+        public Layer (Project.Database Database, string Name)
+        {
+            this.nc_layer = Database.db.Layers.Add(Name);
+        }
+        /// <summary>
         /// Получение описания слоя
         /// </summary>
         public string Description => nc_layer.Description;

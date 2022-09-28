@@ -58,15 +58,19 @@
     <Compile Include="Objects\AcadEntity.cs" />
     <Compile Include="Objects\Annotation\MText.cs" />
     <Compile Include="Objects\Annotation\Text.cs" />
+    <Compile Include="Objects\Geometry\AcLine.cs" />
     <Compile Include="Objects\Geometry\AcPoint.cs" />
+    <Compile Include="Objects\Geometry\AcLwPolyline.cs" />
     <Compile Include="Project\Block.cs" />
     <Compile Include="Objects\BlockReference.cs" />
     <Compile Include="Project\Application.cs" />
+    <Compile Include="Project\Database.cs" />
     <Compile Include="Project\NDocument.cs" />
     <Compile Include="Project\Layer.cs" />
     <Compile Include="Project\Selection.cs" />
+    <Compile Include="Project\UCS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Styles\DimStyle.cs" />
+    <Compile Include="Project\Styles\DimStyle.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +105,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
