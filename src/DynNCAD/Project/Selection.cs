@@ -43,6 +43,19 @@ namespace DynNCAD.Project
             return objects;
         }
         /// <summary>
+        /// Получение сущностей в блоке
+        /// </summary>
+        /// <returns></returns>
+        public static List<Objects.AcadEntity> GetBlockEntities(Project.Block Block)
+        {
+            List<Objects.AcadEntity> objs = new List<Objects.AcadEntity>();
+            for (int i = 0; i < Block.block.Count; i++)
+            {
+                objs.Add(new Objects.AcadEntity(Block.block.Item(i)));
+            }
+            return objs;
+        }
+        /// <summary>
         /// Получение строковых наименований классов объектов чертежа
         /// </summary>
         /// <returns></returns>

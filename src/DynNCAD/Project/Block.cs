@@ -31,15 +31,6 @@ namespace DynNCAD.Project
         /// </summary>
         public string Name => this.block.Name;
 
-        //functions
-        public void Add3DFace(dg.Point p1, dg.Point p2, dg.Point p3, dg.Point p4)
-        {
-            var object_3d_face = this.block.Add3DFace(
-                Tools.PointByDynPoint(p1),
-                Tools.PointByDynPoint(p2),
-                Tools.PointByDynPoint(p3),
-                Tools.PointByDynPoint(p4));
-        }
 
     }
 }

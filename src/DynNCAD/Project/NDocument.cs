@@ -52,25 +52,5 @@ namespace DynNCAD.Project
         /// Получение полного пути к документу
         /// </summary>
         public string FullName => this.nc_doc.FullName;
-
-
-        /// <summary>
-        /// Получение слоев чертежа
-        /// </summary>
-        /// <returns></returns>
-        public List<Layer> Layers()
-        {
-            List<Layer> ls = new List<Layer>();
-            AcadLayers ls_collection = this.nc_doc.Layers;
-            for (int i =0; i < ls_collection.Count; i++)
-            {
-                ls.Add(new Layer(ls_collection.Item(i)));
-            }
-            return ls;
-        }
-
-
-
-
     }
 }

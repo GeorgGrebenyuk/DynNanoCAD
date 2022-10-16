@@ -712,6 +712,96 @@
       ],
       "Replication": "Auto",
       "Description": "Создайте элемент PolyCurve, соединив точки. Чтобы замкнуть PolyCurve, задайте для параметра «connectLastToFirst» значение true.\n\nPolyCurve.ByPoints (points: Point[], connectLastToFirst: bool = false): PolyCurve"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Selection.GetBlockEntities@DynNCAD.Project.Block",
+      "Id": "9f84c1ff60b24850b62164b5338a4276",
+      "Inputs": [
+        {
+          "Id": "5d8f9ab7639e494e9dc67f826862086d",
+          "Name": "Block",
+          "Description": "Block",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "94fb82d2c1854b848433dc1ba08195a3",
+          "Name": "AcadEntity[]",
+          "Description": "AcadEntity[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение сущностей в блоке\n\nSelection.GetBlockEntities (Block: Block): AcadEntity[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Database.GetLayers",
+      "Id": "1bf06aa054de49988e614ce31a52f1b8",
+      "Inputs": [
+        {
+          "Id": "da18095fc68d40b1b24fcf554bebf4f5",
+          "Name": "database",
+          "Description": "DynNCAD.Project.Database",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9d04d8da5d124c48a9f95517c07bac0f",
+          "Name": "Layer[]",
+          "Description": "Layer[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение списка слоев чертежа\n\nDatabase.GetLayers ( ): Layer[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Project.Layer.Name",
+      "Id": "2e01ffeee60a489c8d3e6c710bad4be1",
+      "Inputs": [
+        {
+          "Id": "f2f9cdb4582642f5af365d45847c3c22",
+          "Name": "layer",
+          "Description": "DynNCAD.Project.Layer",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12141420079641eb87e48ea085c3626b",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение наименования слоя\n\nLayer.Name: string"
     }
   ],
   "Connectors": [
@@ -744,11 +834,6 @@
       "Start": "fa5aecc38ad04ee6a620b514db2e1cc3",
       "End": "1df87eea3a0447bfa77680d4c563bf57",
       "Id": "85ac30c6de214dedbfd3b63d58522df5"
-    },
-    {
-      "Start": "f60b9b0ae28a4f68856a69ee4b1dd3a9",
-      "End": "98bda4d82ac1449f8977c7eb7deb45be",
-      "Id": "37d9ac53a40f4095b65dda78d8db2607"
     },
     {
       "Start": "f60b9b0ae28a4f68856a69ee4b1dd3a9",
@@ -796,6 +881,16 @@
       "Id": "58269bdde6e74736a112dea65afcc2ee"
     },
     {
+      "Start": "5e1b2eaebdc54b1d96982956daf8417e",
+      "End": "da18095fc68d40b1b24fcf554bebf4f5",
+      "Id": "b88ce25a25f5477fbf9697a349728f86"
+    },
+    {
+      "Start": "580927eb2921469bb4f9a2d98eef50da",
+      "End": "5d8f9ab7639e494e9dc67f826862086d",
+      "Id": "ce69e64da2e240e2b65551e2e5695248"
+    },
+    {
       "Start": "d8bcd0670b3d414c835af2e27e460d48",
       "End": "d0c49b83c9e74df888822b218c14d66d",
       "Id": "1fc6b80a20a8449687472823fa2d5afa"
@@ -804,6 +899,16 @@
       "Start": "d31adeca9e724c5685aca5786289d19c",
       "End": "11419e590cc74da291a39b6c60b56ecc",
       "Id": "3234a12ef7f84403af1ff6d10bdb8643"
+    },
+    {
+      "Start": "94fb82d2c1854b848433dc1ba08195a3",
+      "End": "98bda4d82ac1449f8977c7eb7deb45be",
+      "Id": "a20878eed5864e6c855ed4af24a8af5f"
+    },
+    {
+      "Start": "9d04d8da5d124c48a9f95517c07bac0f",
+      "End": "f2f9cdb4582642f5af365d45847c3c22",
+      "Id": "7ea4b8d9185c4f1eb599f7e371d4520c"
     }
   ],
   "Dependencies": [],
@@ -855,8 +960,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1205.13325919078,
-        "Y": 606.77207106579635
+        "X": 1078.109793443901,
+        "Y": 586.97957589890962
       },
       {
         "ShowGeometry": true,
@@ -865,8 +970,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1463.5027616262673,
-        "Y": 597.064158128774
+        "X": 1402.3932947976566,
+        "Y": 590.6985886674604
       },
       {
         "ShowGeometry": true,
@@ -885,8 +990,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2703.1500333717067,
-        "Y": 343.15484510430019
+        "X": 2776.0191715230503,
+        "Y": 291.3056506504592
       },
       {
         "ShowGeometry": true,
@@ -895,8 +1000,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1649.7477000576541,
-        "Y": 827.6133979857716
+        "X": 1588.6382332290434,
+        "Y": 821.247828524458
       },
       {
         "ShowGeometry": true,
@@ -905,8 +1010,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2258.2844967965329,
-        "Y": 599.91713111299782
+        "X": 2197.1750299679225,
+        "Y": 593.55156165168421
       },
       {
         "ShowGeometry": true,
@@ -915,8 +1020,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1947.2206375276123,
-        "Y": 838.44897473708409
+        "X": 1886.1111706990016,
+        "Y": 832.08340527577047
       },
       {
         "ShowGeometry": true,
@@ -925,8 +1030,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2017.9847198295561,
-        "Y": 664.23830519244177
+        "X": 1956.8752530009453,
+        "Y": 657.87273573112816
       },
       {
         "ShowGeometry": true,
@@ -975,8 +1080,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3199.4830965167671,
-        "Y": 297.21578475901129
+        "X": 3272.3522346681107,
+        "Y": 245.36659030517029
       },
       {
         "ShowGeometry": true,
@@ -985,8 +1090,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 3489.6919691314379,
-        "Y": 244.04922214517558
+        "X": 3562.5611072827814,
+        "Y": 192.20002769133458
       },
       {
         "ShowGeometry": true,
@@ -1037,6 +1142,36 @@
         "Excluded": false,
         "X": 3876.8796624887759,
         "Y": 991.91114376774931
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Selection.GetBlockEntities",
+        "Id": "9f84c1ff60b24850b62164b5338a4276",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2308.4009125209504,
+        "Y": 869.22374415287277
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Database.GetLayers",
+        "Id": "1bf06aa054de49988e614ce31a52f1b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2062.0788425183673,
+        "Y": 237.93397462205809
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Layer.Name",
+        "Id": "2e01ffeee60a489c8d3e6c710bad4be1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2445.2826799608379,
+        "Y": 237.97277645104711
       }
     ],
     "Annotations": [
@@ -1068,12 +1203,12 @@
           "b06e31184a8842579151a02604a30051",
           "b1914677f3a34edf97f6b0f49779e3e9"
         ],
-        "Left": 2693.1500333717067,
-        "Top": 191.04922214517558,
+        "Left": 2766.0191715230503,
+        "Top": 139.20002769133458,
         "Width": 1123.5419357597311,
         "Height": 245.10562295912462,
         "FontSize": 36.0,
-        "InitialTop": 244.04922214517558,
+        "InitialTop": 192.20002769133458,
         "InitialHeight": 244.10562295912462,
         "TextblockHeight": 43.0,
         "Background": "#FFFFAA45"
@@ -1089,13 +1224,13 @@
           "a0742fe0ab9146b38a012c8300467ac1",
           "a92757edeb1e497db5c9e4559e89d2fe"
         ],
-        "Left": 1195.13325919078,
-        "Top": 544.064158128774,
-        "Width": 1353.1512376057528,
-        "Height": 766.54923985699759,
+        "Left": 1068.109793443901,
+        "Top": 533.97957589890962,
+        "Width": 1419.0652365240214,
+        "Height": 770.26825262554826,
         "FontSize": 36.0,
-        "InitialTop": 597.064158128774,
-        "InitialHeight": 386.38481660831008,
+        "InitialTop": 586.97957589890962,
+        "InitialHeight": 390.10382937686086,
         "TextblockHeight": 43.0,
         "Background": "#FF48B9FF"
       },
@@ -1113,13 +1248,13 @@
         "Height": 172.0,
         "FontSize": 36.0,
         "InitialTop": 991.91114376774931,
-        "InitialHeight": 149.0,
+        "InitialHeight": 155.19748877063148,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": -983.13117385031615,
-    "Y": -143.18960732825394,
-    "Zoom": 0.59092208048742279
+    "X": -517.96041994190057,
+    "Y": -2.4939541472496671,
+    "Zoom": 0.51297514464712757
   }
 }
