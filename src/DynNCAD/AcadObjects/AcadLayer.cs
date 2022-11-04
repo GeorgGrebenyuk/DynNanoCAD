@@ -12,15 +12,15 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD.AcadObjects
 {
     /// <summary>
     /// Класс для работы со слоями
     /// </summary>
-    public class Layer
+    public class AcadLayer : AcadObject
     {
         public OdaX.AcadLayer nc_layer;
-        internal Layer (OdaX.AcadLayer layer)
+        internal AcadLayer (OdaX.AcadLayer layer)
         {
             this.nc_layer = layer;
         }
@@ -29,7 +29,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Database"></param>
         /// <param name="Name"></param>
-        public Layer (Project.Database Database, string Name)
+        public AcadLayer (AcadDatabase Database, string Name)
         {
             this.nc_layer = Database.db.Layers.Add(Name);
         }
@@ -42,7 +42,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Description"></param>
         /// <returns></returns>
-        public Layer SetDescription (string Description)
+        public AcadLayer SetDescription (string Description)
         {
             this.nc_layer.Description = Description;
             return this;
@@ -56,7 +56,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Freeze"></param>
         /// <returns></returns>
-        public Layer SetFreeze(bool Freeze)
+        public AcadLayer SetFreeze(bool Freeze)
         {
             this.nc_layer.Freeze = Freeze;
             return this;
@@ -78,7 +78,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Lock"></param>
         /// <returns></returns>
-        public Layer SetLock (bool Lock)
+        public AcadLayer SetLock (bool Lock)
         {
             this.nc_layer.Lock = Lock;
             return this;
@@ -92,7 +92,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Name"></param>
         /// <returns></returns>
-        public Layer SetName (string Name)
+        public AcadLayer SetName (string Name)
         {
             this.nc_layer.Name = Name;
             return this;
@@ -106,7 +106,7 @@ namespace DynNCAD.Project
         /// </summary>
         /// <param name="Plottable"></param>
         /// <returns></returns>
-        public Layer SetPlottable (bool Plottable)
+        public AcadLayer SetPlottable (bool Plottable)
         {
             this.nc_layer.Plottable = Plottable;
             return this;

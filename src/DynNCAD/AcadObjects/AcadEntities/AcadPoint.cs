@@ -12,36 +12,36 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Objects.Geometry
+namespace DynNCAD.AcadObjects.AcadEntities
 {
     /// <summary>
     /// Класс для работы с точками NanoCAD
     /// </summary>
-    public class AcPoint
+    public class AcadPoint : AcadEntity
     {
-        internal AcadPoint point;
+        internal OdaX.AcadPoint _i;
         /// <summary>
         /// Получение точки как объекта чертежа
         /// </summary>
         /// <param name="AcadEntity"></param>
-        public AcPoint (AcadEntity AcadEntity)
+        public AcadPoint (AcadEntity AcadEntity)
         {
-            if (AcadEntity.entity as AcadPoint != null) this.point = AcadEntity.entity as AcadPoint;
-            else this.point = null;
+            if (AcadEntity._i as OdaX.AcadPoint != null) this._i = AcadEntity._i as OdaX.AcadPoint;
+            else this._i = null;
         }
         /// <summary>
         /// Создание точки в указанной позиции
         /// </summary>
         /// <param name="Block"></param>
         /// <param name="insertion_point"></param>
-        public AcPoint (Project.Block Block, dg.Point insertion_point)
+        public AcadPoint (AcadObjects.AcadBlock Block, dg.Point insertion_point)
         {
-            this.point = Block.block.AddPoint(Tools.PointByDynPoint(insertion_point));
+            this._i = Block.block.AddPoint(Tools.PointByDynPoint(insertion_point));
         }
         /// <summary>
         /// Получение координаты точки
         /// </summary>
-        public dg.Point Coordinates => Tools.ToDynamoPoint(this.point.Coordinates);
+        public dg.Point Coordinates => Tools.ToDynamoPoint(this._i.Coordinates);
 
     }
 }

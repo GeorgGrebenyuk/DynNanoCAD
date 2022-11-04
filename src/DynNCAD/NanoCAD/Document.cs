@@ -12,45 +12,37 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD.NanoCAD
 {
     /// <summary>
     /// Класс для работы с nanoCAD.Document
     /// Экземпляр документа. Осуществляет управление документом: открытие, сохранение, 
     /// экспорт, импорт, изменение свойств документа, доступ к объектам чертежа.
     /// </summary>
-    public class NDocument
+    public class Document
     {
-        internal nanoCAD.Document nc_doc;
+        internal nanoCAD.Document _i;
         /// <summary>
         /// Получает активный документ (проект)
         /// </summary>
         /// <param name="ncad_app"></param>
 
-        public NDocument(Application ncad_app)
+        public Document(Application Application)
         {
-            this.nc_doc = ncad_app.ncad_app.ActiveDocument;
+            this._i = Application._i.ActiveDocument;
         }
-        internal NDocument(nanoCAD.Document doc)
+        internal Document(nanoCAD.Document doc)
         {
-            nc_doc = doc;
+            _i = doc;
         }
         /// <summary>
         /// Передает внутреннюю команду из скрипта в документ для выполнения
         /// </summary>
         /// <param name="command"></param>
-        public void SendCommand(string command) => this.nc_doc.SendCommand(command);
-        /// <summary>
-        /// Устанавливает активный размерный стиль документа
-        /// </summary>
-        /// <param name="style"></param>
-        /// <returns></returns>
-        public object SetActiveDimStyle(Styles.DimStyle style) => this.nc_doc.ActiveDimStyle = style.style;
-
-
+        public void SendCommand(string command) => this._i.SendCommand(command);
         /// <summary>
         /// Получение полного пути к документу
         /// </summary>
-        public string FullName => this.nc_doc.FullName;
+        public string FullName => this._i.FullName;
     }
 }

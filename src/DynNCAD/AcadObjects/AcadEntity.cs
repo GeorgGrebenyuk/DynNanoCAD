@@ -12,178 +12,168 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Objects
+namespace DynNCAD.AcadObjects 
 {
     /// <summary>
-    /// Класс для работы с объектами NanoCAD (общий класс для всех объектов модели)
+    /// Класс для работы с объектами NanoCAD (общий класс для всех сущностей объектов модели)
     /// </summary>
-    public class AcadEntity
+    public class AcadEntity : AcadObject
     {
-        public OdaX.AcadEntity entity;
+        public OdaX.AcadEntity _i;
+
+        public AcadEntity(dynamic sub_class)
+        {
+            this._i = sub_class._i;
+        }
+        internal AcadEntity() { }
         internal AcadEntity(OdaX.AcadEntity entity)
         {
-            this.entity = entity;
-        }
-        /// <summary>
-        /// Из текста
-        /// </summary>
-        /// <param name="Text"></param>
-        public AcadEntity (Annotation.Text Text)
-        {
-            this.entity = (OdaX.AcadEntity)Text.text;
-        }
-        /// <summary>
-        /// Из МТекста
-        /// </summary>
-        /// <param name="MText"></param>
-        public AcadEntity(Annotation.MText MText)
-        {
-            this.entity = (OdaX.AcadEntity)MText.mtext;
+            this._i = entity;
         }
         #region properies
         /// <summary>
         /// Получение внутреннго объектного идентификатора
         /// </summary>
-        public string Handle => this.entity.Handle;
+        public string Handle => this._i.Handle;
         /// <summary>
         /// Получение класса TeighaX объекта 
         /// </summary>
-        public string ObjectName => this.entity.ObjectName;
+        public string ObjectName => this._i.ObjectName;
         /// <summary>
         /// Получение внутреннего текущего объектного идентификатора
         /// </summary>
-        public long ObjectID => this.entity.ObjectID;
+        public long ObjectID => this._i.ObjectID;
 
         /// <summary>
         /// Получение слоя объекта
         /// </summary>
-        public string Layer => this.entity.Layer;
+        public string Layer => this._i.Layer;
         /// <summary>
         /// Получение типа линии
         /// </summary>
-        public string Linetype => this.entity.Linetype;
+        public string Linetype => this._i.Linetype;
         /// <summary>
         /// Получение масштаба линий
         /// </summary>
-        public double LinetypeScale => this.entity.LinetypeScale;
+        public double LinetypeScale => this._i.LinetypeScale;
         /// <summary>
         /// Получение видимости объекта
         /// </summary>
-        public bool Visible => this.entity.Visible;
+        public bool Visible => this._i.Visible;
         /// <summary>
         /// Получение наименования стиля печати
         /// </summary>
-        public string PlotStyleName => this.entity.PlotStyleName;
+        public string PlotStyleName => this._i.PlotStyleName;
         /// <summary>
         /// Получение значения веса линий
         /// </summary>
-        public int Lineweight => (int)this.entity.Lineweight;
+        public int Lineweight => (int)this._i.Lineweight;
         /// <summary>
         /// Получение наименования материала, связанного с объектом
         /// </summary>
-        public string Material => this.entity.Material;
+        public string Material => this._i.Material;
         /// <summary>
         /// Получение наименования сущности
         /// </summary>
-        public string EntityName => this.entity.EntityName;
+        public string EntityName => this._i.EntityName;
         /// <summary>
         /// Получение типа цвета объекта
         /// </summary>
-        public object Color => this.entity.color;
+        public object Color => this._i.color;
         /// <summary>
         /// Получение интерфейса OdaX.AcadEntity для данного класса 
         /// (как аргумента для конструктора других классов на базе объекта модели)
         /// </summary>
         [dr.IsVisibleInDynamoLibrary(false)]
-        public object AsCOM_object => this.entity;
+        public object AsCOM_object => this._i;
         #endregion
         #region functions_as_SET
         /// <summary>
         /// Назначение слоя объекту
         /// </summary>
         /// <param name="Layer"></param>
-        public void SetLayer(string Layer) => this.entity.Layer = Layer;
+        public void SetLayer(string Layer) => this._i.Layer = Layer;
         /// <summary>
         /// Установка типа линии
         /// </summary>
         /// <param name="Linetype"></param>
-        public void SetLinetype(string Linetype) => this.entity.Linetype = Linetype;
+        public void SetLinetype(string Linetype) => this._i.Linetype = Linetype;
         /// <summary>
         /// Установка масштаба линий
         /// </summary>
         /// <param name="LinetypeScale"></param>
-        public void SetLinetypeScale(double LinetypeScale) => this.entity.LinetypeScale = LinetypeScale;
+        public void SetLinetypeScale(double LinetypeScale) => this._i.LinetypeScale = LinetypeScale;
         /// <summary>
         /// Установка видимости объектов
         /// </summary>
         /// <param name="Visible"></param>
-        public void SetVisible(bool Visible) => this.entity.Visible = Visible;
+        public void SetVisible(bool Visible) => this._i.Visible = Visible;
         /// <summary>
         /// Установка стиля печати
         /// </summary>
         /// <param name="PlotStyleName"></param>
-        public void SetPlotStyleName(string PlotStyleName) => this.entity.PlotStyleName = PlotStyleName;
+        public void SetPlotStyleName(string PlotStyleName) => this._i.PlotStyleName = PlotStyleName;
         /// <summary>
         /// Установка значеняи веса линий
         /// </summary>
         /// <param name="Lineweight"></param>
-        public void SetLineweight(object Lineweight) => this.entity.Lineweight = (ACAD_LWEIGHT)Lineweight;
+        public void SetLineweight(object Lineweight) => this._i.Lineweight = (ACAD_LWEIGHT)Lineweight;
         /// <summary>
         /// Присвоение объекту материала по его строковому имени
         /// </summary>
         /// <param name="Material_name"></param>
-        public void SetMaterial(string Material_name) => this.entity.Material = Material_name;
+        public void SetMaterial(string Material_name) => this._i.Material = Material_name;
         /// <summary>
         /// Установка значеняи цвета объекта
         /// </summary>
         /// <param name="ACAD_COLOR"></param>
-        public void SetColor(int ACAD_COLOR) => this.entity.color = (ACAD_COLOR)ACAD_COLOR;
+        public void SetColor(int ACAD_COLOR) => this._i.color = (ACAD_COLOR)ACAD_COLOR;
         #endregion
         #region functions
         /// <summary>
         /// Удаление сущности
         /// </summary>
-        public void Delete() => this.entity.Delete();
+        public void Delete() => this._i.Delete();
         /// <summary>
         /// Удаление сущности
         /// </summary>
-        public void Erase() => this.entity.Erase();
+        public void Erase() => this._i.Erase();
         /// <summary>
         /// Перемещение объекта из точки в точку
         /// </summary>
         /// <param name="FromPoint"></param>
         /// <param name="ToPoint"></param>
-        public void Move (dg.Point FromPoint, dg.Point ToPoint)
+        public void Move(dg.Point FromPoint, dg.Point ToPoint)
         {
-            this.entity.Move(Tools.PointByDynPoint(FromPoint), Tools.PointByDynPoint(ToPoint));
+            this._i.Move(Tools.PointByDynPoint(FromPoint), Tools.PointByDynPoint(ToPoint));
         }
         /// <summary>
         /// Поворот объекта на угол относительно точки
         /// </summary>
         /// <param name="BasePoint"></param>
         /// <param name="RotationAngle"></param>
-        public void Rotate (dg.Point BasePoint, double RotationAngle)
+        public void Rotate(dg.Point BasePoint, double RotationAngle)
         {
-            this.entity.Rotate(Tools.PointByDynPoint(BasePoint), RotationAngle);
+            this._i.Rotate(Tools.PointByDynPoint(BasePoint), RotationAngle);
         }
         /// <summary>
         /// Отзеркаливание объекта
         /// </summary>
         /// <param name="Point1"></param>
         /// <param name="Point2"></param>
-        public void Mirror (dg.Point Point1, dg.Point Point2)
+        public void Mirror(dg.Point Point1, dg.Point Point2)
         {
-            this.entity.Mirror(Tools.PointByDynPoint(Point1), Tools.PointByDynPoint(Point2));
+            this._i.Mirror(Tools.PointByDynPoint(Point1), Tools.PointByDynPoint(Point2));
         }
         /// <summary>
         /// Установка масштаба
         /// </summary>
         /// <param name="BasePoint"></param>
         /// <param name="ScaleFactor"></param>
-        public void ScaleEntity (dg.Point BasePoint, double ScaleFactor)
+        public void ScaleEntity(dg.Point BasePoint, double ScaleFactor)
         {
-            
-            this.entity.ScaleEntity(Tools.PointByDynPoint(BasePoint), ScaleFactor);
+
+            this._i.ScaleEntity(Tools.PointByDynPoint(BasePoint), ScaleFactor);
         }
         /// <summary>
         /// Получение габарита объекта
@@ -193,7 +183,7 @@ namespace DynNCAD.Objects
         {
             object MinPoint;
             object MaxPoint;
-            this.entity.GetBoundingBox(out MinPoint, out MaxPoint);
+            this._i.GetBoundingBox(out MinPoint, out MaxPoint);
             //return dg.BoundingBox.ByGeometry(new dg.Point(Tools.ToDynamoPoint()))
             return new List<object> { MinPoint, MaxPoint };
         }

@@ -12,19 +12,19 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Objects
+namespace DynNCAD.AcadObjects.AcadEntities
 {
     /// <summary>
     /// Класс для работы с вхождениями блоков
     /// </summary>
-    public class BlockReference
+    public class AcadBlockReference : AcadEntity
     {
         internal OdaX.AcadBlockReference block_ref;
         /// <summary>
         /// Получение блока из com-интерфейса
         /// </summary>
         /// <param name="BlockReference_object"></param>
-        private BlockReference(object BlockReference_object)
+        private AcadBlockReference(object BlockReference_object)
         {
             this.block_ref = BlockReference_object as OdaX.AcadBlockReference;
         }
@@ -41,10 +41,6 @@ namespace DynNCAD.Objects
         /// Проверка, является ли блок динамическим
         /// </summary>
         public bool IsDynamicBlock => this.block_ref.IsDynamicBlock;
-        /// <summary>
-        /// Получение слоя блока
-        /// </summary>
-        public string Layer => this.block_ref.Layer;
         /// <summary>
         /// Получение имени блока
         /// </summary>
@@ -90,9 +86,6 @@ namespace DynNCAD.Objects
         /// <returns></returns>
         public double SetZScaleFactor(double ScaleFactor) => this.block_ref.ZScaleFactor = ScaleFactor;
         //functions
-        public void Explode() => this.block_ref.Explode();
-        public void Delete() => this.block_ref.Delete();
-        public object GetAttributes() => this.block_ref.GetAttributes();
 
     }
 }

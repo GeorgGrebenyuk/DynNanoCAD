@@ -12,63 +12,64 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с базой данных объектов чертежа
     /// </summary>
-    public class Database
+    public class AcadDatabase
     {
-        internal AcadDatabase db;
+        internal OdaX.AcadDatabase db;
         /// <summary>
         /// Получение базы данных чертежа
         /// </summary>
         /// <param name="NDocument"></param>
-        public Database (NDocument NDocument)
+        public AcadDatabase (NanoCAD.Document Document)
         {
-            this.db = NDocument.nc_doc.Database;
+            this.db = Document._i.Database;
         }
         #region properties
         /// <summary>
         /// Возвращает Block пространства модели чертежа
         /// </summary>
-        public Project.Block ModelSpace => new Project.Block(this.db.ModelSpace);
+        public AcadObjects.AcadBlock ModelSpace => new AcadObjects.AcadBlock(this.db.ModelSpace);
         /// <summary>
         /// Получение Block пространства листа (активного?)
         /// </summary>
-        public Project.Block PaperSpace => new Project.Block(this.db.PaperSpace);
+        public AcadObjects.AcadBlock PaperSpace => new AcadObjects.AcadBlock(this.db.PaperSpace);
         /// <summary>
         /// Получение Блоков (пространства) листов чертежа
         /// </summary>
         /// <returns></returns>
-        public List<Project.Block> Layouts_AsBlocks()
+        public List<AcadObjects.AcadBlock> Layouts_AsBlocks()
         {
-            List<Project.Block> blocks = new List<Project.Block>();
+            List<AcadObjects.AcadBlock> blocks = new List<AcadObjects.AcadBlock>();
             IAcadBlocks doc_blocks = this.db.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
                 if (bl.Name.Contains("*Paper_Space"))
                 {
-                    blocks.Add(new Project.Block(bl));
+                    blocks.Add(new AcadObjects.AcadBlock(bl));
                 }
             }
             return blocks;
         }
+
+        /// <summary>
         /// Возвращает коллекцию блоков для данного чертежа за исключением пространства Модели и Листов
         /// </summary>
-        /// <param name="NDocument">Текущий документ модели</param>
         /// <returns></returns>
-        public List<Project.Block> Blocks()
+        public List<AcadObjects.AcadBlock> Blocks()
         {
-            List<Project.Block> blocks = new List<Project.Block>();
+            List<AcadObjects.AcadBlock> blocks = new List<AcadObjects.AcadBlock>();
             IAcadBlocks doc_blocks = this.db.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
                 if (!bl.Name.Contains("*Model_Space") && !bl.Name.Contains("*Paper_Space"))
                 {
-                    blocks.Add(new Project.Block(bl));
+                    blocks.Add(new AcadObjects.AcadBlock(bl));
                 }
             }
             return blocks;
@@ -77,13 +78,13 @@ namespace DynNCAD.Project
         /// Получение списка слоев чертежа
         /// </summary>
         /// <returns></returns>
-        public List<Layer> GetLayers()
+        public List<AcadObjects.AcadLayer> GetLayers()
         {
-            List<Layer> layers = new List<Layer>();
+            List<AcadObjects.AcadLayer> layers = new List<AcadObjects.AcadLayer>();
             var layers_collection = this.db.Layers;
             for (int i = 0; i < layers_collection.Count; i ++)
             {
-                layers.Add(new Layer(layers_collection.Item(i)));
+                layers.Add(new AcadObjects.AcadLayer(layers_collection.Item(i)));
             }
             return layers;
         }
@@ -91,13 +92,13 @@ namespace DynNCAD.Project
         /// Получение списка пользовательских систем координат чертежа
         /// </summary>
         /// <returns></returns>
-        public List<Project.UCS> GetUCS()
+        public List<AcadObjects.AcadUCS> GetUCS()
         {
-            List<Project.UCS> l = new List<UCS>();
+            List<AcadObjects.AcadUCS> l = new List<AcadObjects.AcadUCS>();
             var ucss = this.db.UserCoordinateSystems;
             for (int i = 0; i < ucss.Count; i ++)
             {
-                l.Add(new UCS(ucss.Item(i)));
+                l.Add(new AcadObjects.AcadUCS(ucss.Item(i)));
             }
             return l;
         }

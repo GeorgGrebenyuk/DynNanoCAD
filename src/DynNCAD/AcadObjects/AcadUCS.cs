@@ -12,23 +12,23 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD.AcadObjects
 {
     /// <summary>
     /// Класс для работы с системами координат чертежа
     /// </summary>
-    public class UCS
+    public class AcadUCS : AcadObject
     {
         internal OdaX.AcadUCS ucs;
-        internal UCS(OdaX.AcadUCS ucs)
+        internal AcadUCS(OdaX.AcadUCS ucs)
         {
             this.ucs = ucs;
         }
-        public UCS (Database Database, dg.CoordinateSystem CoordinateSystem)
+        public AcadUCS (AcadDatabase Database, dg.CoordinateSystem CoordinateSystem)
         {
 
         }
-        public UCS (Database Database, dg.Point Origin, dg.Point XAxisPoint, dg.Point YAxisPoint, string name)
+        public AcadUCS (AcadDatabase Database, dg.Point Origin, dg.Point XAxisPoint, dg.Point YAxisPoint, string name)
         {
 
         }

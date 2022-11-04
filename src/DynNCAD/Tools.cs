@@ -14,7 +14,10 @@ using OdaX;
 
 namespace DynNCAD
 {
-    internal class Tools
+    /// <summary>
+    /// Class with auxiliary methods
+    /// </summary>
+    internal static class Tools
     {
         public static string PointByDynPoint (dg.Point p)
         {

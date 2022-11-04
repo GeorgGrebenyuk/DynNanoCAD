@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для выборки элементов модели (чертежа)
@@ -22,17 +22,17 @@ namespace DynNCAD.Project
         /// <summary>
         /// Получение объектов, выбранных в текущем чертеже с возможностью сортировки объектов по списку классов
         /// </summary>
-        /// <param name="NDocument">Project.NDocument</param>
+        /// <param name="Document">Project.NDocument</param>
         /// <param name="classes_names">Список наименований классов объектов, которые надо отобрать</param>
         /// <returns></returns>
-        public static List<Objects.AcadEntity> GetSelectedObjectsInDrawing (Project.NDocument NDocument, List<string> classes_names = null)
+        public static List<AcadObjects.AcadEntity> GetSelectedObjectsInDrawing (DynNCAD.NanoCAD.Document Document, List<string> classes_names = null)
         {
-            List<Objects.AcadEntity> objects = new List<Objects.AcadEntity>();
-            SelectionSet all_selected_objects = NDocument.nc_doc.ActiveSelectionSet;
+            List<AcadObjects.AcadEntity> objects = new List<AcadObjects.AcadEntity>();
+            SelectionSet all_selected_objects = Document._i.ActiveSelectionSet;
             for (int counter_objects = 0; counter_objects < all_selected_objects.Count; counter_objects++)
             {
                 AcadEntity one_object = all_selected_objects[counter_objects];
-                objects.Add(new Objects.AcadEntity(one_object));
+                objects.Add(new AcadObjects.AcadEntity(one_object));
             }
             if (classes_names != null)
             {
@@ -46,12 +46,12 @@ namespace DynNCAD.Project
         /// Получение сущностей в блоке
         /// </summary>
         /// <returns></returns>
-        public static List<Objects.AcadEntity> GetBlockEntities(Project.Block Block)
+        public static List<AcadObjects.AcadEntity> GetBlockEntities(AcadObjects.AcadBlock AcadBlock)
         {
-            List<Objects.AcadEntity> objs = new List<Objects.AcadEntity>();
-            for (int i = 0; i < Block.block.Count; i++)
+            List<AcadObjects.AcadEntity> objs = new List<AcadObjects.AcadEntity>();
+            for (int i = 0; i < AcadBlock.block.Count; i++)
             {
-                objs.Add(new Objects.AcadEntity(Block.block.Item(i)));
+                objs.Add(new AcadObjects.AcadEntity(AcadBlock.block.Item(i)));
             }
             return objs;
         }

@@ -12,31 +12,31 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Objects.Geometry
+namespace DynNCAD.AcadObjects.AcadEntities
 {
     /// <summary>
     /// Класс для работы с полилиниями (устаревший тип AcDbPolyline = AcadLWPolyline)
     /// </summary>
-    public class AcLwPolyline
+    public class AcadLWPolyline : AcadEntity
     {
-        internal AcadLWPolyline lw_pline;
+        internal OdaX.AcadLWPolyline _i;
 
         //internal AcadLWPolyline lw_pline;
         /// <summary>
         /// Получение полилинии из объекта модели, если это тот тип
         /// </summary>
         /// <param name="AcadEntity"></param>
-        public AcLwPolyline(AcadEntity AcadEntity)
+        public AcadLWPolyline(AcadEntity AcadEntity)
         {
-            if (AcadEntity.entity as AcadLWPolyline != null) this.lw_pline = AcadEntity.entity as AcadLWPolyline;
-            else this.lw_pline = null;
+            if (AcadEntity._i as OdaX.AcadLWPolyline != null) this._i = AcadEntity._i as OdaX.AcadLWPolyline;
+            else this._i = null;
         }
         /// <summary>
         /// Создание плоской полилинии из набора точек
         /// </summary>
         /// <param name="Block"></param>
         /// <param name="points"></param>
-        public AcLwPolyline(Project.Block Block, List<dg.Point> points)
+        public AcadLWPolyline(AcadObjects.AcadBlock Block, List<dg.Point> points)
         {
             List<double> pnts = new List<double>();
             foreach (var p in points)
@@ -45,13 +45,13 @@ namespace DynNCAD.Objects.Geometry
                 pnts.Add(p.Y);
             }
             var pl = Block.block.AddLightWeightPolyline(string.Join(",", pnts));
-            this.lw_pline = pl;
+            this._i = pl;
         }
         //properties
         /// <summary>
         /// Получение статуса замкнутости линии
         /// </summary>
-        public bool Closed => this.lw_pline.Closed;
+        public bool Closed => this._i.Closed;
 
         /// <summary>
         /// Получение координат линии
@@ -59,10 +59,10 @@ namespace DynNCAD.Objects.Geometry
         /// <returns></returns>
         public List<dg.Point> Coordinates()
         {
-            IEnumerable<double> planar_points_row =  this.lw_pline.Coordinates;
+            IEnumerable<double> planar_points_row = this._i.Coordinates;
             List<double> planar_points = planar_points_row.ToList();
             List<dg.Point> points = new List<dg.Point>();
-            for (int i = 0; i < planar_points.Count() -1; i +=2)
+            for (int i = 0; i < planar_points.Count() - 1; i += 2)
             {
                 points.Add(dg.Point.ByCoordinates(planar_points[i], planar_points[i + 1]));
             }
@@ -73,6 +73,6 @@ namespace DynNCAD.Objects.Geometry
         /// Установка замкнутости линии
         /// </summary>
         /// <param name="Closed"></param>
-        public void SetClosed(bool Closed) => this.lw_pline.Closed = Closed;
+        public void SetClosed(bool Closed) => this._i.Closed = Closed;
     }
 }

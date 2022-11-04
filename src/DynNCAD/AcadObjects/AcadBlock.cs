@@ -12,16 +12,16 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project
+namespace DynNCAD.AcadObjects
 {
     /// <summary>
     /// Класс для работы с блоками (не путать с Вхождениями блоков (Block Reference)!)
     /// </summary>
-    public partial class Block
+    public partial class AcadBlock : AcadObject
     {
         internal OdaX.AcadBlock block;
 
-        internal Block (object block)
+        internal AcadBlock (object block)
         {
             this.block = block as OdaX.AcadBlock;
         }
