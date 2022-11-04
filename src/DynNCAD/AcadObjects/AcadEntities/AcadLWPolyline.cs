@@ -44,7 +44,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
                 pnts.Add(p.X);
                 pnts.Add(p.Y);
             }
-            var pl = Block.block.AddLightWeightPolyline(string.Join(",", pnts));
+            var pl = Block._i.AddLightWeightPolyline(string.Join(",", pnts));
             this._i = pl;
         }
         //properties

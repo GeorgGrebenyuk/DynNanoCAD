@@ -39,7 +39,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="text">Значение текста</param>
         public AcadMText(AcadObjects.AcadBlock block, dg.Point insetion_point, double text_width, string text)
         {
-            this._i = block.block.AddMText(Tools.PointByDynPoint(insetion_point), text_width, text);
+            this._i = block._i.AddMText(Tools.PointByDynPoint(insetion_point), text_width, text);
         }
         #endregion
         #region properties

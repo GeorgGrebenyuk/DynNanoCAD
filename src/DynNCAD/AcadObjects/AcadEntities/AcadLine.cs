@@ -37,7 +37,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="EndPoint">Конечная точка</param>
         public AcadLine(AcadObjects.AcadBlock Block, dg.Point StartPoint, dg.Point EndPoint)
         {
-            this._i = Block.block.AddLine(Tools.PointByDynPoint(StartPoint), Tools.PointByDynPoint(EndPoint));
+            this._i = Block._i.AddLine(Tools.PointByDynPoint(StartPoint), Tools.PointByDynPoint(EndPoint));
         }
         //properties
         /// <summary>

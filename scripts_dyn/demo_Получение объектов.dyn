@@ -1,0 +1,392 @@
+{
+  "Uuid": "92f687f6-bb79-41c0-8ad4-2089d236b0d2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "demo_Получение объектов",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.NanoCAD.Application.Application",
+      "Id": "6574a6448f794636a42578eb37b839f3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "91666b4caa8e4ef78c8abe91a70f259c",
+          "Name": "Application",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application ( ): Application"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.NanoCAD.Document.Document@DynNCAD.NanoCAD.Application",
+      "Id": "768e9be2841141d890c72f0d2520be80",
+      "Inputs": [
+        {
+          "Id": "3db9f725058947c3878f788982a5b5f5",
+          "Name": "Application",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "084ae2dbf17a42e28ccddb7d17387b92",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает активный документ (проект)\n\nDocument.Document (Application: Application): Document"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "source_list = IN[0]\r\nuniq_values = IN[1]\r\nout_data = dict()\r\nfor uniq in uniq_values:\r\n\tout_data[uniq] = source_list.count(uniq)\r\nOUT = out_data",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "da6c4139d12f4a24befd8be027592bc2",
+      "Inputs": [
+        {
+          "Id": "0aa6b9e477b54f7ca061cfba46de964e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bba24ea225364abfbe299c791f5c8c3d",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9209cd3c7be1411e80882e05eadaa7e7",
+          "Name": "OUT",
+          "Description": "Результат сценария Python",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Выполнение встроенного сценария Python."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.UniqueItems@var[]..[]",
+      "Id": "37c54969aea14c8883c156c34cd27046",
+      "Inputs": [
+        {
+          "Id": "d53a365b001548d9ab49e67e8deae777",
+          "Name": "list",
+          "Description": "Список, который требуется отфильтровать, исключив повторы.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "17396479c264482494f6c232e3ce0ccc",
+          "Name": "list",
+          "Description": "Отфильтрованный список.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Создание нового списка, содержащего все уникальные элементы из заданного списка.\n\nList.UniqueItems (list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntity.EntityName",
+      "Id": "c818524e529745d6ac5874d08a1d73b8",
+      "Inputs": [
+        {
+          "Id": "d12217dbd658490a9939d44c716a271b",
+          "Name": "acadEntity",
+          "Description": "DynNCAD.AcadObjects.AcadEntity",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6d8ee8f00c8d470abc87e617d37386d7",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение наименования сущности\n\nAcadEntity.EntityName: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadDatabase.AcadDatabase@DynNCAD.NanoCAD.Document",
+      "Id": "122b75dd907e49c0bb7ba3d3442b1ade",
+      "Inputs": [
+        {
+          "Id": "75ede119cae44e629aa1d772904b2b1a",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "73e5ec941c16442eb2ce91b6afdfed7c",
+          "Name": "AcadDatabase",
+          "Description": "AcadDatabase",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение базы данных чертежа\n\nAcadDatabase.AcadDatabase (Document: Document): AcadDatabase"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadDatabase.ModelSpace",
+      "Id": "99ca3bbe0f5f43768e4953c51e4cae3e",
+      "Inputs": [
+        {
+          "Id": "1fdf9182ae394ccd8c8866fa4e30372b",
+          "Name": "acadDatabase",
+          "Description": "DynNCAD.AcadDatabase",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2523be0070084d2fade961438a0433ce",
+          "Name": "AcadBlock",
+          "Description": "AcadBlock",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Возвращает Block пространства модели чертежа\n\nAcadDatabase.ModelSpace: AcadBlock"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "91666b4caa8e4ef78c8abe91a70f259c",
+      "End": "3db9f725058947c3878f788982a5b5f5",
+      "Id": "e8f0763a9b924e23ac69a2351e3766c8"
+    },
+    {
+      "Start": "084ae2dbf17a42e28ccddb7d17387b92",
+      "End": "75ede119cae44e629aa1d772904b2b1a",
+      "Id": "2166c840332846f6be623d8b45fa7a70"
+    },
+    {
+      "Start": "17396479c264482494f6c232e3ce0ccc",
+      "End": "bba24ea225364abfbe299c791f5c8c3d",
+      "Id": "31d54929187e498a97dbe5db0bdc9ea5"
+    },
+    {
+      "Start": "6d8ee8f00c8d470abc87e617d37386d7",
+      "End": "d53a365b001548d9ab49e67e8deae777",
+      "Id": "2ed2164e2ac9409a998fe61a6a2d69e4"
+    },
+    {
+      "Start": "6d8ee8f00c8d470abc87e617d37386d7",
+      "End": "0aa6b9e477b54f7ca061cfba46de964e",
+      "Id": "cde56a9709584b0f9ed4f4937eea4911"
+    },
+    {
+      "Start": "73e5ec941c16442eb2ce91b6afdfed7c",
+      "End": "1fdf9182ae394ccd8c8866fa4e30372b",
+      "Id": "6b71bb65a00845cb9493b0653b8657c2"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "Нет",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Application.Application",
+        "Id": "6574a6448f794636a42578eb37b839f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 383.071583239348,
+        "Y": 430.18717299426294
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.Document",
+        "Id": "768e9be2841141d890c72f0d2520be80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 659.531167104634,
+        "Y": 431.72758912897689
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Подсчет числа элементов (классов)",
+        "Id": "da6c4139d12f4a24befd8be027592bc2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2185.9753216318045,
+        "Y": 435.5062711305701
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.UniqueItems",
+        "Id": "37c54969aea14c8883c156c34cd27046",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1984.8526111084648,
+        "Y": 529.91642730520857
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadEntity.EntityName",
+        "Id": "c818524e529745d6ac5874d08a1d73b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1557.2062858461982,
+        "Y": 601.11132228396536
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadDatabase.AcadDatabase",
+        "Id": "122b75dd907e49c0bb7ba3d3442b1ade",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 991.62771259439376,
+        "Y": 426.93645946715753
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadDatabase.ModelSpace",
+        "Id": "99ca3bbe0f5f43768e4953c51e4cae3e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1296.8391039986784,
+        "Y": 422.83047662315363
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "82ce6585a99249b3a0c955e79a4d91a8",
+        "Title": "Получение документа",
+        "Nodes": [
+          "6574a6448f794636a42578eb37b839f3",
+          "768e9be2841141d890c72f0d2520be80"
+        ],
+        "Left": 373.071583239348,
+        "Top": 377.18717299426294,
+        "Width": 546.459583865286,
+        "Height": 147.54041613471395,
+        "FontSize": 36.0,
+        "InitialTop": 430.18717299426294,
+        "InitialHeight": 146.54041613471395,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -529.35968425195688,
+    "Y": -25.72637777823968,
+    "Zoom": 0.75298792989129693
+  }
+}

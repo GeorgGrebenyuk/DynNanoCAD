@@ -31,18 +31,8 @@ namespace DynNCAD.AcadObjects
             this._i = entity;
         }
         #region properies
-        /// <summary>
-        /// Получение внутреннго объектного идентификатора
-        /// </summary>
-        public string Handle => this._i.Handle;
-        /// <summary>
-        /// Получение класса TeighaX объекта 
-        /// </summary>
-        public string ObjectName => this._i.ObjectName;
-        /// <summary>
-        /// Получение внутреннего текущего объектного идентификатора
-        /// </summary>
-        public long ObjectID => this._i.ObjectID;
+
+
 
         /// <summary>
         /// Получение слоя объекта
@@ -80,12 +70,6 @@ namespace DynNCAD.AcadObjects
         /// Получение типа цвета объекта
         /// </summary>
         public object Color => this._i.color;
-        /// <summary>
-        /// Получение интерфейса OdaX.AcadEntity для данного класса 
-        /// (как аргумента для конструктора других классов на базе объекта модели)
-        /// </summary>
-        [dr.IsVisibleInDynamoLibrary(false)]
-        public object AsCOM_object => this._i;
         #endregion
         #region functions_as_SET
         /// <summary>
@@ -130,14 +114,6 @@ namespace DynNCAD.AcadObjects
         public void SetColor(int ACAD_COLOR) => this._i.color = (ACAD_COLOR)ACAD_COLOR;
         #endregion
         #region functions
-        /// <summary>
-        /// Удаление сущности
-        /// </summary>
-        public void Delete() => this._i.Delete();
-        /// <summary>
-        /// Удаление сущности
-        /// </summary>
-        public void Erase() => this._i.Erase();
         /// <summary>
         /// Перемещение объекта из точки в точку
         /// </summary>

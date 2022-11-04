@@ -19,17 +19,30 @@ namespace DynNCAD.AcadObjects
     /// </summary>
     public partial class AcadBlock : AcadObject
     {
-        internal OdaX.AcadBlock block;
+        internal OdaX.AcadBlock _i;
 
-        internal AcadBlock (object block)
+        internal AcadBlock(object block)
         {
-            this.block = block as OdaX.AcadBlock;
+            this._i = block as OdaX.AcadBlock;
         }
 
         /// <summary>
         /// Получает имя блока
         /// </summary>
-        public string Name => this.block.Name;
+        public string Name => this._i.Name;
+        /// <summary>
+        /// Получение объектов блока (пространства)
+        /// </summary>
+        /// <returns></returns>
+        public List<AcadEntity> GetObjects()
+        {
+            List<AcadEntity> objects = new List<AcadEntity>();
+            for (int i = 0; i < this._i.Count; i++)
+            {
+                objects.Add(new AcadEntity(this._i.Item(i)));
+            }
+            return objects;
+        }
 
 
     }

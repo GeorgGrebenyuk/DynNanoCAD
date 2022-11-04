@@ -36,7 +36,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="insertion_point"></param>
         public AcadPoint (AcadObjects.AcadBlock Block, dg.Point insertion_point)
         {
-            this._i = Block.block.AddPoint(Tools.PointByDynPoint(insertion_point));
+            this._i = Block._i.AddPoint(Tools.PointByDynPoint(insertion_point));
         }
         /// <summary>
         /// Получение координаты точки

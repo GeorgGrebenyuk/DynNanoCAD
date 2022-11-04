@@ -43,29 +43,17 @@ namespace DynNCAD
             return objects;
         }
         /// <summary>
-        /// Получение сущностей в блоке
-        /// </summary>
-        /// <returns></returns>
-        public static List<AcadObjects.AcadEntity> GetBlockEntities(AcadObjects.AcadBlock AcadBlock)
-        {
-            List<AcadObjects.AcadEntity> objs = new List<AcadObjects.AcadEntity>();
-            for (int i = 0; i < AcadBlock.block.Count; i++)
-            {
-                objs.Add(new AcadObjects.AcadEntity(AcadBlock.block.Item(i)));
-            }
-            return objs;
-        }
-        /// <summary>
         /// Получение строковых наименований классов объектов чертежа
         /// </summary>
         /// <returns></returns>
-        [dr.MultiReturn(new[] { "Текст", "МТекст" , "Отрезок", "Полилиния", "3D-полилиния", "Круговой размер", "Фигура",
+        [dr.MultiReturn(new[] { "Точка", "Текст", "МТекст" , "Отрезок", "Полилиния", "3D-полилиния", "Круговой размер", "Фигура",
         "Дуга","Окружность", "Вхождение блока", "Угловой размер", "Эллипс","Штриховка", "Диаметральный размер","Область",
         "Сплайн"})]
         public static Dictionary<string, string> AutoCADObjectsClasses()
         {
             return new Dictionary<string, string>()
             {
+                {"Точка", "AcDbPoint" },
                 {"Текст", "AcDbText" },
                 {"МТекст", "AcDbMText" },
                 {"Отрезок", " AcDbLine" },
@@ -81,7 +69,8 @@ namespace DynNCAD
                 {"Круговой размер", "AcDbRotatedDimension" },
                 {"Область", "AcDbRegion" },
                 {"Фигура", "AcDbSolid" },
-                {"Вхождение блока", "AcDbBlockReference" }
+                {"Вхождение блока", "AcDbBlockReference" },
+
             };
         }
     }
