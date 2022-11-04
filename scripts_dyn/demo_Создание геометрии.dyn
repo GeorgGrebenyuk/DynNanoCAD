@@ -1,0 +1,533 @@
+{
+  "Uuid": "92f687f6-bb79-41c0-8ad4-2089d236b0d2",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "demo_Создание геометрии",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.NanoCAD.Application.Application",
+      "Id": "6574a6448f794636a42578eb37b839f3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "91666b4caa8e4ef78c8abe91a70f259c",
+          "Name": "Application",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application ( ): Application"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.NanoCAD.Document.Document@DynNCAD.NanoCAD.Application",
+      "Id": "768e9be2841141d890c72f0d2520be80",
+      "Inputs": [
+        {
+          "Id": "3db9f725058947c3878f788982a5b5f5",
+          "Name": "Application",
+          "Description": "Application",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "084ae2dbf17a42e28ccddb7d17387b92",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получает активный документ (проект)\n\nDocument.Document (Application: Application): Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.AcadText@DynNCAD.AcadObjects.AcadBlock,Autodesk.DesignScript.Geometry.Point,double,string",
+      "Id": "f38b681b92074bd3b151f20ba36c5533",
+      "Inputs": [
+        {
+          "Id": "ab908329eab24116805c05ad9b864d1e",
+          "Name": "block",
+          "Description": "Сущность блока\n\nAcadBlock",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ba94f96747c4e49b970513a9aabf098",
+          "Name": "insetion_point",
+          "Description": "Точка вставки\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6480b656a695480cb1ef346bfbd3ebdf",
+          "Name": "text_height",
+          "Description": "Высота текста\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d7f57f72a8234960b32532edc4ef55ad",
+          "Name": "text",
+          "Description": "Значение текста\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "85772b579712477c80931e91265d4296",
+          "Name": "AcadText",
+          "Description": "AcadText",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Создание объекта текста в данном блоке (пространстве модели или листов)\n\nAcadText.AcadText (block: AcadBlock, insetion_point: Point, text_height: double, text: string): AcadText"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadDatabase.ModelSpace",
+      "Id": "83e3dc0c16634e4bb15a05ca73996d6d",
+      "Inputs": [
+        {
+          "Id": "a5d756fcd0654f108fc6e02db7e176a8",
+          "Name": "acadDatabase",
+          "Description": "DynNCAD.AcadDatabase",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "66f066020ffc42eeb2225e695b5ce1b2",
+          "Name": "AcadBlock",
+          "Description": "AcadBlock",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Возвращает Block пространства модели чертежа\n\nAcadDatabase.ModelSpace: AcadBlock"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadDatabase.AcadDatabase@DynNCAD.NanoCAD.Document",
+      "Id": "c8257633dc5f409c8875c5fd03395ce4",
+      "Inputs": [
+        {
+          "Id": "ac07c61751cc41d3afe0a77d5c021aa1",
+          "Name": "Document",
+          "Description": "Document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "933fccac85fa499baf10eba787ba5eb6",
+          "Name": "AcadDatabase",
+          "Description": "AcadDatabase",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение базы данных чертежа\n\nAcadDatabase.AcadDatabase (Document: Document): AcadDatabase"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Point.ByCoordinates(205.7285, 214.9553, 0);",
+      "Id": "fd0ee568df53494595fed13da393241a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4556706cce4f47448be7d1fd687127b7",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Это ванная\";\n3;",
+      "Id": "8a211738b74d4fc8bdeb095be690bc4c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec4e23f622de4360990b01b7a4d0d3e6",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "88c4e57fece7464faee72f750f608f08",
+          "Name": "",
+          "Description": "Значение выражения в строке 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "30;",
+      "Id": "e983cf6fe0ad40fa92b49c0ce621cbaa",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1eb87e5a5a1d483192232fb422e37334",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.Rotation",
+      "Id": "64cae6c4e86f4433ab1d661456522766",
+      "Inputs": [
+        {
+          "Id": "b684e092faaf493da7d4d2ef906f235d",
+          "Name": "acadText",
+          "Description": "DynNCAD.AcadObjects.AcadEntities.AcadText",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26dec40aafcb46fb9de35ab8a0c48617",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение угла поворота текста\n\nAcadText.Rotation: double"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "91666b4caa8e4ef78c8abe91a70f259c",
+      "End": "3db9f725058947c3878f788982a5b5f5",
+      "Id": "e8f0763a9b924e23ac69a2351e3766c8"
+    },
+    {
+      "Start": "084ae2dbf17a42e28ccddb7d17387b92",
+      "End": "ac07c61751cc41d3afe0a77d5c021aa1",
+      "Id": "9bfd05d610ec482582d6e19ca53737c8"
+    },
+    {
+      "Start": "85772b579712477c80931e91265d4296",
+      "End": "b684e092faaf493da7d4d2ef906f235d",
+      "Id": "f4774a4d1f1e4b08989c481cbdfe9ab7"
+    },
+    {
+      "Start": "66f066020ffc42eeb2225e695b5ce1b2",
+      "End": "ab908329eab24116805c05ad9b864d1e",
+      "Id": "60af1749f1f74218998fa3751071e393"
+    },
+    {
+      "Start": "933fccac85fa499baf10eba787ba5eb6",
+      "End": "a5d756fcd0654f108fc6e02db7e176a8",
+      "Id": "d30dd09350da4e749203f625dd573b80"
+    },
+    {
+      "Start": "4556706cce4f47448be7d1fd687127b7",
+      "End": "3ba94f96747c4e49b970513a9aabf098",
+      "Id": "6ea42f1023d44a959bc0e53f0bd07d74"
+    },
+    {
+      "Start": "ec4e23f622de4360990b01b7a4d0d3e6",
+      "End": "d7f57f72a8234960b32532edc4ef55ad",
+      "Id": "cf4a4640405b4c34b2b27d6017ff0f6c"
+    },
+    {
+      "Start": "88c4e57fece7464faee72f750f608f08",
+      "End": "6480b656a695480cb1ef346bfbd3ebdf",
+      "Id": "961f331e465b47b1ba9570d6c0cd79d0"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "Нет",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Application.Application",
+        "Id": "6574a6448f794636a42578eb37b839f3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 383.071583239348,
+        "Y": 430.18717299426294
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Document.Document",
+        "Id": "768e9be2841141d890c72f0d2520be80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 659.531167104634,
+        "Y": 431.72758912897689
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadText.AcadText",
+        "Id": "f38b681b92074bd3b151f20ba36c5533",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1675.367806353524,
+        "Y": 598.39424862568285
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadDatabase.ModelSpace",
+        "Id": "83e3dc0c16634e4bb15a05ca73996d6d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1347.9185035513353,
+        "Y": 440.63241146759054
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadDatabase.AcadDatabase",
+        "Id": "c8257633dc5f409c8875c5fd03395ce4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1019.6707381596809,
+        "Y": 438.57443174726671
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "fd0ee568df53494595fed13da393241a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1121.0488470560942,
+        "Y": 599.69019426544969
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8a211738b74d4fc8bdeb095be690bc4c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1366.243451127302,
+        "Y": 691.5284665273407
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "e983cf6fe0ad40fa92b49c0ce621cbaa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2002.9024073489329,
+        "Y": 669.69958937974468
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadText.Rotation",
+        "Id": "64cae6c4e86f4433ab1d661456522766",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2395.6886550460922,
+        "Y": 659.04392586865379
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "82ce6585a99249b3a0c955e79a4d91a8",
+        "Title": "Получение документа",
+        "Nodes": [
+          "6574a6448f794636a42578eb37b839f3",
+          "768e9be2841141d890c72f0d2520be80"
+        ],
+        "Left": 373.071583239348,
+        "Top": 377.18717299426294,
+        "Width": 546.459583865286,
+        "Height": 147.54041613471395,
+        "FontSize": 36.0,
+        "InitialTop": 430.18717299426294,
+        "InitialHeight": 146.54041613471395,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ec92f6b42e7b422e8233f0a64da4ad9e",
+        "Title": "Параметры создания текста",
+        "Nodes": [
+          "f38b681b92074bd3b151f20ba36c5533",
+          "fd0ee568df53494595fed13da393241a",
+          "8a211738b74d4fc8bdeb095be690bc4c"
+        ],
+        "Left": 1111.0488470560942,
+        "Top": 545.39424862568285,
+        "Width": 835.31895929742973,
+        "Height": 249.13421790165785,
+        "FontSize": 36.0,
+        "InitialTop": 598.39424862568285,
+        "InitialHeight": 238.13421790165785,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFFAA45"
+      },
+      {
+        "Id": "00098d4404e646e79ee2b49623be5108",
+        "Title": "Получение пространства модели",
+        "Nodes": [
+          "83e3dc0c16634e4bb15a05ca73996d6d",
+          "c8257633dc5f409c8875c5fd03395ce4"
+        ],
+        "Left": 1009.6707381596809,
+        "Top": 385.57443174726671,
+        "Width": 615.24776539165441,
+        "Height": 148.05797972032389,
+        "FontSize": 36.0,
+        "InitialTop": 438.57443174726671,
+        "InitialHeight": 147.05797972032389,
+        "TextblockHeight": 43.0,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "ba4dfc86aba44dc3b0240bd3720f0f93",
+        "Title": "Разворот созданного текста",
+        "Nodes": [
+          "e983cf6fe0ad40fa92b49c0ce621cbaa"
+        ],
+        "Left": 1992.9024073489329,
+        "Top": 529.69958937974468,
+        "Width": 199.29666666666668,
+        "Height": 233.0,
+        "FontSize": 36.0,
+        "InitialTop": 669.69958937974468,
+        "InitialHeight": 222.12866884305913,
+        "TextblockHeight": 130.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -1700.9484736559129,
+    "Y": -325.69908312080531,
+    "Zoom": 1.0009240009373874
+  }
+}
