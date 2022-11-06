@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;

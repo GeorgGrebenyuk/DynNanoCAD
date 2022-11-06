@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;
@@ -23,10 +23,6 @@ namespace DynNCAD.AcadObjects
         internal AcadUCS(OdaX.AcadUCS ucs)
         {
             this.ucs = ucs;
-        }
-        public AcadUCS (AcadDatabase Database, dg.CoordinateSystem CoordinateSystem)
-        {
-
         }
         public AcadUCS (AcadDatabase Database, dg.Point Origin, dg.Point XAxisPoint, dg.Point YAxisPoint, string name)
         {

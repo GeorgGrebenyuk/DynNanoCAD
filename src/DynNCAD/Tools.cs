@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;
@@ -26,7 +26,7 @@ namespace DynNCAD
         public static dg.Point ToDynamoPoint (string p)
         {
             double[] pa = p.Split(',').Select(a => double.Parse(a)).ToArray();
-            return dg.Point.ByCoordinates(pa[0], pa[1], pa[2]);
+            return new dg.Point(pa[0], pa[1], pa[2]);
         }
     }
 }

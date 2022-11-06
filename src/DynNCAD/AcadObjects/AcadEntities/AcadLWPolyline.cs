@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;
@@ -64,7 +64,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
             List<dg.Point> points = new List<dg.Point>();
             for (int i = 0; i < planar_points.Count() - 1; i += 2)
             {
-                points.Add(dg.Point.ByCoordinates(planar_points[i], planar_points[i + 1]));
+                points.Add(new dg.Point(planar_points[i], planar_points[i + 1], 0d));
             }
             return points;
         }

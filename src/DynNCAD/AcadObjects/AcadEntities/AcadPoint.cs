@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;
@@ -41,7 +41,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <summary>
         /// Получение координаты точки
         /// </summary>
-        public dg.Point Coordinates => Tools.ToDynamoPoint(this._i.Coordinates);
+        public dg.Point Coordinates => new dg.Point(this._i.Coordinates[0], this._i.Coordinates[1], this._i.Coordinates[2]);
 
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
-using dg = Autodesk.DesignScript.Geometry;
+using dg = DynNCAD.Geometry;
 
 using nanoCAD;
 using OdaX;
@@ -36,7 +36,7 @@ namespace DynNCAD
             }
             if (classes_names != null)
             {
-                objects = objects.Where(a => classes_names.Contains(a.ObjectName)).ToList();
+                objects = objects.Where(a => classes_names.Contains(a._i.EntityName)).ToList();
             }
             //sels.Select(nanoCAD.AcSelect.acSelectionSetWindowPolygon);
 

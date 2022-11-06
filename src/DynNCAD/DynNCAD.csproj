@@ -66,6 +66,7 @@
     <Compile Include="AcadObjects\AcadEntities\AcadLWPolyline.cs" />
     <Compile Include="AcadObjects\AcadBlock.cs" />
     <Compile Include="AcadObjects\AcadEntities\AcadBlockReference.cs" />
+    <Compile Include="Geometry.cs" />
     <Compile Include="NanoCAD\Application.cs" />
     <Compile Include="AcadDatabase.cs" />
     <Compile Include="NanoCAD\Document.cs" />
