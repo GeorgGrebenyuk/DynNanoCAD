@@ -12,19 +12,9 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.NanoCAD.Application.Application@string",
+      "FunctionSignature": "DynNCAD.NanoCAD.Application.Application",
       "Id": "6574a6448f794636a42578eb37b839f3",
-      "Inputs": [
-        {
-          "Id": "c93bf1e692c84266b8f367ae555cfa6f",
-          "Name": "type",
-          "Description": "string\nЗначение по умолчанию : \"nanoCAD.Application\"",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
+      "Inputs": [],
       "Outputs": [
         {
           "Id": "91666b4caa8e4ef78c8abe91a70f259c",
@@ -37,7 +27,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application (type: string = \"nanoCAD.Application\"): Application"
+      "Description": "Получение первого запущенного приложения NanoCAD\n\nApplication.Application ( ): Application"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -78,7 +68,7 @@
       "Outputs": [
         {
           "Id": "13c98afa4ddf4254ac794274d29e2ca2",
-          "Name": "Текст",
+          "Name": "Точка",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -87,7 +77,7 @@
         },
         {
           "Id": "3c6e76815edf4722a5d7f8deaa925569",
-          "Name": "МТекст",
+          "Name": "Текст",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -96,7 +86,7 @@
         },
         {
           "Id": "4473b89de147471fb7916d5ad1acaaf9",
-          "Name": "Отрезок",
+          "Name": "МТекст",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -105,7 +95,7 @@
         },
         {
           "Id": "a1f84d8d03004da8a6b6e6308f04f552",
-          "Name": "Полилиния",
+          "Name": "Отрезок",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -114,7 +104,7 @@
         },
         {
           "Id": "4ea04e47f4f548fea029cd95ec20f22b",
-          "Name": "3D-полилиния",
+          "Name": "Полилиния",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -123,7 +113,7 @@
         },
         {
           "Id": "7c8ab14ea4b842638457b5dfd6c55905",
-          "Name": "Круговой размер",
+          "Name": "3D-полилиния",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -132,7 +122,7 @@
         },
         {
           "Id": "a5e4019ff5024779b8b2e201caafb397",
-          "Name": "Фигура",
+          "Name": "Круговой размер",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -141,7 +131,7 @@
         },
         {
           "Id": "46dce30f1295493ea739c5733ee50cb3",
-          "Name": "Дуга",
+          "Name": "Фигура",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -150,7 +140,7 @@
         },
         {
           "Id": "d0b336a7022047f5b02a82ff6fd770c2",
-          "Name": "Окружность",
+          "Name": "Дуга",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -159,7 +149,7 @@
         },
         {
           "Id": "6a0bc78592b4430fb5b8f74d425408ac",
-          "Name": "Вхождение блока",
+          "Name": "Окружность",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -168,7 +158,7 @@
         },
         {
           "Id": "fd2e505bf7684871b7c02a9f7a388a81",
-          "Name": "Угловой размер",
+          "Name": "Вхождение блока",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -177,7 +167,7 @@
         },
         {
           "Id": "548376d679274b598c632632efe0cc38",
-          "Name": "Эллипс",
+          "Name": "Угловой размер",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -186,7 +176,7 @@
         },
         {
           "Id": "25c328e797a44eda98b1b02c3e05071a",
-          "Name": "Штриховка",
+          "Name": "Эллипс",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -195,7 +185,7 @@
         },
         {
           "Id": "bfa851304d6d487db379cb16ff9aae93",
-          "Name": "Диаметральный размер",
+          "Name": "Штриховка",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -204,7 +194,7 @@
         },
         {
           "Id": "3946f2a4fd414fae8bde7f9bd0c73669",
-          "Name": "Область",
+          "Name": "Диаметральный размер",
           "Description": "var",
           "UsingDefaultValue": false,
           "Level": 2,
@@ -213,6 +203,15 @@
         },
         {
           "Id": "b99baaa07e5549a4bcef473c43257f63",
+          "Name": "Область",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4bea5cbaf51442e48599696d2f9679bc",
           "Name": "Сплайн",
           "Description": "var",
           "UsingDefaultValue": false,
@@ -481,56 +480,6 @@
       ],
       "Replication": "Auto",
       "Description": "AcadObject.ObjectID: int"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntity.Layer",
-      "Id": "d0364ca2599e45889229b8c7250cf023",
-      "Inputs": [
-        {
-          "Id": "dc94e9cf2dfe447cadcbf3e256109ea3",
-          "Name": "acadEntity",
-          "Description": "DynNCAD.AcadObjects.AcadEntity",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "679f5957d5044826a4fd442ecc0fc000",
-          "Name": "string",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Получение слоя объекта\n\nAcadEntity.Layer: string"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "\"AutoCAD.Application.24\";",
-      "Id": "3b7ca102706e48f2ac2f8519df234bba",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "3172ac0a17a345f49f8d9b70213f6d36",
-          "Name": "",
-          "Description": "Значение выражения в строке 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
     }
   ],
   "Connectors": [
@@ -545,14 +494,14 @@
       "Id": "568b1be28aa04ac286e57e2e0b647955"
     },
     {
-      "Start": "13c98afa4ddf4254ac794274d29e2ca2",
+      "Start": "3c6e76815edf4722a5d7f8deaa925569",
       "End": "adc85a05083940c2967e41b34e8c689f",
-      "Id": "501ed44dd0894a01987a5cbf602f5d00"
+      "Id": "370efefef30b4470adb3c61424208cf8"
     },
     {
-      "Start": "f68d4daedfcd4f008d67e653c54c83ce",
+      "Start": "b5d867b6c30648c18b314f3e0d41920a",
       "End": "76711ef9902f4607a98a3916afcfb84f",
-      "Id": "c0b5481b653a44228f10c09ffd2e458a"
+      "Id": "1af170dafd3144818c6e30bed501efee"
     },
     {
       "Start": "552aaa40734d4669b671f8fe09c4c057",
@@ -580,19 +529,9 @@
       "Id": "58f4922beb8648e4a8adaa64531efb01"
     },
     {
-      "Start": "35baa8583d554f1b9970c07ba7be7bfa",
-      "End": "dc94e9cf2dfe447cadcbf3e256109ea3",
-      "Id": "941cd7e3776b4e9aa07d737ce75bc125"
-    },
-    {
       "Start": "29a7a516572b475da6206f0a086c70c7",
       "End": "9c64872e85cf4784ba754fd9815a45f6",
       "Id": "dca7c3db63c341b2a518a706f078ff83"
-    },
-    {
-      "Start": "3172ac0a17a345f49f8d9b70213f6d36",
-      "End": "c93bf1e692c84266b8f367ae555cfa6f",
-      "Id": "30abbc38f8d64c83a66dd00cc8bbf339"
     }
   ],
   "Dependencies": [],
@@ -664,8 +603,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 389.65773612050907,
-        "Y": 626.87498496496789
+        "X": 372.18073503763776,
+        "Y": 616.11990737550855
       },
       {
         "ShowGeometry": true,
@@ -674,8 +613,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 853.89036359375177,
-        "Y": 629.49109404887031
+        "X": 836.41336251088046,
+        "Y": 618.736016459411
       },
       {
         "ShowGeometry": true,
@@ -684,8 +623,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1148.6219221454473,
-        "Y": 602.01922019012056
+        "X": 1131.144921062576,
+        "Y": 591.26414260066122
       },
       {
         "ShowGeometry": true,
@@ -746,26 +685,6 @@
         "Excluded": false,
         "X": 3012.6982656992168,
         "Y": 555.37816808422667
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "AcadEntity.Layer",
-        "Id": "d0364ca2599e45889229b8c7250cf023",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2438.5187871726707,
-        "Y": 312.99013612884482
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "3b7ca102706e48f2ac2f8519df234bba",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 33.45130690866597,
-        "Y": 441.27078414519963
       }
     ],
     "Annotations": [
@@ -828,12 +747,12 @@
           "28ff10d87af3447ab99b3a2c6e4348da",
           "f1bb28224dc8423bb69dd8f24307e662"
         ],
-        "Left": 379.65773612050907,
-        "Top": 549.01922019012056,
+        "Left": 362.18073503763776,
+        "Top": 538.26414260066122,
         "Width": 1058.9641860249383,
-        "Height": 560.85576477484744,
+        "Height": 586.85576477484733,
         "FontSize": 36.0,
-        "InitialTop": 602.01922019012056,
+        "InitialTop": 591.26414260066122,
         "InitialHeight": 172.47187385874975,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
@@ -856,8 +775,8 @@
         "Background": "#FF48B9FF"
       }
     ],
-    "X": 179.27480887607305,
-    "Y": -267.17635966582304,
-    "Zoom": 1.0992168298902727
+    "X": -2107.2551455244438,
+    "Y": -153.47213797778511,
+    "Zoom": 0.98355129210355141
   }
 }

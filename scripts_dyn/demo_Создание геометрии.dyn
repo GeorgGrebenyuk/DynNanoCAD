@@ -8,6 +8,10 @@
       "Point": {
         "Key": "Autodesk.DesignScript.Geometry.Point",
         "Value": "ProtoGeometry.dll"
+      },
+      "Math.PI": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
       }
     }
   },
@@ -67,7 +71,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.AcadText@DynNCAD.AcadObjects.AcadBlock,Autodesk.DesignScript.Geometry.Point,double,string",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.AcadText@DynNCAD.AcadObjects.AcadBlock,DynNCAD.Geometry.Point,double,string",
       "Id": "f38b681b92074bd3b151f20ba36c5533",
       "Inputs": [
         {
@@ -184,26 +188,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "Point.ByCoordinates(205.7285, 214.9553, 0);",
-      "Id": "fd0ee568df53494595fed13da393241a",
-      "Inputs": [],
-      "Outputs": [
-        {
-          "Id": "4556706cce4f47448be7d1fd687127b7",
-          "Name": "",
-          "Description": "Значение выражения в строке 1",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
       "Code": "\"Это ванная\";\n3;",
       "Id": "8a211738b74d4fc8bdeb095be690bc4c",
       "Inputs": [],
@@ -233,12 +217,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "30;",
+      "Code": "30/180*Math.PI;",
       "Id": "e983cf6fe0ad40fa92b49c0ce621cbaa",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "1eb87e5a5a1d483192232fb422e37334",
+          "Id": "1f1229fb08654e4e81d2da3e6343a712",
           "Name": "",
           "Description": "Значение выражения в строке 1",
           "UsingDefaultValue": false,
@@ -253,13 +237,22 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.Rotation",
-      "Id": "64cae6c4e86f4433ab1d661456522766",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadText.SetRotation@double",
+      "Id": "f3bc9e5a751c4704b04fd68962142d4d",
       "Inputs": [
         {
-          "Id": "b684e092faaf493da7d4d2ef906f235d",
+          "Id": "41f088b3a0f84b498a01275a998a27f0",
           "Name": "acadText",
           "Description": "DynNCAD.AcadObjects.AcadEntities.AcadText",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "71d5a2181e2442dcb179e50487b5745d",
+          "Name": "angle",
+          "Description": "double",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -268,9 +261,9 @@
       ],
       "Outputs": [
         {
-          "Id": "26dec40aafcb46fb9de35ab8a0c48617",
-          "Name": "double",
-          "Description": "double",
+          "Id": "6817d741f57e4edeb3c5d189cad1c478",
+          "Name": "void",
+          "Description": "void",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -278,7 +271,309 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "Получение угла поворота текста\n\nAcadText.Rotation: double"
+      "Description": "Установка значения угла поворота текста\n\nAcadText.SetRotation (angle: double): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Selection.AutoCADObjectsClasses",
+      "Id": "1360a947beec4ff6af5b90297b7d7f40",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5c3a763eaec1460eb8856d5b7f83149c",
+          "Name": "Точка",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "780ffeb1bfa34c91867587f40704db25",
+          "Name": "Текст",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "38f59502e0fe4bf4916f853e6bc42fb1",
+          "Name": "МТекст",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "991cbe17e2204ebd94b6c7fff8668595",
+          "Name": "Отрезок",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a1600a67881b46de904f926fff0e489c",
+          "Name": "Полилиния",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d77dd099c15b4ebdbe6cd06ddcefe03c",
+          "Name": "3D-полилиния",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "55cf091e2c7a4fcabb223205bd74b4a2",
+          "Name": "Круговой размер",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f2ed044a817c4434af8c3ed58815f1a7",
+          "Name": "Фигура",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53fc3a4155b3491d8b00bce9bf142ffc",
+          "Name": "Дуга",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cb3c890b62b1438faa72e38a09057adc",
+          "Name": "Окружность",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e775d8424de846c4a9bd5305b3504eb2",
+          "Name": "Вхождение блока",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fdce2aa5a5d0410b9ee1afe7e3c9ab8f",
+          "Name": "Угловой размер",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bf07de175eca4a8d94fa1d79702a9a22",
+          "Name": "Эллипс",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8870a1cc062f4937ba7839b316058b64",
+          "Name": "Штриховка",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ca6180c18bb14211a2efb95ef1ab433c",
+          "Name": "Диаметральный размер",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d282c0a2d47d4341a5e9fa2c12876b7a",
+          "Name": "Область",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e2a4cbb79b44b6db4cffacc1f31ed76",
+          "Name": "Сплайн",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение строковых наименований классов объектов чертежа\n\nSelection.AutoCADObjectsClasses ( ): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Selection.GetSelectedObjectsInDrawing@DynNCAD.NanoCAD.Document,string[]",
+      "Id": "a3eb600265464a5a9db74b7a1e39dc25",
+      "Inputs": [
+        {
+          "Id": "d55f158bf3544d91a50d435afe68b074",
+          "Name": "Document",
+          "Description": "Project.NDocument\n\nDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ad133771af4a4874a89d5b4219e34cb6",
+          "Name": "classes_names",
+          "Description": "Список наименований классов объектов, которые надо отобрать\n\nstring[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c6943bbd62444bdebeb0d43eedfa250d",
+          "Name": "AcadEntity[]",
+          "Description": "AcadEntity[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение объектов, выбранных в текущем чертеже с возможностью сортировки объектов по списку классов\n\nSelection.GetSelectedObjectsInDrawing (Document: Document, classes_names: string[]): AcadEntity[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a=[b];\nb;",
+      "Id": "d34602f5b1934344a9d79e0043e5a369",
+      "Inputs": [
+        {
+          "Id": "daf32f4cbfb9488dbf70765992facbf3",
+          "Name": "b",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6bf45e49cb9b4d75ad38f6b5b0839bf1",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7497069f81f64f04b35db85413c5457c",
+          "Name": "",
+          "Description": "Значение выражения в строке 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadPoint.AcadPoint@DynNCAD.AcadObjects.AcadEntity",
+      "Id": "ea2212400ec14b8a9b1d49bced749939",
+      "Inputs": [
+        {
+          "Id": "e34dc8dd2a60425da0469c1eb52d052f",
+          "Name": "AcadEntity",
+          "Description": "AcadEntity",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6394da9fba80437186c0badfdfea8cee",
+          "Name": "AcadPoint",
+          "Description": "AcadPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение точки как объекта чертежа\n\nAcadPoint.AcadPoint (AcadEntity: AcadEntity): AcadPoint"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.AcadObjects.AcadEntities.AcadPoint.Coordinates",
+      "Id": "1fad08eb9f124389b12b55032828c387",
+      "Inputs": [
+        {
+          "Id": "7e98ebe67c55464db50b6cfb95a956f8",
+          "Name": "acadPoint",
+          "Description": "DynNCAD.AcadObjects.AcadEntities.AcadPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0c05ce1d44aa463986fa636f060d64b8",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Получение координаты точки\n\nAcadPoint.Coordinates: Point"
     }
   ],
   "Connectors": [
@@ -293,9 +588,14 @@
       "Id": "9bfd05d610ec482582d6e19ca53737c8"
     },
     {
+      "Start": "084ae2dbf17a42e28ccddb7d17387b92",
+      "End": "d55f158bf3544d91a50d435afe68b074",
+      "Id": "8fb3cd4a4a4c46c889d86dc3f360265e"
+    },
+    {
       "Start": "85772b579712477c80931e91265d4296",
-      "End": "b684e092faaf493da7d4d2ef906f235d",
-      "Id": "f4774a4d1f1e4b08989c481cbdfe9ab7"
+      "End": "41f088b3a0f84b498a01275a998a27f0",
+      "Id": "0ca433925fd94352af8afe6a3439503a"
     },
     {
       "Start": "66f066020ffc42eeb2225e695b5ce1b2",
@@ -308,11 +608,6 @@
       "Id": "d30dd09350da4e749203f625dd573b80"
     },
     {
-      "Start": "4556706cce4f47448be7d1fd687127b7",
-      "End": "3ba94f96747c4e49b970513a9aabf098",
-      "Id": "6ea42f1023d44a959bc0e53f0bd07d74"
-    },
-    {
       "Start": "ec4e23f622de4360990b01b7a4d0d3e6",
       "End": "d7f57f72a8234960b32532edc4ef55ad",
       "Id": "cf4a4640405b4c34b2b27d6017ff0f6c"
@@ -321,6 +616,36 @@
       "Start": "88c4e57fece7464faee72f750f608f08",
       "End": "6480b656a695480cb1ef346bfbd3ebdf",
       "Id": "961f331e465b47b1ba9570d6c0cd79d0"
+    },
+    {
+      "Start": "1f1229fb08654e4e81d2da3e6343a712",
+      "End": "71d5a2181e2442dcb179e50487b5745d",
+      "Id": "001b7772105f4a4b811f96b78ef68add"
+    },
+    {
+      "Start": "5c3a763eaec1460eb8856d5b7f83149c",
+      "End": "daf32f4cbfb9488dbf70765992facbf3",
+      "Id": "155001f1a00341e998d7190982ee3ec0"
+    },
+    {
+      "Start": "c6943bbd62444bdebeb0d43eedfa250d",
+      "End": "e34dc8dd2a60425da0469c1eb52d052f",
+      "Id": "4bc8facf4ecf4663abf52351cbf38602"
+    },
+    {
+      "Start": "6bf45e49cb9b4d75ad38f6b5b0839bf1",
+      "End": "ad133771af4a4874a89d5b4219e34cb6",
+      "Id": "6f46e11ca4764d71a13402a5ccedc4f8"
+    },
+    {
+      "Start": "6394da9fba80437186c0badfdfea8cee",
+      "End": "7e98ebe67c55464db50b6cfb95a956f8",
+      "Id": "446f67e34fa646f9b9a813d23fef383c"
+    },
+    {
+      "Start": "0c05ce1d44aa463986fa636f060d64b8",
+      "End": "3ba94f96747c4e49b970513a9aabf098",
+      "Id": "fc2af2271e44412eadab55844b71d14f"
     }
   ],
   "Dependencies": [],
@@ -372,8 +697,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 383.071583239348,
-        "Y": 430.18717299426294
+        "X": 436.56354737388438,
+        "Y": 635.25066993580549
       },
       {
         "ShowGeometry": true,
@@ -382,8 +707,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 659.531167104634,
-        "Y": 431.72758912897689
+        "X": 713.02313123917043,
+        "Y": 636.79108607051944
       },
       {
         "ShowGeometry": true,
@@ -392,8 +717,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1675.367806353524,
-        "Y": 598.39424862568285
+        "X": 2176.0737331599212,
+        "Y": 643.23637195926881
       },
       {
         "ShowGeometry": true,
@@ -402,8 +727,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1347.9185035513353,
-        "Y": 440.63241146759054
+        "X": 1334.9274619598389,
+        "Y": 639.20976150903243
       },
       {
         "ShowGeometry": true,
@@ -412,18 +737,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1019.6707381596809,
-        "Y": 438.57443174726671
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "fd0ee568df53494595fed13da393241a",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1121.0488470560942,
-        "Y": 599.69019426544969
+        "X": 1006.6796965681845,
+        "Y": 637.1517817887086
       },
       {
         "ShowGeometry": true,
@@ -432,8 +747,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1366.243451127302,
-        "Y": 691.5284665273407
+        "X": 1971.6694073150879,
+        "Y": 713.33218339702125
       },
       {
         "ShowGeometry": true,
@@ -442,18 +757,68 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2002.9024073489329,
-        "Y": 669.69958937974468
+        "X": 2532.1209795700088,
+        "Y": 687.00550624053074
       },
       {
         "ShowGeometry": true,
-        "Name": "AcadText.Rotation",
-        "Id": "64cae6c4e86f4433ab1d661456522766",
+        "Name": "AcadText.SetRotation",
+        "Id": "f3bc9e5a751c4704b04fd68962142d4d",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 2395.6886550460922,
-        "Y": 659.04392586865379
+        "X": 2800.783791966257,
+        "Y": 645.07871548066441
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Selection.AutoCADObjectsClasses",
+        "Id": "1360a947beec4ff6af5b90297b7d7f40",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 554.62407878544275,
+        "Y": 870.4068605253841
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Selection.GetSelectedObjectsInDrawing",
+        "Id": "a3eb600265464a5a9db74b7a1e39dc25",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1030.9221115179625,
+        "Y": 1020.1705142502331
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "d34602f5b1934344a9d79e0043e5a369",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 864.69981439087655,
+        "Y": 1071.1625092563022
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadPoint.AcadPoint",
+        "Id": "ea2212400ec14b8a9b1d49bced749939",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1357.5353070043452,
+        "Y": 1026.4135031079018
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AcadPoint.Coordinates",
+        "Id": "1fad08eb9f124389b12b55032828c387",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1638.5154989211112,
+        "Y": 1037.325355221174
       }
     ],
     "Annotations": [
@@ -464,12 +829,12 @@
           "6574a6448f794636a42578eb37b839f3",
           "768e9be2841141d890c72f0d2520be80"
         ],
-        "Left": 373.071583239348,
-        "Top": 377.18717299426294,
+        "Left": 426.56354737388438,
+        "Top": 582.25066993580549,
         "Width": 546.459583865286,
         "Height": 147.54041613471395,
         "FontSize": 36.0,
-        "InitialTop": 430.18717299426294,
+        "InitialTop": 635.25066993580549,
         "InitialHeight": 146.54041613471395,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
@@ -479,16 +844,15 @@
         "Title": "Параметры создания текста",
         "Nodes": [
           "f38b681b92074bd3b151f20ba36c5533",
-          "fd0ee568df53494595fed13da393241a",
           "8a211738b74d4fc8bdeb095be690bc4c"
         ],
-        "Left": 1111.0488470560942,
-        "Top": 545.39424862568285,
-        "Width": 835.31895929742973,
-        "Height": 249.13421790165785,
+        "Left": 1961.6694073150879,
+        "Top": 590.23637195926881,
+        "Width": 485.40432584483324,
+        "Height": 226.09581143775245,
         "FontSize": 36.0,
-        "InitialTop": 598.39424862568285,
-        "InitialHeight": 238.13421790165785,
+        "InitialTop": 643.23637195926881,
+        "InitialHeight": 215.09581143775245,
         "TextblockHeight": 43.0,
         "Background": "#FFFFAA45"
       },
@@ -499,13 +863,13 @@
           "83e3dc0c16634e4bb15a05ca73996d6d",
           "c8257633dc5f409c8875c5fd03395ce4"
         ],
-        "Left": 1009.6707381596809,
-        "Top": 385.57443174726671,
+        "Left": 996.67969656818445,
+        "Top": 584.1517817887086,
         "Width": 615.24776539165441,
-        "Height": 148.05797972032389,
+        "Height": 148.05797972032383,
         "FontSize": 36.0,
-        "InitialTop": 438.57443174726671,
-        "InitialHeight": 147.05797972032389,
+        "InitialTop": 637.1517817887086,
+        "InitialHeight": 147.05797972032383,
         "TextblockHeight": 43.0,
         "Background": "#FFBB87C6"
       },
@@ -513,21 +877,42 @@
         "Id": "ba4dfc86aba44dc3b0240bd3720f0f93",
         "Title": "Разворот созданного текста",
         "Nodes": [
-          "e983cf6fe0ad40fa92b49c0ce621cbaa"
+          "e983cf6fe0ad40fa92b49c0ce621cbaa",
+          "f3bc9e5a751c4704b04fd68962142d4d"
         ],
-        "Left": 1992.9024073489329,
-        "Top": 529.69958937974468,
-        "Width": 199.29666666666668,
-        "Height": 233.0,
+        "Left": 2522.1209795700088,
+        "Top": 592.07871548066441,
+        "Width": 488.66281239624823,
+        "Height": 187.92679075986632,
         "FontSize": 36.0,
-        "InitialTop": 669.69958937974468,
-        "InitialHeight": 222.12866884305913,
-        "TextblockHeight": 130.0,
+        "InitialTop": 645.07871548066441,
+        "InitialHeight": 186.92679075986632,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "28e393a7550b41d9af563eb4d74e70f8",
+        "Title": "Получение точки вставки из пространства модели",
+        "Nodes": [
+          "1360a947beec4ff6af5b90297b7d7f40",
+          "a3eb600265464a5a9db74b7a1e39dc25",
+          "d34602f5b1934344a9d79e0043e5a369",
+          "ea2212400ec14b8a9b1d49bced749939",
+          "1fad08eb9f124389b12b55032828c387"
+        ],
+        "Left": 544.62407878544275,
+        "Top": 817.4068605253841,
+        "Width": 1314.8914201356683,
+        "Height": 562.00000000000011,
+        "FontSize": 36.0,
+        "InitialTop": 870.4068605253841,
+        "InitialHeight": 345.7556487309181,
+        "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": -1700.9484736559129,
-    "Y": -325.69908312080531,
-    "Zoom": 1.0009240009373874
+    "X": -3155.7896393938167,
+    "Y": -692.02653204981448,
+    "Zoom": 1.4530538816772676
   }
 }
