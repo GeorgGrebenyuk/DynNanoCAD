@@ -2,7 +2,7 @@
 Репозиторий с исходным кодом для пакета нодов среды Autodesk Dynamo для поддержки платформы nanoCAD
 
 # Описание реализации и ограничения
-[См. выступление на nanoCAD API DAY](https://www.youtube.com/watch?v=eKz8k2Lr-rc&t=19357s)
+[См. выступление на nanoCAD API DAY](https://youtu.be/Z1P5ag5Qy70?t=19230)
 
 Текстовая версия будет позже.
 
