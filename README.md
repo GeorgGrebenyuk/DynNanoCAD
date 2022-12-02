@@ -1,13 +1,16 @@
 # DynNanoCAD
-Public repository with Autodesk Dynamo Core's package to connect with LLC Nanosoft NanoCAD (.NET COM API implementation).
+Репозиторий с исходным кодом для пакета нодов среды Autodesk Dynamo для поддержки платформы nanoCAD
 
-### Become a member of NanoCAD's developer club - register [here](https://developer.nanocad.ru).
+# Описание реализации и ограничения
+[См. выступление на nanoCAD API DAY](https://www.youtube.com/watch?v=eKz8k2Lr-rc&t=19357s)
 
-# About project
-Slow step-by-step deeping into NanoCAD API (due to sanctions) with implementation that in Dynamo Core.
-## Build
-Standard building via MS VS 2017+ with single external dependence - ZeroTouch library (official dynamo's package). 
-Add compiled dll-library to Dynamo and starting using package. Next I'll publish it as web-package in Dynamo's package manager.
+Текстовая версия будет позже.
 
-# Articles
-1. [NanoCAD и ODA. Инструменты разработки. Часть 1 - приложение, документ, слои.](https://zen.yandex.ru/media/id/5d0dba97ecd5cf00afaf2938/6223747e78c7ec42f56f98ee)
+# Об установке среды Dynamo и загрузке пакета нодов
+
+1. Скачиваем DynamoCoreRuntime [отсюда](https://dynamobuilds.com) и распаковываем. Тестировалось на версии 2.12.1 
+2. Загружаем из раздела [Releases](https://github.com/GeorgGrebenyuk/DynNanoCAD/releases) последнюю версию пакета нодов и распаковываем; 
+3. Запускаем из распакованного архива файл `DynamoSandbox.exe`, далее идет Файл -> Импорт библиотеки -> Указываем путь к файлу `DynNCAD.dll` из предыдущего распакованного архива;
+4. Пользуемся библиотекой
+
+Отдельные скрипты приведены [в папке](https://github.com/GeorgGrebenyuk/DynNanoCAD/tree/main/scripts_dyn) `scripys_dyn` настоящего репозитория. Часть подходов кратко [показывалось в видеозаписи](https://www.youtube.com/watch?v=eKz8k2Lr-rc&t=19357s) презентации решения на nanoCAD API DAY. 
