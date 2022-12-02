@@ -13,4 +13,4 @@
 3. Запускаем из распакованного архива файл `DynamoSandbox.exe`, далее идет Файл -> Импорт библиотеки -> Указываем путь к файлу `DynNCAD.dll` из предыдущего распакованного архива;
 4. Пользуемся библиотекой
 
-Отдельные скрипты приведены [в папке](https://github.com/GeorgGrebenyuk/DynNanoCAD/tree/main/scripts_dyn) `scripys_dyn` настоящего репозитория. Часть подходов кратко [показывалось в видеозаписи](https://www.youtube.com/watch?v=eKz8k2Lr-rc&t=19357s) презентации решения на nanoCAD API DAY. 
+Отдельные скрипты приведены [в папке](https://github.com/GeorgGrebenyuk/DynNanoCAD/tree/main/scripts_dyn) `scripys_dyn` настоящего репозитория. Часть подходов кратко [показывалось в видеозаписи](https://youtu.be/Z1P5ag5Qy70?t=19230) презентации решения на nanoCAD API DAY. 
