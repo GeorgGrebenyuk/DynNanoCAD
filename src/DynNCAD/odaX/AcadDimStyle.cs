@@ -12,12 +12,12 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.Project.Styles
+namespace DynNCAD
 {
     //[dr.IsVisibleInDynamoLibrary(false)]
     public class AcadDimStyle
     {
-        internal OdaX.AcadDimStyle style;
+        public OdaX.AcadDimStyle style;
         internal AcadDimStyle(object style)
         {
             this.style = style as OdaX.AcadDimStyle;
@@ -25,7 +25,7 @@ namespace DynNCAD.Project.Styles
         /// <summary>
         /// Получение активного размерного стиля документа
         /// </summary>
-        public AcadDimStyle(NanoCAD.Document Document)
+        public AcadDimStyle(Document Document)
         {
             this.style = Document._i.ActiveDimStyle as OdaX.AcadDimStyle;
         }
@@ -35,7 +35,7 @@ namespace DynNCAD.Project.Styles
         /// </summary>
         /// <param name="Document"></param>
         /// <returns></returns>
-        public static List<AcadDimStyle> DimStyles (NanoCAD.Document Document)
+        public static List<AcadDimStyle> DimStyles (Document Document)
         {
             List<AcadDimStyle> objects = new List<AcadDimStyle>();
             IAcadDimStyles styles = Document._i.DimStyles;

@@ -11,20 +11,19 @@ using dg = DynNCAD.Geometry;
 using nanoCAD;
 using OdaX;
 #endregion
-namespace DynNCAD.NanoCAD
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с nanoCAD.Application
     /// </summary>
     public class Application
     {
-        internal nanoCAD.Application _i;
+        public nanoCAD.Application _i;
         /// <summary>
         /// Получение первого запущенного приложения NanoCAD
         /// </summary>
         public Application()
         {
-
             this._i = System.Runtime.InteropServices.
                 Marshal.GetActiveObject("nanoCAD.Application") as nanoCAD.Application;
         }

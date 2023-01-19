@@ -12,15 +12,14 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects 
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с объектами NanoCAD (общий класс для всех сущностей объектов модели)
     /// </summary>
-    public class AcadEntity : AcadObject
+    public class AcadEntity
     {
         public OdaX.AcadEntity _i;
-
         public AcadEntity(dynamic sub_class)
         {
             this._i = sub_class._i;
@@ -30,10 +29,6 @@ namespace DynNCAD.AcadObjects
         {
             this._i = entity;
         }
-        #region properies
-
-
-
         /// <summary>
         /// Получение слоя объекта
         /// </summary>
@@ -70,8 +65,7 @@ namespace DynNCAD.AcadObjects
         /// Получение типа цвета объекта
         /// </summary>
         public object Color => this._i.color;
-        #endregion
-        #region functions_as_SET
+
         /// <summary>
         /// Назначение слоя объекту
         /// </summary>
@@ -112,8 +106,6 @@ namespace DynNCAD.AcadObjects
         /// </summary>
         /// <param name="ACAD_COLOR"></param>
         public void SetColor(int ACAD_COLOR) => this._i.color = (ACAD_COLOR)ACAD_COLOR;
-        #endregion
-        #region functions
         /// <summary>
         /// Перемещение объекта из точки в точку
         /// </summary>
@@ -163,6 +155,5 @@ namespace DynNCAD.AcadObjects
             //return dg.BoundingBox.ByGeometry(new dg.Point(Tools.ToDynamoPoint()))
             return new List<object> { MinPoint, MaxPoint };
         }
-        #endregion
     }
 }

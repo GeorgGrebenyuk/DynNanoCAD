@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects.AcadEntities
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с таблицами NanoCAD
@@ -20,7 +20,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
     public class AcadTable
     {
         public OdaX.AcadTable _i;
-        #region constructors
         internal AcadTable() { }
         /// <summary>
         /// Приведение объекта модели к таблице
@@ -40,16 +39,13 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="columns_count">Число колонок</param>
         /// <param name="row_height">Высота строки</param>
         /// <param name="column_width">Ширина колонки</param>
-        public AcadTable(AcadObjects.AcadBlock block, dg.Point insetion_point, int rows_count = 4,
+        public AcadTable(AcadBlock block, dg.Point insetion_point, int rows_count = 4,
             int columns_count = 2, double row_height = 4.0, double column_width = 10.0)
         {
-            this._i = block._i.AddTable(Tools.PointByDynPoint(insetion_point), rows_count, columns_count, 
+            this._i = block._i.AddTable(Tools.PointByDynPoint(insetion_point), rows_count, columns_count,
                 row_height, column_width);
         }
-        #endregion
 
-
-        #region functions
         /// <summary>
         /// Получение значение ячейки таблицы
         /// </summary>
@@ -113,7 +109,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="style_name"></param>
         public void SetTextStyle(int rowType, string style_name) => this._i.SetTextStyle(rowType, style_name);
 
-        #region for cell
         /// <summary>
         /// Получение типа ячейки
         /// </summary>
@@ -163,13 +158,5 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="count"></param>
         /// <returns></returns>
         public int SetColumns_count(int count) => this._i.Columns = count;
-
-        #endregion
-
-        #endregion
-
-
-        #region properties
-        #endregion
     }
 }

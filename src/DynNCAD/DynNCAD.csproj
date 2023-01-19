@@ -55,26 +55,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcadObject.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadTable.cs" />
+    <Compile Include="odaX\AcadObject.cs" />
+    <Compile Include="odaX\AcadTable.cs" />
     <Compile Include="dyn_template.cs" />
-    <Compile Include="AcadObjects\AcadEntity.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadMText.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadText.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadLine.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadPoint.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadLWPolyline.cs" />
-    <Compile Include="AcadObjects\AcadBlock.cs" />
-    <Compile Include="AcadObjects\AcadEntities\AcadBlockReference.cs" />
+    <Compile Include="odaX\AcadEntity.cs" />
+    <Compile Include="odaX\AcadMText.cs" />
+    <Compile Include="odaX\AcadText.cs" />
+    <Compile Include="odaX\AcadLine.cs" />
+    <Compile Include="odaX\AcadPoint.cs" />
+    <Compile Include="odaX\AcadLWPolyline.cs" />
+    <Compile Include="odaX\AcadBlock.cs" />
+    <Compile Include="odaX\AcadBlockReference.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="NanoCAD\Application.cs" />
-    <Compile Include="AcadDatabase.cs" />
+    <Compile Include="odaX\AcadDatabase.cs" />
     <Compile Include="NanoCAD\Document.cs" />
-    <Compile Include="AcadObjects\AcadLayer.cs" />
+    <Compile Include="odaX\AcadLayer.cs" />
     <Compile Include="Selection.cs" />
-    <Compile Include="AcadObjects\AcadUCS.cs" />
+    <Compile Include="odaX\AcadUCS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AcadObjects\Styles\AcadDimStyle.cs" />
+    <Compile Include="odaX\AcadDimStyle.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>

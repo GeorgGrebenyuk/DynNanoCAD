@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects.AcadEntities
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с многострочным текстом (MText), интерфейс AcadMText
@@ -20,7 +20,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
     public class AcadMText : AcadEntity
     {
         public OdaX.AcadMText _i;
-        #region creation
         /// <summary>
         /// Получение текста из объекта модели
         /// </summary>
@@ -37,12 +36,10 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="insetion_point">Точка вставки</param>
         /// <param name="text_width">Ширина поля для текста</param>
         /// <param name="text">Значение текста</param>
-        public AcadMText(AcadObjects.AcadBlock block, dg.Point insetion_point, double text_width, string text)
+        public AcadMText(AcadBlock block, dg.Point insetion_point, double text_width, string text)
         {
             this._i = block._i.AddMText(Tools.PointByDynPoint(insetion_point), text_width, text);
         }
-        #endregion
-        #region properties
         /// <summary>
         /// Получение текущего значения для выравнивания текста
         /// </summary>
@@ -76,8 +73,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         public string TextString => this._i.TextString;
 
-        #endregion
-        #region static_containers
         /// <summary>
         /// Варианты ориентации текста
         /// </summary>
@@ -90,8 +85,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
                 {"Слева направо", 1 }, {"Справа налево", 2 },{"Сверху вниз", 3 },{"Снизу вверх", 4 },{"По стилю", 5 }
             };
         }
-        #endregion
-        #region functions
         /// <summary>
         /// Установка значения ширины для текста
         /// </summary>
@@ -125,7 +118,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         /// <param name="text"></param>
         public void SetTextString(string text) => this._i.TextString = text;
-        #endregion
 
     }
 }

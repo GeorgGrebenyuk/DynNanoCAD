@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.NanoCAD
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с nanoCAD.Document
@@ -21,11 +21,11 @@ namespace DynNCAD.NanoCAD
     /// </summary>
     public class Document
     {
-        internal nanoCAD.Document _i;
+        public nanoCAD.Document _i;
         /// <summary>
         /// Получает активный документ (проект)
         /// </summary>
-        /// <param name="ncad_app"></param>
+        /// <param name="Application"></param>
 
         public Document(Application Application)
         {

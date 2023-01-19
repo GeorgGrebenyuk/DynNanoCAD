@@ -17,10 +17,10 @@ namespace DynNCAD.AcadObjects.AcadEntities
     /// <summary>
     /// Класс для работы с однострочным текстом (Text), интерфейс AcadText
     /// </summary>
-    public class AcadText : AcadEntity
+    public class AcadText
     {
         public OdaX.AcadText _i;
-        #region constructors
+
         /// <summary>
         /// Создание объекта текста в данном блоке (пространстве модели или листов)
         /// </summary>
@@ -28,7 +28,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// <param name="insetion_point">Точка вставки</param>
         /// <param name="text_height">Высота текста</param>
         /// <param name="text">Значение текста</param>
-        public AcadText(AcadObjects.AcadBlock block, dg.Point insetion_point, double text_height, string text)
+        public AcadText(AcadBlock block, dg.Point insetion_point, double text_height, string text)
         {
             this._i = block._i.AddText(text, Tools.PointByDynPoint(insetion_point), text_height);
         }
@@ -41,10 +41,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
             if (AcadEntity._i as OdaX.AcadText != null) this._i = AcadEntity._i as OdaX.AcadText;
             else this._i = null;
         }
-        #endregion
 
-
-        #region functions
         /// <summary>
         /// Установка нового выравнивания текста (см. ноду TextAlignmentTypes)
         /// </summary>
@@ -78,9 +75,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         /// <param name="text"></param>
         public void SetTextString(string text) => this._i.TextString = text;
-        #endregion
 
-        #region properties
         /// <summary>
         /// Получение текущего значения для выравнивания текста
         /// </summary>
@@ -115,8 +110,6 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         public string TextString => this._i.TextString;
 
-        #endregion
-        #region static_containers
         /// <summary>
         /// Варианты выравнивания текста
         /// </summary>
@@ -137,8 +130,5 @@ namespace DynNCAD.AcadObjects.AcadEntities
                 {"Вверх по центру", 7 },{"Вверх влево", 6 },{"Вверх вправо", 8 }
             };
         }
-        #endregion
-        
-
     }
 }

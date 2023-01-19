@@ -19,38 +19,37 @@ namespace DynNCAD
     /// </summary>
     public class AcadDatabase
     {
-        internal OdaX.AcadDatabase db;
+        public OdaX.AcadDatabase db;
         /// <summary>
         /// Получение базы данных чертежа
         /// </summary>
         /// <param name="NDocument"></param>
-        public AcadDatabase (NanoCAD.Document Document)
+        public AcadDatabase (Document Document)
         {
             this.db = Document._i.Database;
         }
-        #region properties
         /// <summary>
         /// Возвращает Block пространства модели чертежа
         /// </summary>
-        public AcadObjects.AcadBlock ModelSpace => new AcadObjects.AcadBlock(this.db.ModelSpace);
+        public AcadBlock ModelSpace => new AcadBlock(this.db.ModelSpace);
         /// <summary>
         /// Получение Block пространства листа (активного?)
         /// </summary>
-        public AcadObjects.AcadBlock PaperSpace => new AcadObjects.AcadBlock(this.db.PaperSpace);
+        public AcadBlock PaperSpace => new AcadBlock(this.db.PaperSpace);
         /// <summary>
         /// Получение Блоков (пространства) листов чертежа
         /// </summary>
         /// <returns></returns>
-        public List<AcadObjects.AcadBlock> Layouts_AsBlocks()
+        public List<AcadBlock> Layouts_AsBlocks()
         {
-            List<AcadObjects.AcadBlock> blocks = new List<AcadObjects.AcadBlock>();
+            List<AcadBlock> blocks = new List<AcadBlock>();
             IAcadBlocks doc_blocks = this.db.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
                 if (bl.Name.Contains("*Paper_Space"))
                 {
-                    blocks.Add(new AcadObjects.AcadBlock(bl));
+                    blocks.Add(new AcadBlock(bl));
                 }
             }
             return blocks;
@@ -60,16 +59,16 @@ namespace DynNCAD
         /// Возвращает коллекцию блоков для данного чертежа за исключением пространства Модели и Листов
         /// </summary>
         /// <returns></returns>
-        public List<AcadObjects.AcadBlock> Blocks()
+        public List<AcadBlock> Blocks()
         {
-            List<AcadObjects.AcadBlock> blocks = new List<AcadObjects.AcadBlock>();
+            List<AcadBlock> blocks = new List<AcadBlock>();
             IAcadBlocks doc_blocks = this.db.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
                 if (!bl.Name.Contains("*Model_Space") && !bl.Name.Contains("*Paper_Space"))
                 {
-                    blocks.Add(new AcadObjects.AcadBlock(bl));
+                    blocks.Add(new AcadBlock(bl));
                 }
             }
             return blocks;
@@ -78,13 +77,13 @@ namespace DynNCAD
         /// Получение списка слоев чертежа
         /// </summary>
         /// <returns></returns>
-        public List<AcadObjects.AcadLayer> GetLayers()
+        public List<AcadLayer> GetLayers()
         {
-            List<AcadObjects.AcadLayer> layers = new List<AcadObjects.AcadLayer>();
+            List<AcadLayer> layers = new List<AcadLayer>();
             var layers_collection = this.db.Layers;
             for (int i = 0; i < layers_collection.Count; i ++)
             {
-                layers.Add(new AcadObjects.AcadLayer(layers_collection.Item(i)));
+                layers.Add(new AcadLayer(layers_collection.Item(i)));
             }
             return layers;
         }
@@ -92,16 +91,15 @@ namespace DynNCAD
         /// Получение списка пользовательских систем координат чертежа
         /// </summary>
         /// <returns></returns>
-        public List<AcadObjects.AcadUCS> GetUCS()
+        public List<AcadUCS> GetUCS()
         {
-            List<AcadObjects.AcadUCS> l = new List<AcadObjects.AcadUCS>();
+            List<AcadUCS> l = new List<AcadUCS>();
             var ucss = this.db.UserCoordinateSystems;
             for (int i = 0; i < ucss.Count; i ++)
             {
-                l.Add(new AcadObjects.AcadUCS(ucss.Item(i)));
+                l.Add(new AcadUCS(ucss.Item(i)));
             }
             return l;
         }
-        #endregion
     }
 }

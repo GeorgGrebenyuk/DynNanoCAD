@@ -12,14 +12,14 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects.AcadEntities
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с полилиниями (устаревший тип AcDbPolyline = AcadLWPolyline)
     /// </summary>
-    public class AcadLWPolyline : AcadEntity
+    public class AcadLWPolyline
     {
-        internal OdaX.AcadLWPolyline _i;
+        public OdaX.AcadLWPolyline _i;
 
         //internal AcadLWPolyline lw_pline;
         /// <summary>
@@ -36,7 +36,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         /// <param name="Block"></param>
         /// <param name="points"></param>
-        public AcadLWPolyline(AcadObjects.AcadBlock Block, List<dg.Point> points)
+        public AcadLWPolyline(AcadBlock Block, List<dg.Point> points)
         {
             List<double> pnts = new List<double>();
             foreach (var p in points)

@@ -12,14 +12,14 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects.AcadEntities
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с вхождениями блоков
     /// </summary>
-    public class AcadBlockReference : AcadEntity
+    public class AcadBlockReference
     {
-        internal OdaX.AcadBlockReference block_ref;
+        public OdaX.AcadBlockReference block_ref;
         /// <summary>
         /// Получение блока из com-интерфейса
         /// </summary>

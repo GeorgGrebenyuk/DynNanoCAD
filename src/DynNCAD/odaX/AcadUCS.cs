@@ -12,14 +12,14 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с системами координат чертежа
     /// </summary>
-    public class AcadUCS : AcadObject
+    public class AcadUCS
     {
-        internal OdaX.AcadUCS ucs;
+        public OdaX.AcadUCS ucs;
         internal AcadUCS(OdaX.AcadUCS ucs)
         {
             this.ucs = ucs;

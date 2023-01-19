@@ -12,14 +12,14 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects.AcadEntities
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с точками NanoCAD
     /// </summary>
-    public class AcadPoint : AcadEntity
+    public class AcadPoint
     {
-        internal OdaX.AcadPoint _i;
+        public OdaX.AcadPoint _i;
         /// <summary>
         /// Получение точки как объекта чертежа
         /// </summary>
@@ -34,7 +34,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         /// <param name="Block"></param>
         /// <param name="insertion_point"></param>
-        public AcadPoint (AcadObjects.AcadBlock Block, dg.Point insertion_point)
+        public AcadPoint (AcadBlock Block, dg.Point insertion_point)
         {
             this._i = Block._i.AddPoint(Tools.PointByDynPoint(insertion_point));
         }

@@ -12,12 +12,12 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы со слоями
     /// </summary>
-    public class AcadLayer : AcadObject
+    public class AcadLayer
     {
         public OdaX.AcadLayer nc_layer;
         internal AcadLayer (OdaX.AcadLayer layer)

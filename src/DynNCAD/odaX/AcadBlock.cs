@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 using dr = Autodesk.DesignScript.Runtime;
 using dg = DynNCAD.Geometry;
-
-using nanoCAD;
-using OdaX;
 #endregion
 
-namespace DynNCAD.AcadObjects
+namespace DynNCAD
 {
     /// <summary>
     /// Класс для работы с блоками (не путать с Вхождениями блоков (Block Reference)!)
     /// </summary>
-    public partial class AcadBlock : AcadObject
+    public class AcadBlock
     {
-        internal OdaX.AcadBlock _i;
+        public OdaX.AcadBlock _i;
 
         internal AcadBlock(object block)
         {
