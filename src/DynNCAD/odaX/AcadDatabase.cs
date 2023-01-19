@@ -19,23 +19,24 @@ namespace DynNCAD
     /// </summary>
     public class AcadDatabase
     {
-        public OdaX.AcadDatabase db;
+        [dr.IsVisibleInDynamoLibrary(false)]
+        public OdaX.AcadDatabase _i;
         /// <summary>
         /// Получение базы данных чертежа
         /// </summary>
         /// <param name="NDocument"></param>
         public AcadDatabase (Document Document)
         {
-            this.db = Document._i.Database;
+            this._i= Document._i.Database;
         }
         /// <summary>
         /// Возвращает Block пространства модели чертежа
         /// </summary>
-        public AcadBlock ModelSpace => new AcadBlock(this.db.ModelSpace);
+        public AcadBlock ModelSpace => new AcadBlock(this._i.ModelSpace);
         /// <summary>
         /// Получение Block пространства листа (активного?)
         /// </summary>
-        public AcadBlock PaperSpace => new AcadBlock(this.db.PaperSpace);
+        public AcadBlock PaperSpace => new AcadBlock(this._i.PaperSpace);
         /// <summary>
         /// Получение Блоков (пространства) листов чертежа
         /// </summary>
@@ -43,7 +44,7 @@ namespace DynNCAD
         public List<AcadBlock> Layouts_AsBlocks()
         {
             List<AcadBlock> blocks = new List<AcadBlock>();
-            IAcadBlocks doc_blocks = this.db.Blocks;
+            IAcadBlocks doc_blocks = this._i.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
@@ -62,7 +63,7 @@ namespace DynNCAD
         public List<AcadBlock> Blocks()
         {
             List<AcadBlock> blocks = new List<AcadBlock>();
-            IAcadBlocks doc_blocks = this.db.Blocks;
+            IAcadBlocks doc_blocks = this._i.Blocks;
             for (int i = 0; i < doc_blocks.Count; i++)
             {
                 IAcadBlock bl = doc_blocks.Item(i);
@@ -80,7 +81,7 @@ namespace DynNCAD
         public List<AcadLayer> GetLayers()
         {
             List<AcadLayer> layers = new List<AcadLayer>();
-            var layers_collection = this.db.Layers;
+            var layers_collection = this._i.Layers;
             for (int i = 0; i < layers_collection.Count; i ++)
             {
                 layers.Add(new AcadLayer(layers_collection.Item(i)));
@@ -94,12 +95,13 @@ namespace DynNCAD
         public List<AcadUCS> GetUCS()
         {
             List<AcadUCS> l = new List<AcadUCS>();
-            var ucss = this.db.UserCoordinateSystems;
+            var ucss = this._i.UserCoordinateSystems;
             for (int i = 0; i < ucss.Count; i ++)
             {
                 l.Add(new AcadUCS(ucss.Item(i)));
             }
             return l;
         }
+
     }
 }

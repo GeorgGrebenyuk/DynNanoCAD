@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadLWPolyline
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadLWPolyline _i;
 
         //internal AcadLWPolyline lw_pline;

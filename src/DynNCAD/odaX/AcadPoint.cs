@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadPoint
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadPoint _i;
         /// <summary>
         /// Получение точки как объекта чертежа

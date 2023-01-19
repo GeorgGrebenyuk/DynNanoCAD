@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadLayer
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadLayer nc_layer;
         internal AcadLayer (OdaX.AcadLayer layer)
         {

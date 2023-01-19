@@ -19,6 +19,7 @@ namespace DynNCAD.AcadObjects.AcadEntities
     /// </summary>
     public class AcadText
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadText _i;
 
         /// <summary>
@@ -110,25 +111,5 @@ namespace DynNCAD.AcadObjects.AcadEntities
         /// </summary>
         public string TextString => this._i.TextString;
 
-        /// <summary>
-        /// Варианты выравнивания текста
-        /// </summary>
-        /// <returns></returns>
-        [dr.MultiReturn(new[] { "Вписать", "Вниз по центру" ,
-            "По ширине", "Влево", "Середина","Середина по центру",
-            "Середина влево", "Середина вправо","Вправо",
-            "Вверх по центру","Вверх влево", "Вверх вправо" })]
-        public static Dictionary<string, int> TextAlignmentTypes ()
-        {
-            return new Dictionary<string, int>()
-            {
-                {"Вписать", 3 }, {"Вниз по центру", 13 },
-                {"Вниз влево", 12 },{"Вниз вправо", 14 },
-                {"По центру", 1 },{"По ширине", 5 },{"Влево", 0 },
-                {"Середина", 4 },{"Середина по центру", 10 },
-                {"Середина влево", 9 },{"Середина вправо", 11 },{"Вправо", 2 },
-                {"Вверх по центру", 7 },{"Вверх влево", 6 },{"Вверх вправо", 8 }
-            };
-        }
     }
 }

@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadBlockReference
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadBlockReference block_ref;
         /// <summary>
         /// Получение блока из com-интерфейса

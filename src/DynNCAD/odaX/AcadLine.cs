@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadLine
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadLine _i;
         /// <summary>
         /// Получение отрезка из объекта модели AcadEntity

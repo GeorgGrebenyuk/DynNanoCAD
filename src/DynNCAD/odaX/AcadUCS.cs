@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadUCS
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadUCS ucs;
         internal AcadUCS(OdaX.AcadUCS ucs)
         {

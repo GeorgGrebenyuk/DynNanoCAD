@@ -17,21 +17,11 @@ namespace DynNCAD
     [dr.IsVisibleInDynamoLibrary(false)]
     public class dyn_template
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadEntity _i;
-        #region constructors
-        internal dyn_template() { }
         public dyn_template (dynamic entity)
         {
             this._i = entity._i;
         }
-        #endregion
-
-
-        #region functions
-        #endregion
-
-
-        #region properties
-        #endregion
     }
 }

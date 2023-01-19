@@ -16,6 +16,7 @@ namespace DynNCAD
 {
     public class AcadObject
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadObject _i;
         internal AcadObject() { }
         public AcadObject(dynamic entity)

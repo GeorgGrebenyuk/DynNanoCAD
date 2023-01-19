@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadTable
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadTable _i;
         internal AcadTable() { }
         /// <summary>

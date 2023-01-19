@@ -16,6 +16,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadBlock
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadBlock _i;
 
         internal AcadBlock(object block)
@@ -40,7 +41,5 @@ namespace DynNCAD
             }
             return objects;
         }
-
-
     }
 }

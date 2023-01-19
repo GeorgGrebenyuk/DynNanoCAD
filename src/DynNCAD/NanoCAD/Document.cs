@@ -21,6 +21,7 @@ namespace DynNCAD
     /// </summary>
     public class Document
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public nanoCAD.Document _i;
         /// <summary>
         /// Получает активный документ (проект)
@@ -44,5 +45,17 @@ namespace DynNCAD
         /// Получение полного пути к документу
         /// </summary>
         public string FullName => this._i.FullName;
+        public object Import (string FileName, dg.Point InsertionPoint, double ScaleFactor)
+        {
+            return this._i.Import(FileName, Tools.PointByDynPoint(InsertionPoint), ScaleFactor);
+        }
+        public void AuditInfo(bool FixErr) => this._i.AuditInfo(FixErr);
+        public void Save() => this._i.Save();
+        public void PurgeAll() => this._i.PurgeAll();
+        public object GetVariable(string Name) => this._i.GetVariable(Name);
+        public void SetVariable(string Name, object Value) => this._i.SetVariable(Name, Value);
+        public void Regen(nanoCAD.AcRegenType WhichViewports) => this._i.Regen(WhichViewports);
+
+
     }
 }

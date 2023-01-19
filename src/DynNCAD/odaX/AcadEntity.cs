@@ -19,6 +19,7 @@ namespace DynNCAD
     /// </summary>
     public class AcadEntity
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadEntity _i;
         public AcadEntity(dynamic sub_class)
         {

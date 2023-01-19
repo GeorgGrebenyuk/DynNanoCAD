@@ -55,6 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcadGroup.cs" />
+    <Compile Include="odaX\AcadFileDependency.cs" />
+    <Compile Include="odaX\AcadMaterial.cs" />
+    <Compile Include="odaX\AcadSummaryInfo.cs" />
     <Compile Include="odaX\AcadObject.cs" />
     <Compile Include="odaX\AcadTable.cs" />
     <Compile Include="dyn_template.cs" />

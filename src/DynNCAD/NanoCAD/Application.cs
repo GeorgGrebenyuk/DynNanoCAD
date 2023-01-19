@@ -18,6 +18,7 @@ namespace DynNCAD
     /// </summary>
     public class Application
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public nanoCAD.Application _i;
         /// <summary>
         /// Получение первого запущенного приложения NanoCAD

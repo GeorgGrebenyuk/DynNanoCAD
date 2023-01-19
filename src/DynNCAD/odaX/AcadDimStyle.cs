@@ -17,6 +17,7 @@ namespace DynNCAD
     //[dr.IsVisibleInDynamoLibrary(false)]
     public class AcadDimStyle
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadDimStyle style;
         internal AcadDimStyle(object style)
         {

@@ -17,8 +17,9 @@ namespace DynNCAD
     /// <summary>
     /// Класс для работы с многострочным текстом (MText), интерфейс AcadMText
     /// </summary>
-    public class AcadMText : AcadEntity
+    public class AcadMText
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadMText _i;
         /// <summary>
         /// Получение текста из объекта модели
@@ -73,18 +74,6 @@ namespace DynNCAD
         /// </summary>
         public string TextString => this._i.TextString;
 
-        /// <summary>
-        /// Варианты ориентации текста
-        /// </summary>
-        /// <returns></returns>
-        [dr.MultiReturn(new[] { "Слева направо", "Справа налево" , "Сверху вниз" , "Снизу вверх" , "По стилю"})]
-        public static Dictionary<string, int> TextDrawingDirectionTypes()
-        {
-            return new Dictionary<string, int>()
-            {
-                {"Слева направо", 1 }, {"Справа налево", 2 },{"Сверху вниз", 3 },{"Снизу вверх", 4 },{"По стилю", 5 }
-            };
-        }
         /// <summary>
         /// Установка значения ширины для текста
         /// </summary>
