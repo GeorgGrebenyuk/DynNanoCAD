@@ -11,8 +11,9 @@ namespace DynNCAD
 {
     public class AcadGroup
     {
+        [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadGroup _i;
-        internal AcadGroup (OdaX.AcadGroup AcadGroup)
+        internal AcadGroup(OdaX.AcadGroup AcadGroup)
         {
             this._i = AcadGroup;
         }
@@ -34,5 +35,9 @@ namespace DynNCAD
             }
             return ents;
         }
+        public int Count => this._i.Count;
+        public bool SetVisible (bool Visiable) => this._i.Visible = Visiable;
+        public string Name => this._i.Name;
+        public void SetName(string Name) => this._i.Name = Name;
     }
 }

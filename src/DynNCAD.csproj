@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\DynNCAD.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -33,16 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamoServices, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\DynamoVisualProgramming.DynamoServices.2.12.0.5650\lib\net48\DynamoServices.dll</HintPath>
+    <Reference Include="DynamoServices, Version=2.12.1.8246, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DynamoVisualProgramming.DynamoServices.2.12.1.8246\lib\net48\DynamoServices.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="DynamoUnits, Version=2.12.0.5650, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\DynamoUnits.dll</HintPath>
+    <Reference Include="DynamoUnits, Version=2.12.1.8246, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.1.8246\lib\net48\DynamoUnits.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ProtoGeometry, Version=2.12.0.5475, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.0.5650\lib\net48\ProtoGeometry.dll</HintPath>
+      <HintPath>packages\DynamoVisualProgramming.ZeroTouchLibrary.2.12.1.8246\lib\net48\ProtoGeometry.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -55,13 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcadGroup.cs" />
+    <Compile Include="odaX\AcadGroup.cs" />
     <Compile Include="odaX\AcadFileDependency.cs" />
     <Compile Include="odaX\AcadMaterial.cs" />
     <Compile Include="odaX\AcadSummaryInfo.cs" />
     <Compile Include="odaX\AcadObject.cs" />
     <Compile Include="odaX\AcadTable.cs" />
-    <Compile Include="dyn_template.cs" />
     <Compile Include="odaX\AcadEntity.cs" />
     <Compile Include="odaX\AcadMText.cs" />
     <Compile Include="odaX\AcadText.cs" />
@@ -111,9 +110,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

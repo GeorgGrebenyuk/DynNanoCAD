@@ -20,10 +20,10 @@ namespace DynNCAD
     public class AcadLayer
     {
         [dr.IsVisibleInDynamoLibrary(false)]
-        public OdaX.AcadLayer nc_layer;
+        public OdaX.AcadLayer _i;
         internal AcadLayer (OdaX.AcadLayer layer)
         {
-            this.nc_layer = layer;
+            this._i = layer;
         }
         /// <summary>
         /// Создание нового слоя по имени
@@ -32,12 +32,12 @@ namespace DynNCAD
         /// <param name="Name"></param>
         public AcadLayer (AcadDatabase Database, string Name)
         {
-            this.nc_layer = Database.db.Layers.Add(Name);
+            this._i = Database._i.Layers.Add(Name);
         }
         /// <summary>
         /// Получение описания слоя
         /// </summary>
-        public string Description => nc_layer.Description;
+        public string Description => _i.Description;
         /// <summary>
         /// Установка описания слоя
         /// </summary>
@@ -45,13 +45,13 @@ namespace DynNCAD
         /// <returns></returns>
         public AcadLayer SetDescription (string Description)
         {
-            this.nc_layer.Description = Description;
+            this._i.Description = Description;
             return this;
         }
         /// <summary>
         /// Проверка, является ли слой замороженным
         /// </summary>
-        public bool Freeze => nc_layer.Freeze;
+        public bool Freeze => _i.Freeze;
         /// <summary>
         /// Установка статуса замороженности слоя
         /// </summary>
@@ -59,21 +59,21 @@ namespace DynNCAD
         /// <returns></returns>
         public AcadLayer SetFreeze(bool Freeze)
         {
-            this.nc_layer.Freeze = Freeze;
+            this._i.Freeze = Freeze;
             return this;
         }
         /// <summary>
         /// Получение типа линий слоя (как строку)
         /// </summary>
-        public string Linetype => nc_layer.Linetype;
+        public string Linetype => _i.Linetype;
         /// <summary>
         /// Получение веса линиий слоя (как числа). Для расшифровки см. AcLineWeight в документации OdaX
         /// </summary>
-        public int Lineweight => (int)nc_layer.Lineweight;
+        public ACAD_LWEIGHT Lineweight => _i.Lineweight;
         /// <summary>
         /// Проверка, является ли слой заблокированным
         /// </summary>
-        public bool Lock => nc_layer.Lock;
+        public bool Lock => _i.Lock;
         /// <summary>
         /// Установка блокировки/разблокировки слоя
         /// </summary>
@@ -81,13 +81,13 @@ namespace DynNCAD
         /// <returns></returns>
         public AcadLayer SetLock (bool Lock)
         {
-            this.nc_layer.Lock = Lock;
+            this._i.Lock = Lock;
             return this;
         }
         /// <summary>
         /// Получение наименования слоя
         /// </summary>
-        public string Name => nc_layer.Name;
+        public string Name => _i.Name;
         /// <summary>
         /// Установка имени слоя
         /// </summary>
@@ -95,13 +95,13 @@ namespace DynNCAD
         /// <returns></returns>
         public AcadLayer SetName (string Name)
         {
-            this.nc_layer.Name = Name;
+            this._i.Name = Name;
             return this;
         }
         /// <summary>
         /// Проверка, является ли слой печатным
         /// </summary>
-        public bool Plottable => nc_layer.Plottable;
+        public bool Plottable => _i.Plottable;
         /// <summary>
         /// Установка значения печатности для слоя
         /// </summary>
@@ -109,13 +109,13 @@ namespace DynNCAD
         /// <returns></returns>
         public AcadLayer SetPlottable (bool Plottable)
         {
-            this.nc_layer.Plottable = Plottable;
+            this._i.Plottable = Plottable;
             return this;
         }
         /// <summary>
         /// Получения стиля печати для слоя
         /// </summary>
-        public string PlotStyleName => nc_layer.PlotStyleName;
+        public string PlotStyleName => _i.PlotStyleName;
 
 
     }
