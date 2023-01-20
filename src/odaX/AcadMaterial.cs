@@ -23,18 +23,9 @@ namespace DynNCAD
         {
             this._i = material;
         }
-        public AcadMaterial (AcadDatabase AcadDatabase, string Name)
+        public AcadMaterial(AcadDatabase AcadDatabase, string Name)
         {
             this._i = AcadDatabase._i.Materials.Add(Name);
-        }
-        public List<AcadMaterial> GetAllMaterials(AcadDatabase AcadDatabase)
-        {
-            List<AcadMaterial> mats = new List<AcadMaterial>();
-            for (int i = 0; i < AcadDatabase._i.Materials.Count; i++)
-            {
-                mats.Add(new AcadMaterial(AcadDatabase._i.Materials.Item(i)));
-            }
-            return mats;
         }
         public string Description => this._i.Description;
         public void SetDescription(string Description) => this._i.Description = Description;

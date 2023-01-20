@@ -13,20 +13,17 @@ namespace DynNCAD
     {
         [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadGroup _i;
+        public AcadGroup(AcadEntity AcadEntity)
+        {
+            if (AcadEntity._i as OdaX.AcadGroup != null) this._i = AcadEntity._i as OdaX.AcadGroup;
+            else this._i = null;
+        }
         internal AcadGroup(OdaX.AcadGroup AcadGroup)
         {
             this._i = AcadGroup;
         }
-        public static List<AcadGroup> GetAllAcadGroups (AcadDatabase AcadDatabase)
-        {
-            List<AcadGroup> groups = new List<AcadGroup>();
-            for (int i = 0; i < AcadDatabase._i.Groups.Count; i++)
-            {
-                groups.Add(new AcadGroup(AcadDatabase._i.Groups.Item(i)));
-            }
-            return groups;
-        }
-        public List<AcadEntity> GetEntities ()
+
+        public List<AcadEntity> GetEntities()
         {
             List<AcadEntity> ents = new List<AcadEntity>();
             for (int i = 0; i < this._i.Count; i++)
@@ -35,8 +32,8 @@ namespace DynNCAD
             }
             return ents;
         }
-        public int Count => this._i.Count;
-        public bool SetVisible (bool Visiable) => this._i.Visible = Visiable;
+        //public int Count => this._i.Count;
+        //public void SetVisible(bool VisiableStatus) => this._i.Visible = VisiableStatus;
         public string Name => this._i.Name;
         public void SetName(string Name) => this._i.Name = Name;
     }

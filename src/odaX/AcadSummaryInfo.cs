@@ -19,9 +19,9 @@ namespace DynNCAD
     {
         [dr.IsVisibleInDynamoLibrary(false)]
         public OdaX.AcadSummaryInfo _i;
-        public AcadSummaryInfo (AcadDatabase AcadDatabase)
+        internal AcadSummaryInfo(OdaX.AcadSummaryInfo AcadSummaryInfo)
         {
-            this._i = AcadDatabase._i.SummaryInfo;
+            this._i = AcadSummaryInfo;
         }
         public string Author => this._i.Author;
         public void SetAuthor(string Author) => this._i.Author = Author;

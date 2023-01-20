@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,15 +20,7 @@ namespace DynNCAD
         {
             this._i = AcadFileDependency;
         }
-        public List<AcadFileDependency> GetAllAcadFileDependencies(AcadDatabase AcadDatabase)
-        {
-            List<AcadFileDependency> deps = new List<AcadFileDependency>();
-            for (int i = 0; i < AcadDatabase._i.FileDependencies.Count; i++)
-            {
-                deps.Add(new AcadFileDependency(AcadDatabase._i.FileDependencies.Item(i)));
-            }
-            return deps;
-        }
+
         public string FullFileName => this._i.FullFileName;
         public string FileName => this._i.FileName;
         public string FoundPath => this._i.FoundPath;

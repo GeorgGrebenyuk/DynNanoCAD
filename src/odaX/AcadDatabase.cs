@@ -102,6 +102,34 @@ namespace DynNCAD
             }
             return l;
         }
+        public List<AcadFileDependency> FileDependencies()
+        {
+            List<AcadFileDependency> deps = new List<AcadFileDependency>();
+            for (int i = 0; i < this._i.FileDependencies.Count; i++)
+            {
+                deps.Add(new AcadFileDependency(this._i.FileDependencies.Item(i)));
+            }
+            return deps;
+        }
+        public AcadSummaryInfo SummaryInfo => new AcadSummaryInfo(this._i.SummaryInfo);
+        public List<AcadMaterial> Materials()
+        {
+            List<AcadMaterial> mats = new List<AcadMaterial>();
+            for (int i = 0; i < this._i.Materials.Count; i++)
+            {
+                mats.Add(new AcadMaterial(this._i.Materials.Item(i)));
+            }
+            return mats;
+        }
+        public List<AcadGroup> GetAllAcadGroups()
+        {
+            List<AcadGroup> groups = new List<AcadGroup>();
+            for (int i = 0; i < this._i.Groups.Count; i++)
+            {
+                groups.Add(new AcadGroup(this._i.Groups.Item(i)));
+            }
+            return groups;
+        }
 
     }
 }
