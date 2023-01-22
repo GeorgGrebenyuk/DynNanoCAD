@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using dr = Autodesk.DesignScript.Runtime;
 using dg = DynNCAD.Geometry;
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     public class AcadGroup
     {

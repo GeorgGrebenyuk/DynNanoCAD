@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.Objects
 {
     /// <summary>
     /// Класс для работы с полилиниями (устаревший тип AcDbPolyline = AcadLWPolyline)
@@ -27,7 +27,7 @@ namespace DynNCAD
         /// Получение полилинии из объекта модели, если это тот тип
         /// </summary>
         /// <param name="AcadEntity"></param>
-        public AcadLWPolyline(AcadEntity AcadEntity)
+        public AcadLWPolyline(General.AcadEntity AcadEntity)
         {
             if (AcadEntity._i as OdaX.AcadLWPolyline != null) this._i = AcadEntity._i as OdaX.AcadLWPolyline;
             else this._i = null;
@@ -37,7 +37,7 @@ namespace DynNCAD
         /// </summary>
         /// <param name="Block"></param>
         /// <param name="points"></param>
-        public AcadLWPolyline(AcadBlock Block, List<dg.Point> points)
+        public AcadLWPolyline(General.AcadBlock Block, List<dg.Point> points)
         {
             List<double> pnts = new List<double>();
             foreach (var p in points)

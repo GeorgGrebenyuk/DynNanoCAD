@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.App
 {
     /// <summary>
     /// Класс для работы с nanoCAD.Document
@@ -35,6 +35,7 @@ namespace DynNCAD
         internal Document(nanoCAD.Document doc)
         {
             _i = doc;
+            
         }
         /// <summary>
         /// Передает внутреннюю команду из скрипта в документ для выполнения

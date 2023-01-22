@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using dr = Autodesk.DesignScript.Runtime;
 using dg = DynNCAD.Geometry;
 
-namespace DynNCAD
+namespace DynNCAD.App
 {
     /// <summary>
     /// Класс для работы с внешними зависимостями чертежа
@@ -19,6 +19,32 @@ namespace DynNCAD
         internal AcadFileDependency(OdaX.AcadFileDependency AcadFileDependency)
         {
             this._i = AcadFileDependency;
+        }
+
+        [dr.MultiReturn(new[] { "Acad:Text", "Внешняя ссылка" })]
+        public static Dictionary<string, string> Features()
+        {
+            return new Dictionary<string, string>()
+            {
+                {"Acad:Text", "Acad:Text" },
+                {"Внешняя ссылка", "Acad:XRef" },
+            };
+        }
+        /// <summary>
+        /// Создание внешней ссылки
+        /// </summary>
+        /// <param name="AcadDatabase"></param>
+        /// <param name="Feature"></param>
+        /// <param name="FullFileName"></param>
+        /// <param name="AffectsGraphics"></param>
+        /// <param name="noIncrement"></param>
+        public AcadFileDependency (General.AcadDatabase AcadDatabase, 
+            string Feature, string FullFileName, bool AffectsGraphics = false, bool noIncrement = false)
+        {
+            int new_index = AcadDatabase._i.FileDependencies.
+                CreateEntry(Feature, FullFileName, AffectsGraphics, noIncrement);
+            var count_files = AcadDatabase._i.FileDependencies.Count;
+            this._i = AcadDatabase._i.FileDependencies.Item(new_index);
         }
 
         public string FullFileName => this._i.FullFileName;

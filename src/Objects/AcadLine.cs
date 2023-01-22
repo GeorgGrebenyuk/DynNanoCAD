@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.Objects
 {
     /// <summary>
     /// Класс для работы с отрезками
@@ -25,7 +25,7 @@ namespace DynNCAD
         /// Получение отрезка из объекта модели AcadEntity
         /// </summary>
         /// <param name="AcadEntity"></param>
-        public AcadLine(AcadEntity AcadEntity)
+        public AcadLine(General.AcadEntity AcadEntity)
         {
             if (AcadEntity._i as OdaX.AcadLine != null) this._i = AcadEntity._i as OdaX.AcadLine;
             else this._i = null;
@@ -36,7 +36,7 @@ namespace DynNCAD
         /// <param name="Block"></param>
         /// <param name="StartPoint">Начальная точка</param>
         /// <param name="EndPoint">Конечная точка</param>
-        public AcadLine(AcadBlock Block, dg.Point StartPoint, dg.Point EndPoint)
+        public AcadLine(General.AcadBlock Block, dg.Point StartPoint, dg.Point EndPoint)
         {
             this._i = Block._i.AddLine(Tools.PointByDynPoint(StartPoint), Tools.PointByDynPoint(EndPoint));
         }

@@ -16,26 +16,26 @@ using System.Security;
 using System.Runtime.InteropServices.ComTypes;
 using Microsoft.Win32;
 #endregion
-namespace DynNCAD
+namespace DynNCAD.App
 {
     /// <summary>
     /// Класс для работы с nanoCAD.Application
     /// </summary>
     public class Application
     {
+        
         [dr.IsVisibleInDynamoLibrary(false)]
         public nanoCAD.Application _i;
         /// <summary>
         /// Получение первого запущенного приложения NanoCAD
         /// </summary>
+        public Application(string progID = "nanoCAD.Application")
+        {
+            var check_app = Marshal.GetActiveObject(progID) as nanoCAD.Application;
+            if (check_app != null) this._i = check_app;
+        }
         public Application()
         {
-            StringBuilder SB = new StringBuilder();
-            foreach (var moniker in EnumRunningObjects())
-            {
-                List<string> t1 = GetMonikerString(moniker).Split('\t').ToList();
-            }
-
             var check_app = Marshal.GetActiveObject("nanoCADx64.Application.22.0") as nanoCAD.Application;
             if (check_app != null) this._i = check_app;
         }
@@ -74,7 +74,21 @@ namespace DynNCAD
         }
         #region getting_processes_ROT
         //https://stackoverflow.com/questions/7736280/marshal-getactiveobject-throws-mk-e-unavailable-exception-in-c-sharp
-
+        /// <summary>
+        /// Получает идентификаторы всех запущенных процессов в системе через COM
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetCOMProcesses()
+        {
+            StringBuilder SB = new StringBuilder();
+            List<string> processes = new List<string>();
+            foreach (var moniker in EnumRunningObjects())
+            {
+                List<string> t1 = GetMonikerString(moniker).Split('\t').ToList();
+                processes = processes.Concat(t1).ToList();
+            }
+            return processes;
+        }
         private const int S_OK = 0x00000000;
 
         [DllImport("ole32.dll")]

@@ -10,7 +10,7 @@ using dg = DynNCAD.Geometry;
 using nanoCAD;
 using OdaX;
 
-namespace DynNCAD
+namespace DynNCAD.App
 {
     /// <summary>
     /// Класс для работы со свойствами документа

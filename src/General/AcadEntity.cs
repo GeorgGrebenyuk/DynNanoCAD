@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     /// <summary>
     /// Класс для работы с объектами NanoCAD (общий класс для всех сущностей объектов модели)
@@ -23,7 +23,8 @@ namespace DynNCAD
         public OdaX.AcadEntity _i;
         public AcadEntity(dynamic sub_class)
         {
-            this._i = sub_class._i;
+            if (sub_class as OdaX.AcadEntity != null) this._i = sub_class as OdaX.AcadEntity;
+            else this._i = null;
         }
         internal AcadEntity() { }
         internal AcadEntity(OdaX.AcadEntity entity)

@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     /// <summary>
     /// Класс для работы с базой данных объектов чертежа
@@ -25,7 +25,7 @@ namespace DynNCAD
         /// Получение базы данных чертежа
         /// </summary>
         /// <param name="NDocument"></param>
-        public AcadDatabase (Document Document)
+        public AcadDatabase (DynNCAD.App.Document Document)
         {
             this._i= Document._i.Database;
         }
@@ -102,16 +102,17 @@ namespace DynNCAD
             }
             return l;
         }
-        public List<AcadFileDependency> FileDependencies()
+        public List<DynNCAD.App.AcadFileDependency> FileDependencies()
         {
-            List<AcadFileDependency> deps = new List<AcadFileDependency>();
-            for (int i = 0; i < this._i.FileDependencies.Count; i++)
+            List<DynNCAD.App.AcadFileDependency> deps = new List<DynNCAD.App.AcadFileDependency>();
+            for (int i = 1; i <= this._i.FileDependencies.Count; i++)
             {
-                deps.Add(new AcadFileDependency(this._i.FileDependencies.Item(i)));
+                DynNCAD.App.AcadFileDependency dep = new DynNCAD.App.AcadFileDependency(this._i.FileDependencies.Item(i));
+                deps.Add(dep);
             }
             return deps;
         }
-        public AcadSummaryInfo SummaryInfo => new AcadSummaryInfo(this._i.SummaryInfo);
+        public DynNCAD.App.AcadSummaryInfo SummaryInfo => new DynNCAD.App.AcadSummaryInfo(this._i.SummaryInfo);
         public List<AcadMaterial> Materials()
         {
             List<AcadMaterial> mats = new List<AcadMaterial>();

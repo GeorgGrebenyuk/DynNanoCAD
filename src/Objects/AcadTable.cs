@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.Objects
 {
     /// <summary>
     /// Класс для работы с таблицами NanoCAD
@@ -26,7 +26,7 @@ namespace DynNCAD
         /// Приведение объекта модели к таблице
         /// </summary>
         /// <param name="AcadEntity"></param>
-        public AcadTable(AcadEntity AcadEntity)
+        public AcadTable(General.AcadEntity AcadEntity)
         {
             if (AcadEntity._i as OdaX.AcadTable != null) this._i = AcadEntity._i as OdaX.AcadTable;
             else this._i = null;
@@ -40,7 +40,7 @@ namespace DynNCAD
         /// <param name="columns_count">Число колонок</param>
         /// <param name="row_height">Высота строки</param>
         /// <param name="column_width">Ширина колонки</param>
-        public AcadTable(AcadBlock block, dg.Point insetion_point, int rows_count = 4,
+        public AcadTable(General.AcadBlock block, dg.Point insetion_point, int rows_count = 4,
             int columns_count = 2, double row_height = 4.0, double column_width = 10.0)
         {
             this._i = block._i.AddTable(Tools.PointByDynPoint(insetion_point), rows_count, columns_count,

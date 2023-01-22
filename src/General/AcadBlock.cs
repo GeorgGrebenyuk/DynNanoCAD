@@ -9,7 +9,7 @@ using dr = Autodesk.DesignScript.Runtime;
 using dg = DynNCAD.Geometry;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     /// <summary>
     /// Класс для работы с блоками (не путать с Вхождениями блоков (Block Reference)!)

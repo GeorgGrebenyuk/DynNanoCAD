@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.Objects
 {
     /// <summary>
     /// Класс для работы с многострочным текстом (MText), интерфейс AcadMText
@@ -25,9 +25,9 @@ namespace DynNCAD
         /// Получение текста из объекта модели
         /// </summary>
         /// <param name="model_object"></param>
-        public AcadMText(object model_object)
+        public AcadMText(General.AcadEntity AcadEntity)
         {
-            if (model_object as OdaX.AcadMText != null) this._i = model_object as OdaX.AcadMText;
+            if (AcadEntity._i as OdaX.AcadMText != null) this._i = AcadEntity._i as OdaX.AcadMText;
             else this._i = null;
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace DynNCAD
         /// <param name="insetion_point">Точка вставки</param>
         /// <param name="text_width">Ширина поля для текста</param>
         /// <param name="text">Значение текста</param>
-        public AcadMText(AcadBlock block, dg.Point insetion_point, double text_width, string text)
+        public AcadMText(General.AcadBlock block, dg.Point insetion_point, double text_width, string text)
         {
             this._i = block._i.AddMText(Tools.PointByDynPoint(insetion_point), text_width, text);
         }

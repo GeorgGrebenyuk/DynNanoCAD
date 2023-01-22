@@ -9,7 +9,7 @@ using dg = DynNCAD.Geometry;
 
 
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     /// <summary>
     /// Класс для работы с материалами, но без доступа к их формулировке
@@ -23,7 +23,7 @@ namespace DynNCAD
         {
             this._i = material;
         }
-        public AcadMaterial(AcadDatabase AcadDatabase, string Name)
+        public AcadMaterial(General.AcadDatabase AcadDatabase, string Name)
         {
             this._i = AcadDatabase._i.Materials.Add(Name);
         }

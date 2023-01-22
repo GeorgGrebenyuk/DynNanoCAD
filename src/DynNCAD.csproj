@@ -22,8 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>bin\Debug\DynNCAD.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
+    <DocumentationFile>bin\Release\DynNCAD.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DynamoServices, Version=2.12.1.8246, Culture=neutral, processorArchitecture=MSIL">
@@ -57,27 +57,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="odaX\AcadGroup.cs" />
-    <Compile Include="odaX\AcadFileDependency.cs" />
-    <Compile Include="odaX\AcadMaterial.cs" />
-    <Compile Include="odaX\AcadSummaryInfo.cs" />
-    <Compile Include="odaX\AcadObject.cs" />
-    <Compile Include="odaX\AcadTable.cs" />
-    <Compile Include="odaX\AcadEntity.cs" />
-    <Compile Include="odaX\AcadMText.cs" />
-    <Compile Include="odaX\AcadText.cs" />
-    <Compile Include="odaX\AcadLine.cs" />
-    <Compile Include="odaX\AcadPoint.cs" />
-    <Compile Include="odaX\AcadLWPolyline.cs" />
-    <Compile Include="odaX\AcadBlock.cs" />
-    <Compile Include="odaX\AcadBlockReference.cs" />
+    <Compile Include="General\AcadDictionary.cs" />
+    <Compile Include="General\AcadGroup.cs" />
+    <Compile Include="App\AcadFileDependency.cs" />
+    <Compile Include="General\AcadHyperlink.cs" />
+    <Compile Include="General\AcadMaterial.cs" />
+    <Compile Include="App\AcadSummaryInfo.cs" />
+    <Compile Include="General\AcadObject.cs" />
+    <Compile Include="Objects\AcadCircle.cs" />
+    <Compile Include="Objects\AcadHatch.cs" />
+    <Compile Include="Objects\AcadTable.cs" />
+    <Compile Include="General\AcadEntity.cs" />
+    <Compile Include="Objects\AcadMText.cs" />
+    <Compile Include="Objects\AcadText.cs" />
+    <Compile Include="Objects\AcadLine.cs" />
+    <Compile Include="Objects\AcadPoint.cs" />
+    <Compile Include="Objects\AcadLWPolyline.cs" />
+    <Compile Include="General\AcadBlock.cs" />
+    <Compile Include="Objects\AcadBlockReference.cs" />
     <Compile Include="Geometry.cs" />
-    <Compile Include="NanoCAD\Application.cs" />
-    <Compile Include="odaX\AcadDatabase.cs" />
-    <Compile Include="NanoCAD\Document.cs" />
-    <Compile Include="odaX\AcadLayer.cs" />
+    <Compile Include="App\Application.cs" />
+    <Compile Include="General\AcadDatabase.cs" />
+    <Compile Include="App\Document.cs" />
+    <Compile Include="General\AcadLayer.cs" />
     <Compile Include="Selection.cs" />
-    <Compile Include="odaX\AcadUCS.cs" />
+    <Compile Include="Objects\AcadUCS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools.cs" />
   </ItemGroup>

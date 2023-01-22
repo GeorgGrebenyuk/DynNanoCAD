@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     public class AcadObject
     {
@@ -21,7 +21,8 @@ namespace DynNCAD
         internal AcadObject() { }
         public AcadObject(dynamic entity)
         {
-            this._i = entity._i;
+            if (entity as OdaX.AcadObject != null) this._i = entity as OdaX.AcadObject;
+            else this._i = null;
         }
         public void Delete() => this._i.Delete();
         public void Erase() => this._i.Erase();

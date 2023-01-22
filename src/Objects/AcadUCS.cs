@@ -12,7 +12,7 @@ using nanoCAD;
 using OdaX;
 #endregion
 
-namespace DynNCAD
+namespace DynNCAD.General
 {
     /// <summary>
     /// Класс для работы с системами координат чертежа
@@ -25,7 +25,7 @@ namespace DynNCAD
         {
             this.ucs = ucs;
         }
-        public AcadUCS (AcadDatabase Database, dg.Point Origin, dg.Point XAxisPoint, dg.Point YAxisPoint, string name)
+        public AcadUCS (General.AcadDatabase Database, dg.Point Origin, dg.Point XAxisPoint, dg.Point YAxisPoint, string name)
         {
 
         }
