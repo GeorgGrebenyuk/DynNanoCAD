@@ -41,11 +41,15 @@ namespace DynNCAD.Objects
         //    else this._i = AcadBlock._i.InsertBlock(Tools.PointByDynPoint(InsertionPoint),
         //        Name, Xscale, Yscale, Zscale, Rotation, Password);
         //}
-        //public AcadBlockReference(General.AcadBlock AcadBlock, dg.Point InsertionPoint, string Name)
-        //{
-        //    this._i = AcadBlock._i.InsertBlock(Tools.PointByDynPoint(InsertionPoint),
-        //            Name, 1.0, 1.0, 1.0, 0.0);
-        //}
+        /// <summary>
+        /// Приведение к Вхождению блока COM-интерфейса. Использовать совместно с нодом "InsertBlockReferenceToBlock"
+        /// </summary>
+        /// <param name="AcadBlockReference"></param>
+        public AcadBlockReference (object AcadBlockReference)
+        {
+            if (AcadBlockReference as OdaX.AcadBlockReference != null) this._i = AcadBlockReference as OdaX.AcadBlockReference;
+            else this._i = null;
+        }
 
         //properties
         /// <summary>

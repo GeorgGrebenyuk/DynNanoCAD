@@ -1,0 +1,484 @@
+{
+  "Uuid": "7e9dbea8-0287-4ea9-9e8b-5c43572892f5",
+  "IsCustomNode": true,
+  "Category": "DynNCAD.DynNCAD.Objects.AcadBlockReference",
+  "Description": "Python-нод для создания вхождения блока  (BlockReference) в данное пространство Блока. Результат подавать на вход одному из конструктору класса BlockReference",
+  "Name": "InsertBlockReferenceToBlock",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [
+    {
+      "Id": "d49da3daaeea491eaee409c986e403fb",
+      "Name": "AcadBlockReference.AcadBlockReference",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Приведение к Вхождению блока COM-интерфейса. Использовать совместно с нодом \"PyBlockRefInsert\"\n\nAcadBlockReference.AcadBlockReference (AcadBlockReference: var): AcadBlockReference"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynNCAD.Objects.AcadBlockReference.AcadBlockReference@var",
+      "Id": "d49da3daaeea491eaee409c986e403fb",
+      "Inputs": [
+        {
+          "Id": "628c37c26daf4136bff13e202309ccfb",
+          "Name": "AcadBlockReference",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8acab2fbe8824eb6b03ea39fce934405",
+          "Name": "AcadBlockReference",
+          "Description": "AcadBlockReference",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Приведение к Вхождению блока COM-интерфейса. Использовать совместно с нодом \"PyBlockRefInsert\"\n\nAcadBlockReference.AcadBlockReference (AcadBlockReference: var): AcadBlockReference"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "\"\"\"\r\nВходные параметры для создания Вхождения блока\r\nCOM-функция AcadBlock.InsertBlock()\r\n\r\n\"\"\"\r\nblock_to_insert = IN[0]\r\nblock_parent_name = IN[1]\r\nblock_ref_insertion_point = IN[2]\r\nblock_ref_scale_x = IN[3]\r\nblock_ref_scale_y = IN[4]\r\nblock_ref_scale_z = IN[5]\r\nblock_ref_rotation = IN[6]\r\n\r\nblock_ref_insertion_point_str = str(block_ref_insertion_point.X) + \",\" + str(block_ref_insertion_point.Y) + \",\" + str(block_ref_insertion_point.Z)\r\ncreated_block_ref = block_to_insert._i.InsertBlock(block_ref_insertion_point_str, block_parent_name, block_ref_scale_x, block_ref_scale_y, block_ref_scale_z, block_ref_rotation)\r\nOUT = created_block_ref",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "4ddf3cd8101549f8995ac9b91e96248f",
+      "Inputs": [
+        {
+          "Id": "d44d263217d846978cc1d0b20095a4ad",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3b214fdfff844449b2862da5c855af92",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09eaa8efe81b4f8292e8ff93d3fd53e6",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0cd91e303d7148b9b99f343c28d92d16",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fa3d67814f964cdd9905c20e32162961",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a400c4b8d99941f2832590a0fb1aeda3",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc4aae15b2b14fbcb625734b68a75f8e",
+          "Name": "IN[6]",
+          "Description": "Input #6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6b3575049d43417685d8a9b5b12935f3",
+          "Name": "OUT",
+          "Description": "Результат сценария Python",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Выполнение встроенного сценария Python."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "block_to_insert",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "3bb1fc2c596f4a43857afe5d3d767bad",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ed53c8d532b84c6bb30063824c0f0f36",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "blocks_name",
+        "TypeName": "string",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "96c0ab4573b64a5c9ee5080926aaa66e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5ce7201a1e904b0d96ce36021724bb26",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "insertion_point",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "165f0ff62f8b4e0fb5f541714641666d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1c2b2e4b0cb04dad9571485d262d2923",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "scale_x",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "96f85e079da5406e8f6800f56f855108",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ea9e5ef7e13549ed8c9f5b1d0c8d520d",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "scale_y",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "cbac0be998be4349801a0cd6674f9364",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a6d50154788f4ced95c9bae9ddf6ca28",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "scale_z",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "6471aa56005e4af9bb8d69e051e4e6de",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4dabda5eef9b4fbb8931ffc562607391",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "rotation",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "d1ba366492654219863b314a17a34c2b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "265ff6e4bff1476db0b0c33dc8756a0e",
+          "Name": "",
+          "Description": "Обозначение",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Параметр функции, использовать с пользовательскими узлами.\r\n\r\nМожно указать тип и значение параметра по умолчанию. Например,\r\n\r\nввод: var [], [].\r\nзначение: bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6b3575049d43417685d8a9b5b12935f3",
+      "End": "628c37c26daf4136bff13e202309ccfb",
+      "Id": "4a27f759b8c644299e4356530edcafb0"
+    },
+    {
+      "Start": "ed53c8d532b84c6bb30063824c0f0f36",
+      "End": "d44d263217d846978cc1d0b20095a4ad",
+      "Id": "89e75a9265e74f068c623480acaa67ef"
+    },
+    {
+      "Start": "5ce7201a1e904b0d96ce36021724bb26",
+      "End": "3b214fdfff844449b2862da5c855af92",
+      "Id": "135e17eeee5544cda2d81d34b922bea7"
+    },
+    {
+      "Start": "1c2b2e4b0cb04dad9571485d262d2923",
+      "End": "09eaa8efe81b4f8292e8ff93d3fd53e6",
+      "Id": "430067efde4647849188f543a65e6e73"
+    },
+    {
+      "Start": "ea9e5ef7e13549ed8c9f5b1d0c8d520d",
+      "End": "0cd91e303d7148b9b99f343c28d92d16",
+      "Id": "edc2b12015da4bf89f6f9d0abfc993ed"
+    },
+    {
+      "Start": "a6d50154788f4ced95c9bae9ddf6ca28",
+      "End": "fa3d67814f964cdd9905c20e32162961",
+      "Id": "7de2cb66e0f1485cb2d5af7512ab9214"
+    },
+    {
+      "Start": "4dabda5eef9b4fbb8931ffc562607391",
+      "End": "a400c4b8d99941f2832590a0fb1aeda3",
+      "Id": "674fa8d9bf994574bdd07fe85dd294eb"
+    },
+    {
+      "Start": "265ff6e4bff1476db0b0c33dc8756a0e",
+      "End": "cc4aae15b2b14fbcb625734b68a75f8e",
+      "Id": "fa341e528ced4e648c437d92fdea9515"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Author": "None provided",
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "AcadBlockReference.AcadBlockReference",
+        "Id": "d49da3daaeea491eaee409c986e403fb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 695.0,
+        "Y": 308.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Operation",
+        "Id": "4ddf3cd8101549f8995ac9b91e96248f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 466.0,
+        "Y": 306.63606911447084
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "3bb1fc2c596f4a43857afe5d3d767bad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 55.585313174946066,
+        "Y": 242.24838012958946
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "96c0ab4573b64a5c9ee5080926aaa66e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 46.946004319654492,
+        "Y": 320.00215982721369
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "165f0ff62f8b4e0fb5f541714641666d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 52.993520518358594,
+        "Y": 395.16414686825038
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "96f85e079da5406e8f6800f56f855108",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 110.01295896328298,
+        "Y": 460.82289416846635
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "cbac0be998be4349801a0cd6674f9364",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 119.29167938392317,
+        "Y": 536.63154549793626
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "6471aa56005e4af9bb8d69e051e4e6de",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 128.50573337572024,
+        "Y": 592.93965322558415
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "d1ba366492654219863b314a17a34c2b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 129.52951715258661,
+        "Y": 663.58073382936061
+      }
+    ],
+    "Annotations": [],
+    "X": 276.81295980021594,
+    "Y": -133.374228037257,
+    "Zoom": 0.97676875
+  }
+}
