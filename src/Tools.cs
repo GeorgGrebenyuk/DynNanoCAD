@@ -23,6 +23,10 @@ namespace DynNCAD
         {
             return $"{p.X},{p.Y},{p.Z}";
         }
+        public static double[] ToDoubleArray (dg.Vector3d v)
+        {
+            return new double[3] { v.X, v.Y, v.Z };
+        }
         public static dg.Point ToDynamoPoint (string p)
         {
             double[] pa = p.Split(',').Select(a => double.Parse(a)).ToArray();

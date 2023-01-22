@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\AcadExternalReference.cs" />
     <Compile Include="General\AcadDictionary.cs" />
     <Compile Include="General\AcadGroup.cs" />
     <Compile Include="App\AcadFileDependency.cs" />
@@ -65,7 +66,9 @@
     <Compile Include="App\AcadSummaryInfo.cs" />
     <Compile Include="General\AcadObject.cs" />
     <Compile Include="Objects\AcadCircle.cs" />
+    <Compile Include="Objects\AcadEllipse.cs" />
     <Compile Include="Objects\AcadHatch.cs" />
+    <Compile Include="Objects\AcadPolygonMesh.cs" />
     <Compile Include="Objects\AcadTable.cs" />
     <Compile Include="General\AcadEntity.cs" />
     <Compile Include="Objects\AcadMText.cs" />

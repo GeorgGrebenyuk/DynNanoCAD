@@ -22,12 +22,11 @@
 //        [dr.IsVisibleInDynamoLibrary(false)]
 //        public OdaX.IAcadHatch _i;
 
-//        public AcadHatch(General.AcadEntity AcadEntity)
-//        {
-//            if (AcadEntity._i as OdaX.IAcadHatch != null) this._i = AcadEntity._i as OdaX.IAcadHatch;
-//            else this._i = null;
-
-//        }
+//        //public AcadHatch(General.AcadEntity AcadEntity)
+//        //{
+//        //    if (AcadEntity._i as OdaX.IAcadHatch != null) this._i = AcadEntity._i as OdaX.IAcadHatch;
+//        //    else this._i = null;
+//        //}
 
 //        //public AcadHatch(General.AcadBlock Block, int PatternType, string PatternName,
 //        //    bool Associativity, object HatchObjectType = null)

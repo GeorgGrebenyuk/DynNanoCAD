@@ -30,6 +30,23 @@ namespace DynNCAD.Objects
             if (AcadEntity._i as OdaX.AcadBlockReference != null) this._i = AcadEntity._i as OdaX.AcadBlockReference;
             else this._i = null;
         }
+        //public AcadBlockReference(General.AcadBlock AcadBlock, dg.Point InsertionPoint, string Name,
+        //    double Xscale = 1.0, double Yscale = 1.0, double Zscale = 1.0, double Rotation = 0.0, object Password = null)
+        //{
+        //    if (Password == null)
+        //    {
+        //        this._i = AcadBlock._i.InsertBlock(Tools.PointByDynPoint(InsertionPoint),
+        //            Name, Xscale, Yscale, Zscale, Rotation);
+        //    }
+        //    else this._i = AcadBlock._i.InsertBlock(Tools.PointByDynPoint(InsertionPoint),
+        //        Name, Xscale, Yscale, Zscale, Rotation, Password);
+        //}
+        //public AcadBlockReference(General.AcadBlock AcadBlock, dg.Point InsertionPoint, string Name)
+        //{
+        //    this._i = AcadBlock._i.InsertBlock(Tools.PointByDynPoint(InsertionPoint),
+        //            Name, 1.0, 1.0, 1.0, 0.0);
+        //}
+
         //properties
         /// <summary>
         /// Проверка, есть ли атрибуты у блока
